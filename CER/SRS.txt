@@ -1,33 +1,35 @@
 ================================================================================
 SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
 PROJECT: Centralised Examination Result System (Class 9 & Class 10)
-DATASET: Mapped directly from 'Roll number and url file map.xlsx'
+ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
 ================================================================================
 
 1. INTRODUCTION
    1.1 Purpose
-       This document defines the software requirements for the Centralised Examination Result Web Application. The system enables Class 9 and Class 10 students to search, view, and download official secondary school marksheets hosted on GitHub.
+       This document defines the software requirements for the Centralised Examination Result Web Application. The system enables Class 9 and Class 10 students to search and retrieve their official secondary school marksheets hosted on GitHub.
    1.2 Scope
-       Targeted at Class 9 and Class 10 secondary school examinations. All 30 student result records are mapped directly from 'Roll number and url file map.xlsx' featuring numeric Roll Numbers (e.g. 22287419, 22287458) and Date of Birth (DOB in DD/MM/YYYY format via calendar date picker). PDF transcripts are downloaded directly from official raw GitHub repository URLs.
+       Targeted at Class 9 and Class 10 secondary school examinations. All PDF certificates are accessed via a deterministic mathematical algorithm matching user-input Roll Number and Date of Birth.
 
 2. PURPOSE AND SCOPE
    - Public online portal for "Centralised Examination Result".
    - Class 9 & Class 10 Secondary Education.
-   - Numeric Roll Number verification (digits only, e.g. 22287419).
-   - DOB calendar selector system (DD/MM/YYYY format).
-   - Direct download links for official PDF marksheets hosted on GitHub (`https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/{pdfName}.pdf`).
+   - Numeric Roll Number input (digits only, e.g. 22287869).
+   - DOB calendar selector system (HTML5 Date Picker).
+   - Direct redirection to official PDF marksheets hosted on GitHub (`https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/{pdfCode}.pdf`).
 
-3. DEFINITIONS AND ACRONYMS
-   - SRS: Software Requirements Specification
-   - LL-SRS: Low-Level Software Requirements Specification
-   - Class IX: 9th Grade Secondary Education
-   - Class X: 10th Grade Secondary Board Examination
-   - DOB: Date of Birth (DD/MM/YYYY)
-   - GitHub PDF Host: Static repository hosting pre-rendered official PDF certificates.
+3. MATHEMATICAL PDF URL ALGORITHM
+   3.1 Inputs:
+       - Roll Number (numeric string)
+       - Date of Birth (YYYY-MM-DD format from date picker)
+   3.2 Derivation Formula:
+       - Code = (Last 4 digits of Roll Number) + (Last 2 digits of DOB Year)
+   3.3 Target URL Construction:
+       - URL = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/" + Code + ".pdf"
+   3.4 Example:
+       - Roll: 22287869, DOB: 12-08-2013 -> Code: 786913 -> URL: .../786913.pdf
 
-4. DATASET MAPPING & URL ARCHITECTURE
-   - Source File: 'Roll number and url file map.xlsx'
-   - Total Students: 30 Secondary Candidates (Class IX & Class X)
-   - Roll Numbers: 22287458 to 22287465 (Class IX), 22282518 & 22287419 to 22287439 (Class X)
-   - Download URL Pattern: `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/{pdfName}.pdf`
+4. DUMMY DETAILS SAMPLE
+   - File: 'dummy details'
+   - Roll No: 2224865
+   - DOB: 30/12/2016
 ================================================================================
