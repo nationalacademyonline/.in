@@ -1,0 +1,23 @@
+================================================================================
+LOW-LEVEL SOFTWARE REQUIREMENTS SPECIFICATION (LL-SRS)
+PROJECT: Centralised Examination Result System (Class 9 & Class 10)
+================================================================================
+
+1. COMPONENT SPECIFICATIONS
+   1.1 Roll & DOB Validation Logic (`js/calculator.js` & `js/app.js`)
+       - Roll Number Example: `2224865` (Digits-only pattern `/^\d+$/`).
+       - DOB Format: `30/12/2016` (Interactive HTML5 Datepicker converted to `DD/MM/YYYY`).
+
+   1.2 GitHub PDF Link Integration (`js/pdf-generator.js`)
+       - Property: `student.pdfUrl`
+       - Behavior: Clicking "Download Official PDF" triggers direct download of the pre-hosted GitHub PDF URL (`https://github.com/.../2224865.pdf`).
+       - Fallback: If `pdfUrl` is unspecified, generates browser print stream (`window.print()`).
+
+   1.3 Storage Data Schema (`js/storage.js` & `data/students.json`)
+       - Record Schema: `{ id: string, rollNo: "2224865", dob: "30/12/2016", classLevel: "Class X", name: string, pdfUrl: string, subjects: [...], cgpa: number, percentage: number, resultStatus: "PASS"|"COMPARTMENT" }`
+
+2. MARKSHEET HEADER & GITHUB PDF DISPATCH
+   - Title: "CENTRALISED EXAMINATION RESULT"
+   - Subtitle: "Secondary School Examination (Class X / Class IX)"
+   - Action: Direct download trigger for GitHub-hosted PDF certificates.
+================================================================================
