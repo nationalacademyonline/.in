@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - National Academy Saran</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --whatsapp-color: #25d366;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* Round Social Icons */
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover { transform: scale(1.1); }
+        .yt { background-color: #ff0000; }
+        .fb { background-color: #1877f2; }
+        .ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+        .web { background-color: #2ecc71; }
+        .map { background-color: #e74c3c; }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn i { margin-right: 10px; }
+
+        .btn-call {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .btn-call:hover { background-color: #2980b9; }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: white;
+        }
+        .btn-whatsapp:hover { background-color: #1eb954; }
+
+        .btn-email {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 15px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-card">
+    <h2>National Academy Saran</h2>
+
+    <div class="social-links">
+        <a href="https://www.nationalacademysaran.com" class="social-icon web" title="Website"><i class="fas fa-globe"></i></a>
+        <a href="https://youtube.com/@nationalacademysaran" class="social-icon yt" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebook.com/nationalacademysaran" class="social-icon fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/nationalacademysaran" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://share.google/DFq7AVzWljjPhEAs5" class="social-icon map" title="Location"><i class="fas fa-location-dot"></i></a>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee;">
+
+    <span class="label">Direct Contact</span>
+    <div class="action-buttons">
+        <a href="tel:+918757033600" class="btn btn-call">
+            <i class="fas fa-phone-alt"></i> Call 87570 33600
+        </a>
+
+        <a href="tel:+919771760033" class="btn btn-call">
+            <i class="fas fa-phone-alt"></i> Call 97717 60033
+        </a>
+
+        <a href="https://wa.me/919771760033" class="btn btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Chat
+        </a>
+
+        <a href="mailto:nationalacademysaran@gmail.com" class="btn btn-email">
+            <i class="fas fa-envelope"></i> Send Email
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
