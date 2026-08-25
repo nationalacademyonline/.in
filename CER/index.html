@@ -1,158 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - National Academy Saran</title>
+    <title>Centralised Examination Result - Class 9 & Class 10 Portal</title>
+    <meta name="description" content="Official Centralised Examination Result Portal for Class 9 and Class 10 Secondary Education. Search by Roll Number and Date of Birth.">
+
+    <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --whatsapp-color: #25d366;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    <!-- QRCode Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-        .contact-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        /* Round Social Icons */
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .social-icon:hover { transform: scale(1.1); }
-        .yt { background-color: #ff0000; }
-        .fb { background-color: #1877f2; }
-        .ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
-        .web { background-color: #2ecc71; }
-        .map { background-color: #e74c3c; }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-
-        .btn i { margin-right: 10px; }
-
-        .btn-call {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        .btn-call:hover { background-color: #2980b9; }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp-color);
-            color: white;
-        }
-        .btn-whatsapp:hover { background-color: #1eb954; }
-
-        .btn-email {
-            background-color: #95a5a6;
-            color: white;
-        }
-
-        .label {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 15px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-    </style>
+    <!-- Custom Design System -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<div class="contact-card">
-    <h2>National Academy Saran</h2>
-
-    <div class="social-links">
-        <a href="https://www.nationalacademysaran.com" class="social-icon web" title="Website"><i class="fas fa-globe"></i></a>
-        <a href="https://youtube.com/@nationalacademysaran" class="social-icon yt" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://facebook.com/nationalacademysaran" class="social-icon fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/nationalacademysaran" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://share.google/DFq7AVzWljjPhEAs5" class="social-icon map" title="Location"><i class="fas fa-location-dot"></i></a>
+    <!-- Dynamic Animated Background Orbs -->
+    <div class="bg-glow-backdrop">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee;">
+    <!-- Application Main Container -->
+    <div class="app-container">
 
-    <span class="label">Direct Contact</span>
-    <div class="action-buttons">
-        <a href="tel:+918757033600" class="btn btn-call">
-            <i class="fas fa-phone-alt"></i> Call 87570 33600
-        </a>
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <a href="#" class="brand-logo" onclick="location.reload();">
+                <div class="brand-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div>
+                    <div class="brand-title">Centralised Examination Result</div>
+                    <div style="font-size: 0.72rem; color: var(--accent-cyan); font-weight: 600; letter-spacing: 0.05em;">SECONDARY BOARD (CLASS IX & CLASS X)</div>
+                </div>
+            </a>
 
-        <a href="tel:+919771760033" class="btn btn-call">
-            <i class="fas fa-phone-alt"></i> Call 97717 60033
-        </a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </nav>
 
-        <a href="https://wa.me/919771760033" class="btn btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Chat
-        </a>
+        <!-- ===================================================================
+             MAIN STUDENT RESULT SEARCH & TRANSCRIPT VIEW
+             =================================================================== -->
+        <div id="searchPage" class="page-view active">
+            <section class="hero-section">
+                <div class="hero-badge">
+                    <i class="fas fa-certificate"></i> SECONDARY SCHOOL EXAMINATION RESULT
+                </div>
+                <h1 class="hero-title">Centralised Examination Result</h1>
+                <p class="hero-subtitle">Select your Date of Birth (DOB) using the calendar system and enter your numeric Roll Number to access your official secondary mark statement.</p>
 
-        <a href="mailto:nationalacademysaran@gmail.com" class="btn btn-email">
-            <i class="fas fa-envelope"></i> Send Email
-        </a>
+                <div class="search-card">
+                    <form id="resultSearchForm" class="search-form" style="flex-direction: column;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; width: 100%;">
+                            <!-- Roll Number Input (Digits Only) -->
+                            <div class="search-input-group">
+                                <i class="fas fa-hashtag"></i>
+                                <input type="text" id="rollSearchInput" class="search-input"
+                                    placeholder="Roll No. (e.g. 2224865)" pattern="[0-9]+"
+                                    title="Roll number must contain digits only" required autocomplete="off">
+                            </div>
+
+                            <!-- Interactive Calendar System for DOB Selection -->
+                            <div class="search-input-group">
+                                <i class="fas fa-calendar-alt"></i>
+                                <input type="date" id="dobSearchInput" class="search-input"
+                                    title="Select Date of Birth from Calendar System" required>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 0.85rem;">
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-search"></i> Check Secondary Result
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Dynamic Result Display Section -->
+            <div id="marksheetResultDisplay"></div>
+        </div>
+
     </div>
-</div>
 
+    <!-- Application ES Module Entry -->
+    <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
