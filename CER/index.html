@@ -10,9 +10,6 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- QRCode Generator Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
     <!-- Custom Design System -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -48,7 +45,7 @@
         </nav>
 
         <!-- ===================================================================
-             MAIN STUDENT RESULT SEARCH & TRANSCRIPT VIEW
+             MAIN STUDENT RESULT SEARCH
              =================================================================== -->
         <div id="searchPage" class="page-view active">
             <section class="hero-section">
@@ -56,7 +53,7 @@
                     <i class="fas fa-certificate"></i> SECONDARY SCHOOL EXAMINATION RESULT
                 </div>
                 <h1 class="hero-title">Centralised Examination Result</h1>
-                <p class="hero-subtitle">Select your Date of Birth (DOB) using the calendar system and enter your numeric Roll Number to access your official secondary mark statement.</p>
+                <p class="hero-subtitle">Select your Date of Birth (DOB) using the calendar system and enter your numeric Roll Number to access your official secondary result certificate.</p>
 
                 <div class="search-card">
                     <form id="resultSearchForm" class="search-form" style="flex-direction: column;">
@@ -85,15 +82,65 @@
                     </form>
                 </div>
             </section>
-
-            <!-- Dynamic Result Display Section -->
-            <div id="marksheetResultDisplay"></div>
         </div>
 
     </div>
 
-    <!-- Application ES Module Entry -->
-    <script type="module" src="js/app.js"></script>
+    <!-- Algorithm Script -->
+    <script>
+        // Theme Toggle Handler
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const savedTheme = localStorage.getItem('cer_theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                const isLight = document.body.classList.contains('light-theme');
+                localStorage.setItem('cer_theme', isLight ? 'light' : 'dark');
+                themeBtn.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            });
+        }
+
+        // Direct URL Generation Algorithm Handler
+        document.getElementById('resultSearchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const roll = document.getElementById('rollSearchInput').value.trim();
+            const dob = document.getElementById('dobSearchInput').value;
+
+            if (!roll || roll.length < 4 || !/^\d+$/.test(roll)) {
+                alert('Please enter a valid numeric Roll Number.');
+                return;
+            }
+
+            if (!dob) {
+                alert('Please select your Date of Birth.');
+                return;
+            }
+
+            // Extract last 4 digits of Roll Number
+            const last4Roll = roll.slice(-4);
+
+            // Extract last 2 digits of DOB Year (from YYYY-MM-DD input date)
+            const year = dob.split('-')[0];
+            const last2Year = year.slice(-2);
+
+            // Combine last 4 digits of Roll + last 2 digits of Year
+            const pdfCode = last4Roll + last2Year;
+
+            // Final PDF Download URL
+            const finalUrl = `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/${pdfCode}.pdf`;
+
+            // Redirect / Open target PDF URL
+            const win = window.open(finalUrl, '_blank');
+            if (!win) {
+                window.location.href = finalUrl;
+            }
+        });
+    </script>
 </body>
 
 </html>
