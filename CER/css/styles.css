@@ -1,0 +1,771 @@
+/* ==========================================================================
+   RESULT HTML - PREMIUM GLASSMORPHISM DESIGN SYSTEM & PRINT STYLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(18, 26, 44, 0.75);
+    --bg-card-border: rgba(255, 255, 255, 0.08);
+    --bg-hover: rgba(255, 255, 255, 0.05);
+
+    --accent-primary: #6366f1;
+    --accent-primary-hover: #4f46e5;
+    --accent-cyan: #06b6d4;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --accent-amber: #f59e0b;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Variables Override */
+body.light-theme {
+    --bg-dark: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-border: rgba(0, 0, 0, 0.08);
+    --bg-hover: rgba(0, 0, 0, 0.03);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Global Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Dynamic Background Glow Effect */
+.bg-glow-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.25;
+    animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.glow-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-primary);
+    top: -100px;
+    left: -100px;
+}
+
+.glow-orb-2 {
+    width: 600px;
+    height: 600px;
+    background: var(--accent-cyan);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -9s;
+}
+
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(80px, 60px) scale(1.15); }
+}
+
+/* Layout Wrapper */
+.app-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--bg-card-border);
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 2rem;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.35rem;
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.brand-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, var(--text-secondary) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .brand-title {
+    background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle-btn {
+    background: var(--bg-hover);
+    border: 1px solid var(--bg-card-border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(15deg) scale(1.05);
+}
+
+/* Page Views System */
+.page-view {
+    display: none;
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO SECTION / RESULT LOOKUP */
+.hero-section {
+    text-align: center;
+    padding: 3rem 1rem 2.5rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--accent-primary);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .hero-title {
+    background: linear-gradient(135deg, #0f172a 30%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Search Box Component */
+.search-card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--bg-card-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+}
+
+.search-form {
+    display: flex;
+    gap: 0.85rem;
+}
+
+.search-input-group {
+    flex: 1;
+    position: relative;
+}
+
+.search-input-group i {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.9rem 1.1rem 0.9rem 3rem;
+    background: var(--bg-hover);
+    border: 1px solid var(--bg-card-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.search-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+    color: white;
+    border: none;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* MARKSHEET MODAL / CONTAINER */
+.marksheet-view-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--bg-card-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--glass-shadow);
+    margin-top: 2rem;
+}
+
+.marksheet-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bg-card-border);
+}
+
+.action-btns {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-secondary {
+    background: var(--bg-hover);
+    border: 1px solid var(--bg-card-border);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.btn-emerald {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.btn-emerald:hover {
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
+}
+
+/* OFFICIAL MARKSHEET DOCUMENT FORMATTING */
+.official-marksheet-document {
+    background: white !important;
+    color: #0f172a !important;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.watermark-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+    letter-spacing: 0.2em;
+}
+
+.marksheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.header-branding {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.institute-logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.institute-title-group h1 {
+    font-size: 1.45rem;
+    color: #1e1b4b;
+    font-weight: 800;
+}
+
+.institute-name {
+    font-size: 1.45rem;
+    color: #1e1b4b;
+    font-weight: 800;
+}
+
+.institute-accreditation {
+    font-size: 0.82rem;
+    color: #4338ca;
+    font-weight: 600;
+}
+
+.institute-address {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.doc-badge {
+    text-align: right;
+}
+
+.transcript-tag {
+    display: block;
+    background: #4338ca;
+    color: white;
+    padding: 0.3rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.session-tag {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.header-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, #4338ca, #06b6d4);
+    margin: 1.25rem 0;
+}
+
+/* Student Meta Information Grid */
+.student-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.info-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.15rem;
+}
+
+.info-value {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.info-value.highlight {
+    color: #4338ca;
+}
+
+/* Marks Table */
+.marks-table-section {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.marksheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.marksheet-table th {
+    background: #1e1b4b;
+    color: white;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 0.65rem 0.5rem;
+    letter-spacing: 0.04em;
+    border: 1px solid #1e1b4b;
+}
+
+.marksheet-table td {
+    padding: 0.65rem 0.5rem;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    color: #1e293b;
+}
+
+.marksheet-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.marksheet-table td.subject-name {
+    text-align: left;
+    font-weight: 500;
+}
+
+.failing-row td {
+    background: #fff1f2 !important;
+}
+
+.grade-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.grade-O { background: #dcfce7; color: #15803d; }
+.grade-A\+ { background: #e0f2fe; color: #0369a1; }
+.grade-A { background: #e0e7ff; color: #4338ca; }
+.grade-B\+ { background: #fef9c3; color: #a16207; }
+.grade-B { background: #ffedd5; color: #c2410c; }
+.grade-C { background: #f3e8ff; color: #7e22ce; }
+.grade-F { background: #ffe4e6; color: #be123c; }
+
+/* Performance Summary Box */
+.performance-summary-container {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+.summary-box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.metric-card {
+    text-align: center;
+    background: white;
+    padding: 0.65rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.metric-card.highlight-box {
+    border-color: #6366f1;
+    background: #f5f3ff;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.metric-val {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.metric-val.big {
+    font-size: 1.35rem;
+    color: #4338ca;
+}
+
+.badge-status {
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.status-PASS .badge-status { background: #dcfce7; color: #15803d; }
+.status-FAIL .badge-status { background: #ffe4e6; color: #be123c; }
+.status-PROMOTED .badge-status { background: #fef9c3; color: #a16207; }
+
+.remarks-row {
+    font-size: 0.85rem;
+    color: #334155;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 0.6rem;
+}
+
+/* Marks Footer & Verification */
+.marksheet-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    margin-top: 2rem;
+}
+
+.qr-verification-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qr-code-canvas img, .qr-code-canvas canvas {
+    border: 1px solid #cbd5e1;
+    padding: 4px;
+    background: white;
+    border-radius: 6px;
+}
+
+.qr-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.qr-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #1e1b4b;
+}
+
+.qr-sub {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.qr-code-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+.date-issue-box {
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.signatory-box {
+    text-align: center;
+    min-width: 180px;
+}
+
+.sig-line {
+    width: 100%;
+    height: 1px;
+    background: #0f172a;
+    margin-bottom: 0.4rem;
+}
+
+.sig-name {
+    font-size: 0.88rem;
+    color: #0f172a;
+}
+
+.sig-title {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Notification Toast */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.toast {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--bg-card-border);
+    color: var(--text-primary);
+    padding: 0.9rem 1.4rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* PRINT MEDIA OVERRIDES FOR EXACT A4 MARKSHEET OUTPUT */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .bg-glow-backdrop, .navbar, .marksheet-action-bar, .modal-overlay, .toast-container, .hero-section {
+        display: none !important;
+    }
+
+    #printableMarksheet, #printableMarksheet * {
+        visibility: visible;
+    }
+
+    #printableMarksheet {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 210mm;
+        min-height: 297mm;
+        padding: 15mm;
+        margin: 0;
+        background: white !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+}
