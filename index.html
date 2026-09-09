@@ -3,156 +3,1359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - National Academy Saran</title>
+    <title>National Academy Saran | Official Digital Hub & Services</title>
+    <meta name="description" content="Official portal of National Academy, Taraiya, Saran, Bihar. Apply for online admission, check Centralised Examination Results (CER), submit feedback, and view campus location.">
+    <meta name="keywords" content="National Academy Saran, National Academy Taraiya, Admission Form, CER Results, School Saran Bihar">
+    
+    <!-- Open Graph & Meta for Social Sharing -->
+    <meta property="og:title" content="National Academy Saran | Official Digital Hub">
+    <meta property="og:description" content="Online Admissions 2026-27, Centralised Examination Results, Feedback Portal & Campus Directions.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png">
+
+    <!-- Google Fonts & Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* ==========================================================================
+           BRAND DESIGN SYSTEM - NATIONAL ACADEMY SARAN
+           Core Colors: #050a30 (Navy), #f4f6fc (Ice Light), #233dff (Electric Blue)
+           ========================================================================== */
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
+            --brand-navy: #050a30;
+            --brand-ice: #f4f6fc;
+            --brand-blue: #233dff;
+            --brand-blue-hover: #192fd8;
+            --brand-blue-light: #5267ff;
+            --brand-blue-glow: rgba(35, 61, 255, 0.28);
+            
+            /* Light Mode Default Theme (Built upon #f4f6fc and #050a30) */
+            --bg-page: #f4f6fc;
+            --bg-surface: #ffffff;
+            --bg-surface-glass: rgba(255, 255, 255, 0.88);
+            --bg-card-subtle: #edf1fa;
+            --text-heading: #050a30;
+            --text-body: #2a3453;
+            --text-muted: #5e6b8c;
+            --border-subtle: rgba(5, 10, 48, 0.08);
+            --border-highlight: rgba(35, 61, 255, 0.2);
+            --card-shadow: 0 16px 36px -8px rgba(5, 10, 48, 0.08), 0 4px 12px rgba(5, 10, 48, 0.03);
+            --nav-bg: rgba(244, 246, 252, 0.85);
+
+            /* Badges & Accents */
+            --badge-admission-bg: rgba(35, 61, 255, 0.12);
+            --badge-admission-text: #192fd8;
+            --badge-result-bg: rgba(16, 185, 129, 0.14);
+            --badge-result-text: #059669;
+            --badge-feedback-bg: rgba(245, 158, 11, 0.14);
+            --badge-feedback-text: #b45309;
+
             --whatsapp-color: #25d366;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Modern Dark Mode (Deep Midnight #050a30 Palette) */
+        [data-theme="dark"] {
+            --bg-page: #050a30;
+            --bg-surface: #0a1348;
+            --bg-surface-glass: rgba(10, 19, 72, 0.78);
+            --bg-card-subtle: #0f1c63;
+            --text-heading: #f4f6fc;
+            --text-body: #d1d8ec;
+            --text-muted: #8d9bbd;
+            --border-subtle: rgba(244, 246, 252, 0.12);
+            --border-highlight: rgba(35, 61, 255, 0.45);
+            --card-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+            --nav-bg: rgba(5, 10, 48, 0.88);
+
+            --badge-admission-bg: rgba(35, 61, 255, 0.25);
+            --badge-admission-text: #9eb1ff;
+            --badge-result-bg: rgba(16, 185, 129, 0.22);
+            --badge-result-text: #6ee7b7;
+            --badge-feedback-bg: rgba(245, 158, 11, 0.22);
+            --badge-feedback-text: #fcd34d;
+        }
+
+        /* Global Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-body);
             min-height: 100vh;
-            padding: 20px;
+            line-height: 1.6;
+            transition: background-color 0.35s ease, color 0.35s ease;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .contact-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
+        /* Ambient Glow Background Orbs */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
         }
 
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+        .glow-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.22;
+            animation: pulseGlow 14s infinite alternate ease-in-out;
         }
 
-        .social-links {
+        .glow-1 {
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
+        }
+
+        .glow-2 {
+            bottom: -150px;
+            left: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #3a53ff 0%, transparent 70%);
+            animation-delay: -5s;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translateY(0); opacity: 0.18; }
+            100% { transform: scale(1.18) translateY(40px); opacity: 0.32; }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation Bar */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 2px;
+            box-shadow: 0 4px 12px rgba(5, 10, 48, 0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-link:hover .brand-logo-img {
+            transform: scale(1.06) rotate(2deg);
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-sub {
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .nav-btn-outline {
+            background: var(--bg-card-subtle);
+            color: var(--text-heading);
+            border-color: var(--border-subtle);
+        }
+
+        .nav-btn-outline:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--bg-card-subtle);
+            color: var(--text-heading);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--brand-blue);
+            color: #ffffff;
+            border-color: var(--brand-blue);
+            transform: rotate(15deg);
+        }
+
+        /* Layout Container */
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 3.5rem;
+            position: relative;
+        }
+
+        .hero-logo-frame {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-logo {
+            width: 115px;
+            height: 115px;
+            object-fit: contain;
+            border-radius: 28px;
+            background: #ffffff;
+            padding: 8px;
+            box-shadow: 0 12px 35px var(--brand-blue-glow), 0 4px 14px rgba(5, 10, 48, 0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.08) translateY(-4px);
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--badge-admission-bg);
+            color: var(--badge-admission-text);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--border-highlight);
+        }
+
+        .badge-pill i {
+            font-size: 0.85rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--text-heading);
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, #6879ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        /* Round Social Icons */
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
+        .btn-primary {
+            display: inline-flex;
             align-items: center;
-            color: white;
+            gap: 0.65rem;
+            background: var(--brand-blue);
+            color: #ffffff;
+            padding: 0.85rem 1.6rem;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: transform 0.3s;
+            box-shadow: 0 10px 24px var(--brand-blue-glow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
         }
 
-        .social-icon:hover { transform: scale(1.1); }
-        .yt { background-color: #ff0000; }
-        .fb { background-color: #1877f2; }
-        .ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
-        .web { background-color: #2ecc71; }
-        .map { background-color: #e74c3c; }
+        .btn-primary:hover {
+            background: var(--brand-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px var(--brand-blue-glow);
+        }
 
-        /* Action Buttons */
-        .action-buttons {
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            background: var(--bg-surface-glass);
+            color: var(--text-heading);
+            padding: 0.85rem 1.6rem;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+        }
+
+        .section-sub {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* Cards Grid - Key Portals */
+        .portals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .portal-card {
+            background: var(--bg-surface-glass);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn {
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--brand-blue);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-highlight);
+            box-shadow: 0 20px 40px -10px var(--brand-blue-glow);
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon-bubble {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.3s;
+            font-size: 1.35rem;
+            background: var(--bg-card-subtle);
+            color: var(--brand-blue);
+            transition: var(--transition);
         }
 
-        .btn i { margin-right: 10px; }
-
-        .btn-call {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        .btn-call:hover { background-color: #2980b9; }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp-color);
-            color: white;
-        }
-        .btn-whatsapp:hover { background-color: #1eb954; }
-
-        .btn-email {
-            background-color: #95a5a6;
-            color: white;
+        .portal-card:hover .card-icon-bubble {
+            background: var(--brand-blue);
+            color: #ffffff;
+            transform: scale(1.08);
         }
 
-        .label {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 15px;
-            display: block;
+        .portal-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 0.75rem;
+            border-radius: var(--radius-full);
+        }
+
+        .badge-admission {
+            background: var(--badge-admission-bg);
+            color: var(--badge-admission-text);
+        }
+
+        .badge-result {
+            background: var(--badge-result-bg);
+            color: var(--badge-result-text);
+        }
+
+        .badge-feedback {
+            background: var(--badge-feedback-bg);
+            color: var(--badge-feedback-text);
+        }
+
+        .badge-location {
+            background: rgba(239, 68, 68, 0.14);
+            color: #dc2626;
+        }
+
+        .portal-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .portal-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .card-btn-solid {
+            background: var(--brand-blue);
+            color: #ffffff;
+        }
+
+        .card-btn-solid:hover {
+            background: var(--brand-blue-hover);
+        }
+
+        .card-btn-outline {
+            background: var(--bg-card-subtle);
+            color: var(--text-heading);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .card-btn-outline:hover {
+            background: var(--brand-blue);
+            color: #ffffff;
+            border-color: var(--brand-blue);
+        }
+
+        /* Communication Grid */
+        .comms-section {
+            background: var(--bg-surface-glass);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3.5rem;
+        }
+
+        .comms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .comm-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.2rem;
+            background: var(--bg-card-subtle);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+        }
+
+        .comm-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-blue);
+            box-shadow: 0 8px 20px rgba(5, 10, 48, 0.06);
+        }
+
+        .comm-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            color: #ffffff;
+        }
+
+        .icon-call { background: var(--brand-blue); }
+        .icon-wa { background: var(--whatsapp-color); }
+        .icon-mail { background: #475569; }
+
+        .comm-meta {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .comm-label {
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .comm-val {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .comm-copy-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.4rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .comm-copy-btn:hover {
+            color: var(--brand-blue);
+            background: rgba(35, 61, 255, 0.1);
+        }
+
+        /* Social Channels Strip */
+        .social-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.1rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-heading);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-pill:hover {
+            transform: translateY(-2px);
+        }
+
+        .pill-web:hover { background: #10b981; color: #fff; border-color: #10b981; }
+        .pill-yt:hover { background: #ff0000; color: #fff; border-color: #ff0000; }
+        .pill-fb:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
+        .pill-ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #fff; border-color: transparent; }
+        .pill-map:hover { background: #ea4335; color: #fff; border-color: #ea4335; }
+
+        /* ==========================================================================
+           INTERACTABLE MODAL WINDOW - CAMPUS LOCATION
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 10, 48, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-window {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal-window {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            padding: 1.1rem 1.5rem;
+            background: var(--bg-card-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .modal-title-group i {
+            color: #ea4335;
+            font-size: 1.25rem;
+        }
+
+        .modal-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-iframe-container {
+            width: 100%;
+            height: 360px;
+            background: #e5e7eb;
+            position: relative;
+        }
+
+        .map-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .modal-footer-details {
+            padding: 1.5rem;
+            background: var(--bg-surface);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .address-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--bg-card-subtle);
+            padding: 1rem 1.2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .address-box i {
+            color: var(--brand-blue);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .address-text h4 {
+            font-size: 0.98rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .address-text p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .modal-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        /* Toast Feedback */
+        .toast-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 2000;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--brand-navy);
+            color: #ffffff;
+            border: 1px solid var(--border-highlight);
+            padding: 0.8rem 1.4rem;
+            border-radius: var(--radius-md);
+            font-size: 0.92rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast i {
+            color: #10b981;
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            background: var(--bg-card-subtle);
+        }
+
+        .footer-logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-logo-img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 2px;
+        }
+
+        .footer-title {
+            font-weight: 700;
+            color: var(--text-heading);
+            font-size: 1rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 680px) {
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+            .brand-title {
+                font-size: 1.1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-logo {
+                width: 90px;
+                height: 90px;
+            }
+            .main-wrapper {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .comms-section {
+                padding: 1.4rem;
+            }
+            .map-iframe-container {
+                height: 280px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="contact-card">
-    <h2>National Academy Saran</h2>
-
-    <div class="social-links">
-        <a href="https://www.nationalacademysaran.com" class="social-icon web" title="Website"><i class="fas fa-globe"></i></a>
-        <a href="https://youtube.com/@nationalacademysaran" class="social-icon yt" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://facebook.com/nationalacademysaran" class="social-icon fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/nationalacademysaran" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://share.google/DFq7AVzWljjPhEAs5" class="social-icon map" title="Location"><i class="fas fa-location-dot"></i></a>
+    <!-- Ambient Animated Glow Lights (#050a30 & #233dff) -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="glow-sphere glow-1"></div>
+        <div class="glow-sphere glow-2"></div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee;">
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="nav-container" aria-label="Main Navigation">
+            <a href="#" class="brand-link" id="navBrandLink">
+                <img src="https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png" 
+                     alt="National Academy Saran Logo" 
+                     class="brand-logo-img"
+                     loading="eager">
+                <div class="brand-text-block">
+                    <span class="brand-title">National Academy</span>
+                    <span class="brand-sub">Saran, Bihar</span>
+                </div>
+            </a>
 
-    <span class="label">Direct Contact</span>
-    <div class="action-buttons">
-        <a href="tel:+918757033600" class="btn btn-call">
-            <i class="fas fa-phone-alt"></i> Call 87570 33600
-        </a>
+            <div class="header-actions">
+                <button type="button" class="nav-btn nav-btn-outline" id="navLocationBtn" onclick="openLocationModal()" title="View Campus Location">
+                    <i class="fas fa-location-dot" style="color: #ea4335;"></i>
+                    <span class="d-none-sm">Campus Map</span>
+                </button>
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Dark and Light Theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-        <a href="tel:+919771760033" class="btn btn-call">
-            <i class="fas fa-phone-alt"></i> Call 97717 60033
-        </a>
+    <!-- Main Content Container -->
+    <main class="main-wrapper">
 
-        <a href="https://wa.me/919771760033" class="btn btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Chat
-        </a>
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <div class="hero-logo-frame">
+                <img src="https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png" 
+                     alt="National Academy 4K Official Insignia" 
+                     class="hero-logo">
+            </div>
 
-        <a href="mailto:nationalacademysaran@gmail.com" class="btn btn-email">
-            <i class="fas fa-envelope"></i> Send Email
-        </a>
+            <div>
+                <div class="badge-pill">
+                    <i class="fas fa-check-circle"></i> Official Digital Portal
+                </div>
+            </div>
+
+            <h1 class="hero-title">
+                National Academy <span class="hero-highlight">Saran</span>
+            </h1>
+
+            <p class="hero-tagline">
+                Empowering minds through quality education, character building, and academic excellence. Access student admissions, board examination results, campus inquiries, and administrative support.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="https://forms.gle/efnVTqDJbvzvwEXW7" target="_blank" rel="noopener noreferrer" class="btn-primary" id="heroApplyBtn">
+                    <i class="fas fa-user-graduate"></i> Online Admission 2026-27
+                </a>
+                <a href="CER/index.html" class="btn-secondary" id="heroCerBtn">
+                    <i class="fas fa-award"></i> Check CER Results
+                </a>
+                <button type="button" class="btn-secondary" onclick="openLocationModal()" id="heroMapBtn">
+                    <i class="fas fa-map-marked-alt"></i> Find Campus
+                </button>
+            </div>
+        </section>
+
+        <!-- Key Academic Portals & Forms Grid -->
+        <section aria-labelledby="portals-title">
+            <div class="section-header">
+                <div>
+                    <h2 id="portals-title" class="section-title">Key Portals & Services</h2>
+                    <p class="section-sub">Direct access to online admissions, board results, and student services.</p>
+                </div>
+            </div>
+
+            <div class="portals-grid">
+                <!-- Admission Form Card -->
+                <article class="portal-card" id="admissionCard">
+                    <div class="card-top">
+                        <div class="card-icon-bubble">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <span class="portal-badge badge-admission">Admissions Open</span>
+                    </div>
+                    <h3>Admission Form</h3>
+                    <p>Apply for student admissions for the 2026–2027 academic session. Submit student details, academic history, and parents' contact information online.</p>
+                    <a href="https://forms.gle/efnVTqDJbvzvwEXW7" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-solid" id="admissionFormLink">
+                        <span>Fill Admission Form</span>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Centralised Examination Result Card -->
+                <article class="portal-card" id="resultCard">
+                    <div class="card-top">
+                        <div class="card-icon-bubble">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="portal-badge badge-result">Secondary Board</span>
+                    </div>
+                    <h3>Centralised Results (CER)</h3>
+                    <p>Access official Class 9 & Class 10 Centralised Examination Results. Search by roll number and date of birth to view and download your scorecard.</p>
+                    <a href="CER/index.html" class="card-btn card-btn-outline" id="cerPortalLink">
+                        <span>Open CER Portal</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Complaint & Feedback Form Card -->
+                <article class="portal-card" id="feedbackCard">
+                    <div class="card-top">
+                        <div class="card-icon-bubble">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <span class="portal-badge badge-feedback">Student & Parent Voice</span>
+                    </div>
+                    <h3>Complaint & Feedback</h3>
+                    <p>Share your valuable feedback, academic suggestions, or submit grievances directly to the school management for swift resolution.</p>
+                    <a href="https://forms.gle/EGjkVovPbxakk7jCA" target="_blank" rel="noopener noreferrer" class="card-btn card-btn-outline" id="feedbackFormLink">
+                        <span>Submit Feedback</span>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Interactive Campus Location Card -->
+                <article class="portal-card" id="locationCard">
+                    <div class="card-top">
+                        <div class="card-icon-bubble">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <span class="portal-badge badge-location">Campus Visit</span>
+                    </div>
+                    <h3>Interactive Location</h3>
+                    <p>Located on State Highway 73, Madsaura Road, Taraiya, Saran. Click below to launch the interactive campus map with route directions.</p>
+                    <button type="button" class="card-btn card-btn-outline" onclick="openLocationModal()" id="locationCardBtn">
+                        <span>Open Interactive Window</span>
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Direct Contact & Helpline Section -->
+        <section class="comms-section" aria-labelledby="contact-title">
+            <div class="section-header" style="margin-bottom: 0.5rem;">
+                <div>
+                    <h2 id="contact-title" class="section-title">Direct Helpline & Contact</h2>
+                    <p class="section-sub">Connect with the National Academy administration office during school hours.</p>
+                </div>
+            </div>
+
+            <div class="comms-grid">
+                <!-- Call 1 -->
+                <div class="comm-item">
+                    <div class="comm-icon icon-call">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="comm-meta">
+                        <div class="comm-label">Office Desk 1</div>
+                        <a href="tel:+918757033600" class="comm-val" style="text-decoration: none;">+91 87570 33600</a>
+                    </div>
+                    <button type="button" class="comm-copy-btn" onclick="copyText('+918757033600', 'Phone 1')" title="Copy Phone Number" aria-label="Copy Phone Number 1">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <!-- Call 2 -->
+                <div class="comm-item">
+                    <div class="comm-icon icon-call">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="comm-meta">
+                        <div class="comm-label">Office Desk 2</div>
+                        <a href="tel:+919771760033" class="comm-val" style="text-decoration: none;">+91 97717 60033</a>
+                    </div>
+                    <button type="button" class="comm-copy-btn" onclick="copyText('+919771760033', 'Phone 2')" title="Copy Phone Number" aria-label="Copy Phone Number 2">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer" class="comm-item" id="whatsappLink">
+                    <div class="comm-icon icon-wa">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="comm-meta">
+                        <div class="comm-label">Instant Chat</div>
+                        <div class="comm-val">WhatsApp Support</div>
+                    </div>
+                    <i class="fas fa-external-link-alt" style="color: var(--text-muted); font-size: 0.85rem;"></i>
+                </a>
+
+                <!-- Email -->
+                <div class="comm-item">
+                    <div class="comm-icon icon-mail">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="comm-meta">
+                        <div class="comm-label">Official Email</div>
+                        <a href="mailto:nationalacademysaran@gmail.com" class="comm-val" style="text-decoration: none; font-size: 0.84rem;">nationalacademysaran@gmail.com</a>
+                    </div>
+                    <button type="button" class="comm-copy-btn" onclick="copyText('nationalacademysaran@gmail.com', 'Email')" title="Copy Email" aria-label="Copy Email">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Social Media & Web Ecosystem -->
+            <div class="social-strip">
+                <a href="https://www.nationalacademysaran.com" target="_blank" rel="noopener noreferrer" class="social-pill pill-web" id="socialWeb">
+                    <i class="fas fa-globe"></i> Official Website
+                </a>
+                <a href="https://youtube.com/@nationalacademysaran" target="_blank" rel="noopener noreferrer" class="social-pill pill-yt" id="socialYt">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://facebook.com/nationalacademysaran" target="_blank" rel="noopener noreferrer" class="social-pill pill-fb" id="socialFb">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://instagram.com/nationalacademysaran" target="_blank" rel="noopener noreferrer" class="social-pill pill-ig" id="socialIg">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <button type="button" class="social-pill pill-map" onclick="openLocationModal()" id="socialLocationBtn">
+                    <i class="fas fa-location-dot"></i> Campus Location
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         INTERACTABLE LOCATION MODAL WINDOW
+         ========================================================================== -->
+    <div id="locationModal" class="modal-overlay" onclick="handleModalBackdropClick(event)" role="dialog" aria-modal="true" aria-labelledby="modalLocTitle">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h3 id="modalLocTitle" class="modal-title">National Academy - Campus Location</h3>
+                        <span style="font-size: 0.74rem; color: var(--brand-blue); font-weight: 600;">Shahnewazpur, Taraiya, Saran, Bihar</span>
+                    </div>
+                </div>
+                <button type="button" class="modal-close-btn" onclick="closeLocationModal()" title="Close Location Window" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Interactive Embedded Map Frame -->
+                <div class="map-iframe-container">
+                    <iframe 
+                        id="gmapIframe"
+                        title="National Academy Saran Campus Map"
+                        src="https://maps.google.com/maps?q=National%20Academy%20Taraiya%20Saran%20Bihar%20841424&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="modal-footer-details">
+                    <div class="address-box">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="address-text">
+                            <h4>Campus Address & Landmark</h4>
+                            <p id="fullAddressText">Shahnewazpur, State Highway 73, Madsaura Road, Taraiya, Saran, Bihar - 841424 (Near Punjab National Bank)</p>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="copyAddress()" id="copyAddressBtn">
+                            <i class="far fa-copy"></i> Copy Address
+                        </button>
+                        <a href="https://share.google/DFq7AVzWljjPhEAs5" target="_blank" rel="noopener noreferrer" class="btn-primary" id="openMapsExternalBtn">
+                            <i class="fas fa-diamond-turn-right"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
+    <!-- Toast Feedback Element -->
+    <div id="toast" class="toast-container" aria-live="polite">
+        <div class="toast" id="toastInner">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Copied to clipboard!</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo-row">
+            <img src="https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png" alt="Logo" class="footer-logo-img">
+            <span class="footer-title">National Academy Saran</span>
+        </div>
+        <p>&copy; 2026 National Academy. All Rights Reserved.</p>
+        <p style="margin-top: 0.35rem; font-size: 0.78rem;">Taraiya, Saran, Bihar - 841424 • Affiliated Secondary Education Institution</p>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        // Theme Management (Light Ice #f4f6fc & Midnight Navy #050a30)
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('na_theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('na_theme', 'light');
+            }
+        }
+
+        // Initialize Theme from localStorage or system preference
+        const savedTheme = localStorage.getItem('na_theme');
+        if (savedTheme === 'dark') {
+            setTheme('dark');
+        } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            setTheme(isDark ? 'light' : 'dark');
+        });
+
+        // Interactive Location Modal
+        const locationModal = document.getElementById('locationModal');
+
+        function openLocationModal() {
+            locationModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLocationModal() {
+            locationModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalBackdropClick(event) {
+            if (event.target === locationModal) {
+                closeLocationModal();
+            }
+        }
+
+        // Escape Key Listener
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && locationModal.classList.contains('active')) {
+                closeLocationModal();
+            }
+        });
+
+        // Toast Feedback System
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toastInner');
+            const msgSpan = document.getElementById('toastMessage');
+            msgSpan.textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // Copy Text Helper
+        function copyText(text, label) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(`${label} copied to clipboard!`);
+                }).catch(() => {
+                    promptCopy(text);
+                });
+            } else {
+                promptCopy(text);
+            }
+        }
+
+        function copyAddress() {
+            const address = document.getElementById('fullAddressText').textContent;
+            copyText(address, 'Address');
+        }
+
+        function promptCopy(text) {
+            window.prompt('Copy to clipboard: Ctrl+C, Enter', text);
+        }
+    </script>
 </body>
 </html>
