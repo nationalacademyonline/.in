@@ -8,7 +8,7 @@ Official web repository for **National Academy Saran** (Taraiya, Saran, Bihar). 
 
 - **Location**: Shahnewazpur, State Highway 73, Madsaura Road, Taraiya, Saran, Bihar – 841424 (Near Punjab National Bank)
 - **Website**: [www.nationalacademysaran.com](https://www.nationalacademysaran.com)
-- **Email**: [nationalacademysaran@gmail.com](mailto:nationalacademysaran@gmail.com)
+- **Email**: [support.nationalacademysaran@gmail.com](mailto:support.nationalacademysaran@gmail.com)
 - **Helplines**:
   - **Accounts Office**: `+91 97717 60033` (Call & WhatsApp)
   - **General Helpdesk**: `+91 87570 33600`
@@ -48,7 +48,7 @@ The user interface is designed using an official three-tone institutional palett
 ## ✨ Features
 
 ### 1. Contact Us & Inquiries Hub (`index.html`)
-- **Admission Form (2026–2027)**: Direct access for new student enrollments via [Google Form](https://forms.gle/efnVTqDJbvzvwEXW7).
+- **Admission Enquiry Form (2026–2027)**: Direct access for new student enrollments via [Google Form](https://forms.gle/efnVTqDJbvzvwEXW7).
 - **Complaint & Feedback Portal**: Direct student & parent voice form via [Google Form](https://forms.gle/EGjkVovPbxakk7jCA).
 - **Campus Location & Live Mini Map**:
   - Embedded Google Map preview directly within the location card.
@@ -58,7 +58,7 @@ The user interface is designed using an official three-tone institutional palett
   - Accounts Office (`+91 97717 60033`)
   - General Helpdesk (`+91 87570 33600`)
   - Accounts WhatsApp (`WhatsApp Chat`)
-  - Official Email (`nationalacademysaran@gmail.com`)
+  - Support Email (`support.nationalacademysaran@gmail.com`)
 - **Theme Switcher**: Instant toggle between Light (Ice Slate) and Dark (Midnight Navy) themes with `localStorage` persistence.
 - **Mobile-First**: 44px+ touch targets, safe area inset support (iOS/Android), and fluid responsiveness.
 
