@@ -53,7 +53,7 @@ The user interface is designed using an official three-tone institutional palett
 - **Campus Location & Live Mini Map**:
   - Embedded Google Map preview directly within the location card.
   - Expands into an interactive modal window with directions and 1-click address copy.
-  - Direct link to [Google Maps Location](https://share.google/DFq7AVzWljjPhEAs5).
+  - Direct link to [Google Maps Location](https://www.google.com/maps/search/?api=1&query=National+Academy,+Taraiya,+Saran,+Bihar+841424).
 - **2×2 Office Desk Grid**:
   - Accounts Office (`+91 97717 60033`)
   - General Helpdesk (`+91 87570 33600`)
