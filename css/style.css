@@ -402,20 +402,20 @@ h1, h2, h3, h4 {
 
 .map-pin-indicator {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 54%;
+    left: 49%;
+    transform: translate(-50%, -100%);
     color: #ea4335;
-    font-size: 1.6rem;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+    font-size: 1.7rem;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
     pointer-events: none;
     z-index: 2;
     animation: pinBounce 2s ease-in-out infinite alternate;
 }
 
 @keyframes pinBounce {
-    0% { transform: translate(-50%, -50%) translateY(0); }
-    100% { transform: translate(-50%, -50%) translateY(-6px); }
+    0% { transform: translate(-50%, -100%) translateY(0); }
+    100% { transform: translate(-50%, -100%) translateY(-8px); }
 }
 
 .map-expand-overlay {
