@@ -1,6 +1,6 @@
 ================================================================================
 LOW-LEVEL SOFTWARE REQUIREMENTS SPECIFICATION (LL-SRS)
-PROJECT: Centralised Examination Result Portal (Class 9 & Class 10)
+PROJECT: Central Examination Board Result Portal (Class 9 & Class 10)
 MODULE: Client-Side URL Construction & Navigation
 ================================================================================
 
@@ -15,7 +15,7 @@ MODULE: Client-Side URL Construction & Navigation
        year = dob.split('-')[0]
        last2Year = year.slice(-2)
        pdfCode = last4Roll + last2Year
-       return "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/" + pdfCode + ".pdf"
+       return "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + pdfCode + ".pdf"
 
 3. DUMMY DETAILS CONTEXT
    - Roll: 2224865

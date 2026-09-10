@@ -1,6 +1,6 @@
 # National Academy Saran — Official Web Hub & Portals
 
-Official web repository for **National Academy Saran** (Taraiya, Saran, Bihar). This project provides a modernized, mobile-first Contact Us & Inquiries hub and hosts the Centralised Examination Result (CER) portal.
+Official web repository for **National Academy Saran** (Taraiya, Saran, Bihar). This project provides a modernized, mobile-first Contact Us & Inquiries hub and hosts the Central Examination Board Result (CEB) portal.
 
 ---
 
@@ -36,9 +36,8 @@ The user interface is designed using an official three-tone institutional palett
 ├── index.html          # Modern, mobile-first Contact Us & Inquiries page
 ├── css/
 │   └── style.css       # Design system, 2x2 contact grid, and responsive styles
-├── CER/                # Centralised Examination Result (Class 9 & 10) Portal
+├── CEB/                # Central Examination Board Result (Class 9 & 10) Portal
 │   ├── index.html      # Scorecard search and verification portal
-│   ├── css/            # CER styling system
 │   └── Result_PDFs/    # Archive & examination records
 └── README.md           # Project documentation
 ```
@@ -62,9 +61,9 @@ The user interface is designed using an official three-tone institutional palett
 - **Theme Switcher**: Instant toggle between Light (Ice Slate) and Dark (Midnight Navy) themes with `localStorage` persistence.
 - **Mobile-First**: 44px+ touch targets, safe area inset support (iOS/Android), and fluid responsiveness.
 
-### 2. Centralised Examination Result (`CER/`)
+### 2. Central Examination Board Result (`CEB/`)
 - Secondary Board Examination portal for Class 9 and Class 10 students.
-- Search by Roll Number and Date of Birth (DOB) with scorecard generation and print support.
+- Search by Roll Number and Date of Birth (DOB) with instant, direct official certificate retrieval.
 
 ---
 

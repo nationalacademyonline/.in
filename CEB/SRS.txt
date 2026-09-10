@@ -1,21 +1,21 @@
 ================================================================================
 SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
-PROJECT: Centralised Examination Result System (Class 9 & Class 10)
+PROJECT: Central Examination Board Result System (Class 9 & Class 10)
 ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
 ================================================================================
 
 1. INTRODUCTION
    1.1 Purpose
-       This document defines the software requirements for the Centralised Examination Result Web Application. The system enables Class 9 and Class 10 students to search and retrieve their official secondary school marksheets hosted on GitHub.
+       This document defines the software requirements for the Central Examination Board Result Web Application. The system enables Class 9 and Class 10 students to search and retrieve their official secondary school marksheets hosted on GitHub.
    1.2 Scope
        Targeted at Class 9 and Class 10 secondary school examinations. All PDF certificates are accessed via a deterministic mathematical algorithm matching user-input Roll Number and Date of Birth.
 
 2. PURPOSE AND SCOPE
-   - Public online portal for "Centralised Examination Result".
+   - Public online portal for "Central Examination Board Result".
    - Class 9 & Class 10 Secondary Education.
    - Numeric Roll Number input (digits only, e.g. 22287869).
    - DOB calendar selector system (HTML5 Date Picker).
-   - Direct redirection to official PDF marksheets hosted on GitHub (`https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/{pdfCode}.pdf`).
+   - Direct redirection to official PDF marksheets hosted on GitHub (`https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/{pdfCode}.pdf`).
 
 3. MATHEMATICAL PDF URL ALGORITHM
    3.1 Inputs:
@@ -24,7 +24,7 @@ ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
    3.2 Derivation Formula:
        - Code = (Last 4 digits of Roll Number) + (Last 2 digits of DOB Year)
    3.3 Target URL Construction:
-       - URL = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/" + Code + ".pdf"
+       - URL = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + Code + ".pdf"
    3.4 Example:
        - Roll: 22287869, DOB: 12-08-2013 -> Code: 786913 -> URL: .../786913.pdf
 

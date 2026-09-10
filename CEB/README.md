@@ -1,4 +1,4 @@
-# Centralised Examination Result Portal (Class 9 & Class 10)
+# Central Examination Board Result Portal (Class 9 & Class 10)
 
 An official, responsive, zero-maintenance static web portal for Secondary School Examination (Class IX & Class X) result lookup and certificate retrieval.
 
@@ -19,7 +19,7 @@ The system operates using a zero-backend, deterministic URL construction algorit
 - **Date of Birth**: `12-08-2013` $\rightarrow$ Last 2 digits of Year: `13`
 - **Generated Code**: `786913`
 - **Final Target PDF URL**:
-  `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/786913.pdf`
+  `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/786913.pdf`
 
 ---
 
@@ -28,17 +28,16 @@ The system operates using a zero-backend, deterministic URL construction algorit
 - **Roll No**: `2224865`
 - **DOB**: `30/12/2016` (Year `2016` $\rightarrow$ `16`)
 - **Generated Code**: `486516`
-- **Target Certificate**: `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CER/Result_PDFs/486516.pdf`
+- **Target Certificate**: `https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/486516.pdf`
 
 ---
 
-## File Structure (`CER/`)
+## File Structure (`CEB/`)
 
 ```text
-CER/
+CEB/
 ├── index.html       # Single-Page Result Form & Algorithm Script
-├── css/
-│   └── styles.css   # Premium Glassmorphism Design System
+├── Result_PDFs/     # Direct Marksheet Records
 ├── dummy details    # Sample Candidate Credentials
 ├── SRS.txt          # Software Requirements Specification
 ├── LL-SRS.txt       # Low-Level Specification
