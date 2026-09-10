@@ -25,7 +25,7 @@ The user interface is designed using an official three-tone institutional palett
 | **Ice Slate** | `#f4f6fc` | Light mode canvas, card borders, and subtle contrast |
 | **Electric Blue** | `#233dff` | Interactive buttons, badges, glows, and brand accents |
 
-- **School Logo**: Direct 4K raw asset hosted on [Assets/School Logo 4K.png](https://raw.githubusercontent.com/nationalacademyonline/Assets/main/School%20Logo%204K.png).
+- **School Logo**: Self-hosted institutional asset in [assets/school-logo.png](assets/school-logo.png).
 - **Typography**: Google Fonts ([Outfit](https://fonts.google.com/specimen/Outfit) & [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)).
 
 ---
@@ -34,6 +34,8 @@ The user interface is designed using an official three-tone institutional palett
 
 ```text
 ├── index.html          # Modern, mobile-first Contact Us & Inquiries page
+├── assets/             # Local high-res logos and campus map snapshot
+├── vendor/             # Self-hosted Font Awesome 6 icons and webfonts
 ├── css/
 │   └── style.css       # Design system, 2x2 contact grid, and responsive styles
 ├── CEB/                # Central Examination Board Result (Class 9 & 10) Portal
