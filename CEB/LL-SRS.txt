@@ -10,16 +10,21 @@ MODULE: Client-Side URL Construction & Navigation
 
 2. ALGORITHM LOGIC & FUNCTION SPECIFICATION
    function constructPDFURL(roll, dob):
-       input: roll (string), dob (string YYYY-MM-DD)
-       last4Roll = roll.slice(-4)
-       year = dob.split('-')[0]
-       last2Year = year.slice(-2)
-       pdfCode = last4Roll + last2Year
-       return "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + pdfCode + ".pdf"
+       input: roll (numeric string >= 5 digits), dob (string YYYY-MM-DD)
+       last5Roll = roll.slice(-5)
+       dobParts = dob.split('-')
+       month = dobParts[1]
+       day = dobParts[2]
+       dateMonth = day + month           // 4 digits (DDMM)
+       pdfCode = last5Roll + dateMonth   // 9 digits (e.g. 87458 + 3112 = 874583112)
+       primaryUrl = "Result_PDFs/" + pdfCode + ".pdf"
+       fallbackUrl = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + pdfCode + ".pdf"
+       downloadName = "Result_" + pdfCode + ".pdf"
+       return { primaryUrl, fallbackUrl, downloadName }
 
 3. DUMMY DETAILS CONTEXT
-   - Roll: 2224865
-   - DOB: 30/12/2016 (Year 2016 -> 16)
-   - Resulting Code: 486516
-   - Target PDF: 486516.pdf
+   - Roll: 22285468 (Last 5 digits -> 85468)
+   - DOB: 30/12/2016 (Day 30, Month 12 -> 3012)
+   - Resulting Code: 854683012
+   - Target PDF: 854683012.pdf
 ================================================================================

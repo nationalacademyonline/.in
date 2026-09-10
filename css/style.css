@@ -1024,6 +1024,142 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 /* ==========================================================================
+   RESULT STATUS PANELS (Found Success & Not Found Error States)
+   ========================================================================== */
+.result-status-panel {
+    margin-top: 1.35rem;
+    padding: 1.35rem 1.25rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.panel-success {
+    background: var(--bg-subtle);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 8px 22px -6px rgba(16, 185, 129, 0.18);
+}
+
+.panel-error {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.32);
+    box-shadow: 0 8px 22px -6px rgba(239, 68, 68, 0.15);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.32rem 0.9rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.32);
+}
+
+.badge-error {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.32);
+}
+
+.status-subtext {
+    font-size: 0.88rem;
+    color: var(--text-title);
+    margin: 0.4rem auto 1.1rem;
+    line-height: 1.45;
+}
+
+.panel-error .status-subtext {
+    color: var(--text-title);
+    margin: 0.4rem auto 0.2rem;
+}
+
+.result-btn-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.btn-result {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 46px;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    touch-action: manipulation;
+}
+
+.btn-download {
+    background: #10b981;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.btn-download:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.35);
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
+
+.btn-preview {
+    background: var(--bg-card);
+    color: var(--text-title);
+    border: 1px solid var(--border-color);
+}
+
+.btn-preview:hover {
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-color: var(--brand-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px var(--brand-blue-glow);
+}
+
+.btn-preview:active {
+    transform: scale(0.98);
+}
+
+.password-notice {
+    margin-top: 0.95rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.password-notice i {
+    color: var(--brand-blue);
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
    MOBILE-FIRST RESPONSIVE MEDIA QUERIES (Android & iOS Optimizations)
    ========================================================================== */
 
@@ -1126,6 +1262,11 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     .search-grid {
         grid-template-columns: 1fr;
         gap: 0.85rem;
+    }
+
+    .result-btn-row {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
     }
 }
 

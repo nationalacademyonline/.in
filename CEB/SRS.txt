@@ -13,23 +13,25 @@ ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
 2. PURPOSE AND SCOPE
    - Public online portal for "Central Examination Board Result".
    - Class 9 & Class 10 Secondary Education.
-   - Numeric Roll Number input (digits only, e.g. 22287869).
+   - Numeric Roll Number input (digits only, minimum 5 digits, e.g. 2287458).
    - DOB calendar selector system (HTML5 Date Picker).
-   - Direct redirection to official PDF marksheets hosted on GitHub (`https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/{pdfCode}.pdf`).
+   - Direct verified download & preview of official PDF marksheets (`Result_PDFs/{pdfCode}.pdf` with fallback to GitHub raw storage).
 
 3. MATHEMATICAL PDF URL ALGORITHM
    3.1 Inputs:
-       - Roll Number (numeric string)
+       - Roll Number (numeric string >= 5 digits)
        - Date of Birth (YYYY-MM-DD format from date picker)
    3.2 Derivation Formula:
-       - Code = (Last 4 digits of Roll Number) + (Last 2 digits of DOB Year)
+       - Code = (Last 5 digits of Roll Number) + (First 4 digits of DOB: Day DD + Month MM)
    3.3 Target URL Construction:
-       - URL = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + Code + ".pdf"
+       - Primary: "Result_PDFs/" + Code + ".pdf"
+       - Fallback: "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + Code + ".pdf"
+       - Clean Download Filename: "Result_" + Code + ".pdf"
    3.4 Example:
-       - Roll: 22287869, DOB: 12-08-2013 -> Code: 786913 -> URL: .../786913.pdf
+       - Roll: 2287458, DOB: 31-12-2012 -> Day: 31, Month: 12 -> Code: 874583112 -> File: Result_874583112.pdf
 
 4. DUMMY DETAILS SAMPLE
    - File: 'dummy details'
-   - Roll No: 2224865
+   - Roll No: 22285468
    - DOB: 30/12/2016
 ================================================================================
