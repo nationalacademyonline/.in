@@ -264,7 +264,7 @@
             const dobParts = dob.split('-');
             const month = dobParts[1];
             const day = dobParts[2];
-            const dateMonth = day + month; // 4 digits: DDMM (e.g. 3112 for 31 Dec)
+            const dateMonth = day + month; // 4 digits: DDMM (e.g. 3012 for 30 Dec)
 
             // Combine last 5 digits of Roll + 4 digits of DOB (Date & Month)
             const pdfCode = last5Roll + dateMonth;

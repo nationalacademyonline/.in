@@ -6,7 +6,7 @@ Official web repository for **National Academy Saran** (Taraiya, Saran, Bihar). 
 
 ## 🏫 About National Academy Saran
 
-- **Location**: Shahnewazpur, State Highway 73, Madsaura Road, Taraiya, Saran, Bihar – 841424 (Near Punjab National Bank)
+- **Location**: Shahnewazpur, State Highway 73, Marhaurah Taraiya Road, Taraiya, Saran, Bihar – 841424
 - **Website**: [www.nationalacademysaran.com](https://www.nationalacademysaran.com)
 - **Email**: [support.nationalacademysaran@gmail.com](mailto:support.nationalacademysaran@gmail.com)
 - **Helplines**:

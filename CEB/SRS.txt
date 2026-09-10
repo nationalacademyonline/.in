@@ -13,7 +13,7 @@ ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
 2. PURPOSE AND SCOPE
    - Public online portal for "Central Examination Board Result".
    - Class 9 & Class 10 Secondary Education.
-   - Numeric Roll Number input (digits only, minimum 5 digits, e.g. 2287458).
+   - Numeric Roll Number input (digits only, minimum 5 digits, e.g. 22285468).
    - DOB calendar selector system (HTML5 Date Picker).
    - Direct verified download & preview of official PDF marksheets (`Result_PDFs/{pdfCode}.pdf` with fallback to GitHub raw storage).
 
@@ -28,7 +28,7 @@ ARCHITECTURE: Zero-Backend Direct Algorithm URL Generator
        - Fallback: "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + Code + ".pdf"
        - Clean Download Filename: "Result_" + Code + ".pdf"
    3.4 Example:
-       - Roll: 2287458, DOB: 31-12-2012 -> Day: 31, Month: 12 -> Code: 874583112 -> File: Result_874583112.pdf
+       - Roll: 22285468, DOB: 30-12-2016 -> Day: 30, Month: 12 -> Code: 854683012 -> File: Result_854683012.pdf
 
 4. DUMMY DETAILS SAMPLE
    - File: 'dummy details'

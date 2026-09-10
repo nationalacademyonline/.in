@@ -16,7 +16,7 @@ MODULE: Client-Side URL Construction & Navigation
        month = dobParts[1]
        day = dobParts[2]
        dateMonth = day + month           // 4 digits (DDMM)
-       pdfCode = last5Roll + dateMonth   // 9 digits (e.g. 87458 + 3112 = 874583112)
+       pdfCode = last5Roll + dateMonth   // 9 digits (e.g. 85468 + 3012 = 854683012)
        primaryUrl = "Result_PDFs/" + pdfCode + ".pdf"
        fallbackUrl = "https://raw.githubusercontent.com/nationalacademyonline/.in/main/CEB/Result_PDFs/" + pdfCode + ".pdf"
        downloadName = "Result_" + pdfCode + ".pdf"

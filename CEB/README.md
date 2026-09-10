@@ -18,12 +18,12 @@ The system operates using a zero-backend, deterministic URL construction algorit
    - **Clean Download Name**: `Result_{pdfCode}.pdf`
 5. **Validation**: Pre-checks file existence via asynchronous fetch before revealing download and preview actions.
 
-### Example
-- **Roll Number**: `2287458` $\rightarrow$ Last 5 digits: `87458`
-- **Date of Birth**: `31-12-2012` $\rightarrow$ Day: `31`, Month: `12` $\rightarrow$ `3112`
-- **Generated Code**: `874583112`
-- **Target File**: `Result_PDFs/874583112.pdf`
-- **Clean Download**: `Result_874583112.pdf`
+### Example (Using Dummy Details)
+- **Roll Number**: `22285468` $\rightarrow$ Last 5 digits: `85468`
+- **Date of Birth**: `30-12-2016` $\rightarrow$ Day: `30`, Month: `12` $\rightarrow$ `3012`
+- **Generated Code**: `854683012`
+- **Target File**: `Result_PDFs/854683012.pdf`
+- **Clean Download**: `Result_854683012.pdf`
 
 ---
 
