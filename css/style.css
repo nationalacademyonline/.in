@@ -623,6 +623,8 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-full);
     background: var(--bg-subtle);
     border: 1px solid var(--border-color);
+    background-origin: border-box;
+    background-repeat: no-repeat;
     color: var(--text-title);
     font-size: 0.82rem;
     font-weight: 600;
@@ -639,10 +641,21 @@ h1, h2, h3, h4 {
     transform: scale(0.96);
 }
 
-.chip-web:hover { background: #10b981; color: #fff; border-color: #10b981; }
-.chip-yt:hover { background: #ff0000; color: #fff; border-color: #ff0000; }
-.chip-fb:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
-.chip-ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%,#d6249f 60%,#285AEB 90%); color: #fff; border-color: transparent; }
+.chip-web:hover,
+.chip-web:focus-visible { background: #10b981; color: #fff; border-color: #10b981; }
+.chip-yt:hover,
+.chip-yt:focus-visible { background: #ff0000; color: #fff; border-color: #ff0000; }
+.chip-fb:hover,
+.chip-fb:focus-visible { background: #1877f2; color: #fff; border-color: #1877f2; }
+.chip-ig:hover,
+.chip-ig:focus-visible,
+.chip-ig:active {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-color: transparent;
+}
 
 /* ==========================================================================
    EXPANDED LOCATION MODAL (Mobile-Optimized & Smooth Animation)
