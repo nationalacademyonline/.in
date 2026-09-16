@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Complaint & Feedback Form | National Academy Saran</title>
+    <meta name="description"
+        content="Official Complaint and Feedback Form for National Academy, Taraiya, Saran, Bihar. Submit grievance matters, suggestions, and feedback directly to school administration.">
+
+    <!-- Mobile Web App & Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Complaint & Feedback Form | National Academy Saran">
+    <meta property="og:description"
+        content="Submit grievance matters, feedback, and suggestions directly to National Academy administration.">
+    <meta property="og:image" content="../assets/school-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/school-logo.png">
+    <link rel="apple-touch-icon" href="../assets/school-logo.png">
+
+    <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- Institutional Design System -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+
+<body>
+
+    <!-- Ambient Subtle Glow (#050a30 & #233dff) -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="glow-orb glow-1"></div>
+        <div class="glow-orb glow-2"></div>
+    </div>
+
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand-link" id="brandLink" title="National Academy Saran">
+                <img src="../assets/school-logo.png" alt="National Academy Logo" class="brand-logo" loading="eager">
+                <div class="brand-text">
+                    <h1>National Academy</h1>
+                    <span>Saran, Bihar</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../home/index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="../home/index.html#about" class="nav-link">About</a></li>
+                <li><a href="../home/index.html#academics" class="nav-link">Academics</a></li>
+                <li><a href="../home/index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="../home/index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html" class="nav-link active">Forms</a></li>
+                <li><a href="../index.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Theme"
+                    aria-label="Toggle Dark and Light Theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+
+                <button type="button" id="mobileMenuBtn" class="mobile-toggle-btn" title="Open Navigation Menu"
+                    aria-label="Open Navigation Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Form Shell -->
+        <div class="form-shell">
+
+            <!-- Page Intro -->
+            <section class="page-intro" style="text-align: left; margin-bottom: 1.5rem;">
+                <div class="page-badge">
+                    <i class="fas fa-comments"></i> Student & Parent Voice
+                </div>
+                <h2 class="page-title">Complaint / Feedback Form</h2>
+                <p class="page-desc">
+                    National Academy, Shahnewazpur, Taraiya, Saran, Bihar - 841424.<br>
+                    Please share your valuable feedback, constructive suggestions, or grievances directly with the school administration.
+                </p>
+            </section>
+
+            <!-- Success Alert Banner -->
+            <div class="status-alert alert-success" id="successAlert" role="alert">
+                <h4>
+                    <i class="fas fa-circle-check"></i>
+                    <span>Complaint / Feedback Submitted Successfully!</span>
+                </h4>
+                <p>
+                    Thank you, <strong id="submittedParentName">Parent</strong>. Your feedback regarding student
+                    <strong id="submittedStudentName">Student</strong> (Class <span id="submittedClass"></span>)
+                    has been securely delivered to the National Academy administration team for review.
+                </p>
+                <div class="success-receipt">
+                    <div class="receipt-row">
+                        <span class="receipt-label">Student Name:</span>
+                        <span class="receipt-val" id="receiptStudent"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Class & Section:</span>
+                        <span class="receipt-val" id="receiptClassSec"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Roll Number:</span>
+                        <span class="receipt-val" id="receiptRoll"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Parent / Guardian:</span>
+                        <span class="receipt-val" id="receiptParent"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Submission Time:</span>
+                        <span class="receipt-val" id="receiptTime"></span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="button" class="btn-submit" id="submitAnotherBtn" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+                        <i class="fas fa-redo"></i> Submit Another Feedback
+                    </button>
+                    <a href="index.html" class="btn-reset" style="padding: 0.55rem 1.25rem; font-size: 0.85rem; text-decoration: none;">
+                        <i class="fas fa-folder-open"></i> Back to All Forms
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error Alert Banner -->
+            <div class="status-alert alert-error" id="errorAlert" role="alert">
+                <h4>
+                    <i class="fas fa-circle-exclamation"></i>
+                    <span>Submission Notice</span>
+                </h4>
+                <p id="formErrorMessage">
+                    There was a temporary issue submitting your feedback. Please check your connection and retry, or call our direct office desk at
+                    <a href="tel:+919771760033" style="color: inherit; font-weight: 700;">+91 97717 60033</a> for immediate assistance.
+                </p>
+            </div>
+
+            <!-- Form Container Card -->
+            <div class="form-card">
+                <form id="feedbackForm" novalidate autocomplete="on">
+
+                    <!-- Anti-Spam Honeypot (Hidden) -->
+                    <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+                        <label for="hp_website">Website</label>
+                        <input type="text" id="hp_website" name="hp_website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <!-- ==========================================================
+                         SECTION 1: STUDENT INFORMATION
+                         ========================================================== -->
+                    <div class="form-section-title">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Student Information</span>
+                    </div>
+
+                    <!-- Student Full Name (entry.2005620554) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName" class="form-label">
+                                Student's Full Name <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="studentName" name="student_name" class="form-control"
+                                placeholder="Enter student's full name" required minlength="2" maxlength="80">
+                            <div class="field-error-msg" id="studentNameError">Please provide the student's name.</div>
+                        </div>
+
+                        <!-- Parent/Guardian's Name (entry.695094505) -->
+                        <div class="form-group">
+                            <label for="parentName" class="form-label">
+                                Parent / Guardian's Name <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="parentName" name="parent_name" class="form-control"
+                                placeholder="Enter parent or guardian's name" required minlength="2" maxlength="80">
+                            <div class="field-error-msg" id="parentNameError">Please provide the parent or guardian's name.</div>
+                        </div>
+                    </div>
+
+                    <!-- Class, Section & Roll Number -->
+                    <div class="form-row-3">
+                        <!-- Class (entry.300657752) -->
+                        <div class="form-group">
+                            <label for="classGrade" class="form-label">
+                                Class <span class="required-star">*</span>
+                            </label>
+                            <select id="classGrade" name="class_grade" class="form-control" required>
+                                <option value="" disabled selected>Select Class</option>
+                                <option value="Pre Nursery">Pre Nursery</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                            </select>
+                            <div class="field-error-msg" id="classGradeError">Please select the student's class.</div>
+                        </div>
+
+                        <!-- Section (entry.1850304676) -->
+                        <div class="form-group">
+                            <label for="sectionVal" class="form-label">
+                                Section <span class="required-star">*</span>
+                            </label>
+                            <select id="sectionVal" name="section_val" class="form-control" required>
+                                <option value="" disabled selected>Select Section</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                            </select>
+                            <div class="field-error-msg" id="sectionValError">Please select section (A or B).</div>
+                        </div>
+
+                        <!-- Roll Number (entry.122165795) -->
+                        <div class="form-group">
+                            <label for="rollNumber" class="form-label">
+                                Roll Number <span class="required-star">*</span>
+                            </label>
+                            <input type="tel" id="rollNumber" name="roll_number" class="form-control"
+                                placeholder="e.g. 14" required maxlength="2" inputmode="numeric" pattern="[0-9]{1,2}">
+                            <div class="field-error-msg" id="rollNumberError">Please enter a valid roll number (1 to 99).</div>
+                        </div>
+                    </div>
+
+                    <!-- Optional Parent Contact Number -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone" class="form-label">
+                                Parent Phone / WhatsApp (Optional)
+                            </label>
+                            <input type="tel" id="contactPhone" name="contact_phone" class="form-control"
+                                placeholder="10-digit mobile number (e.g. 9876543210)" maxlength="10" inputmode="numeric" autocomplete="tel">
+                            <span class="field-error-msg" id="contactPhoneError"></span>
+                        </div>
+
+                        <!-- Feedback / Complaint Category -->
+                        <div class="form-group">
+                            <label for="feedbackCategory" class="form-label">
+                                Category of Feedback / Complaint
+                            </label>
+                            <select id="feedbackCategory" name="feedback_category" class="form-control">
+                                <option value="General Feedback / Complaint" selected>General Feedback / Complaint</option>
+                                <option value="Academic & Teaching">Academic & Teaching Curriculum</option>
+                                <option value="Campus & Cleanliness">Campus Facilities & Cleanliness</option>
+                                <option value="Transport & Bus Route">Transport & Bus Route</option>
+                                <option value="Student Discipline & Care">Student Discipline & Care</option>
+                                <option value="Fee & Accounts Desk">Fee & Accounts Desk</option>
+                                <option value="Sports & Extracurricular">Sports, Arts & Activities</option>
+                                <option value="Other Grievance / Matter">Other Grievance / Concern</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================================
+                         SECTION 2: COMPLAINT / FEEDBACK DESCRIPTION
+                         ========================================================== -->
+                    <div class="form-section-title">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Complaint / Feedback Details</span>
+                    </div>
+
+                    <!-- Description (entry.1002328075) -->
+                    <div class="form-group">
+                        <label for="feedbackDescription" class="form-label">
+                            Complaint / Feedback Description <span class="required-star">*</span>
+                        </label>
+                        <textarea id="feedbackDescription" name="feedback_description" class="form-control"
+                            placeholder="Please provide specific details regarding your suggestion, concern, or grievance so the school administration can take prompt action..."
+                            required minlength="10" maxlength="2000"></textarea>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="field-error-msg" id="feedbackDescriptionError">Please provide feedback description (at least 10 characters).</div>
+                            <div class="char-counter" id="charCounter">0 / 2000</div>
+                        </div>
+                    </div>
+
+                    <!-- Declaration Box -->
+                    <div class="declaration-box">
+                        <input type="checkbox" id="declarationCheck" required>
+                        <label for="declarationCheck">
+                            I verify that the information submitted above is accurate and intended for constructive school improvement, administrative review, or legitimate student welfare.
+                        </label>
+                    </div>
+                    <div class="field-error-msg" id="declarationError" style="margin-top: -1rem; margin-bottom: 1rem;">
+                        Please check the verification box before submitting.
+                    </div>
+
+                    <!-- Form Action Buttons -->
+                    <div class="form-actions-bar">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane" id="submitIcon"></i>
+                            <span id="submitBtnText">Submit Feedback</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Helpline Quick Callout -->
+            <div class="form-helpline-box">
+                <div class="form-helpline-info">
+                    <h4>Need assistance filling this form?</h4>
+                    <p>Our admissions desk is available Mon–Sat (8:00 AM to 3:00 PM).</p>
+                </div>
+                <div class="form-helpline-links">
+                    <a href="tel:+919771760033" class="helpline-chip" title="Call Accounts Office">
+                        <i class="fas fa-phone-alt"></i> +91 97717 60033
+                    </a>
+                    <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer"
+                        class="helpline-chip chip-wa" title="WhatsApp Admissions Desk">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Help
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo-row">
+            <img src="../assets/school-logo.png" alt="National Academy Emblem">
+            <span>National Academy Saran</span>
+        </div>
+        <p>Shahnewazpur, State Highway 73, Taraiya, Saran, Bihar - 841424.</p>
+        <p style="margin-top: 0.35rem; color: var(--text-muted); font-size: 0.82rem;">
+            Helplines: <a href="tel:+919771760033" style="color: inherit; text-decoration: none;">+91 97717 60033</a> | 
+            Email: <a href="mailto:support.nationalacademysaran@gmail.com" style="color: inherit; text-decoration: none;">support.nationalacademysaran@gmail.com</a>
+        </p>
+        <p style="margin-top: 0.75rem;">
+            &copy; 2026 National Academy. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Google Apps Script Web App Endpoint (Deployed)
+        const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbz4fs4fqca4zceFfXUP0jvjJpxlCgMT4jWC3hUkYVdqLxDZCoQDWasLQO5JsQg0P3epqA/exec';
+
+        // Fallback Google Form Submission Endpoint
+        const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScp76PTujCHjuRjk7VD1WX8ZdcT-hb9NjZYK1QOUVX5RQbCAg/formResponse';
+        
+        // Exact Google Form Entry Mapping IDs
+        const ENTRY_STUDENT_NAME = 'entry.2005620554';
+        const ENTRY_CLASS = 'entry.300657752';
+        const ENTRY_SECTION = 'entry.1850304676';
+        const ENTRY_ROLL_NUMBER = 'entry.122165795';
+        const ENTRY_DESCRIPTION = 'entry.1002328075';
+        const ENTRY_PARENT_NAME = 'entry.695094505';
+
+        // Elements
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        const form = document.getElementById('feedbackForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const submitIcon = document.getElementById('submitIcon');
+        const successAlert = document.getElementById('successAlert');
+        const errorAlert = document.getElementById('errorAlert');
+        const charCounter = document.getElementById('charCounter');
+        const descInput = document.getElementById('feedbackDescription');
+
+        // Theme Management (Default: Bright Light governed by style.css :root)
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        // Clear legacy automatic dark storage so all pages default to bright light
+        if (localStorage.getItem('na_theme') === 'dark' && !localStorage.getItem('na_user_theme')) {
+            localStorage.removeItem('na_theme');
+        }
+
+        // Apply explicit user preference if manually chosen, otherwise default to CSS :root (Bright Light)
+        const userTheme = localStorage.getItem('na_user_theme');
+        if (userTheme === 'dark') {
+            applyTheme('dark');
+        } else if (userTheme === 'light') {
+            applyTheme('light');
+        } else {
+            applyTheme('default');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('na_user_theme', nextTheme);
+            });
+        }
+
+        // Mobile menu toggle
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('active');
+                if (menuIcon) {
+                    menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+                }
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    if (menuIcon) menuIcon.className = 'fas fa-bars';
+                });
+            });
+        }
+
+        // Live Character Counter
+        if (descInput && charCounter) {
+            descInput.addEventListener('input', () => {
+                const len = descInput.value.length;
+                charCounter.textContent = `${len} / 2000`;
+                if (len >= 1900) {
+                    charCounter.style.color = '#ef4444';
+                } else {
+                    charCounter.style.color = 'var(--text-muted)';
+                }
+            });
+        }
+
+        // Field Error Helpers
+        function showFieldError(input, errorEl, msg) {
+            if (input) input.classList.add('is-invalid');
+            if (errorEl) {
+                if (msg) errorEl.textContent = msg;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function clearFieldError(input, errorEl) {
+            if (input) input.classList.remove('is-invalid');
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.style.display = 'none';
+            }
+        }
+
+        // Phone Number Validation (as in admission form)
+        function validatePhoneNumber(input, errorEl, isRequired = false) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                if (isRequired) {
+                    showFieldError(input, errorEl, 'Mobile number is required (must be 10 digits).');
+                    return false;
+                }
+                clearFieldError(input, errorEl);
+                return true;
+            }
+            if (val.length !== 10) {
+                showFieldError(input, errorEl, `Please enter a complete 10-digit number (${val.length}/10 entered).`);
+                return false;
+            }
+            if (!/^[6-9]\d{9}$/.test(val)) {
+                showFieldError(input, errorEl, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.');
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        // Validation Listeners
+        const studentNameInput = document.getElementById('studentName');
+        const studentNameError = document.getElementById('studentNameError');
+        const parentNameInput = document.getElementById('parentName');
+        const parentNameError = document.getElementById('parentNameError');
+        const classGradeInput = document.getElementById('classGrade');
+        const classGradeError = document.getElementById('classGradeError');
+        const sectionValInput = document.getElementById('sectionVal');
+        const sectionValError = document.getElementById('sectionValError');
+        const rollNumberInput = document.getElementById('rollNumber');
+        const rollNumberError = document.getElementById('rollNumberError');
+        const contactPhoneInput = document.getElementById('contactPhone');
+        const contactPhoneError = document.getElementById('contactPhoneError');
+        const descError = document.getElementById('feedbackDescriptionError');
+        const declarationCheck = document.getElementById('declarationCheck');
+        const declarationError = document.getElementById('declarationError');
+
+        function validateField(input, errorEl, message, validatorFn) {
+            if (!input) return true;
+            const valid = validatorFn ? validatorFn(input.value) : input.value.trim().length > 0;
+            if (!valid) {
+                showFieldError(input, errorEl, message);
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        studentNameInput.addEventListener('input', () => clearFieldError(studentNameInput, studentNameError));
+        parentNameInput.addEventListener('input', () => clearFieldError(parentNameInput, parentNameError));
+        classGradeInput.addEventListener('change', () => clearFieldError(classGradeInput, classGradeError));
+        sectionValInput.addEventListener('change', () => clearFieldError(sectionValInput, sectionValError));
+        if (rollNumberInput) {
+            // Block non-digits on keydown (allow navigation and editing keys)
+            rollNumberInput.addEventListener('keydown', (e) => {
+                if (['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(e.key)) {
+                    return;
+                }
+                if (e.ctrlKey || e.metaKey) return;
+                if (!/^[0-9]$/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            // Restrict input to digits only, max 2 digits; clear error for valid 1 or 2 digit numbers (1-99)
+            rollNumberInput.addEventListener('input', () => {
+                rollNumberInput.value = rollNumberInput.value.replace(/\D/g, '').slice(0, 2);
+                const val = rollNumberInput.value.trim();
+                const num = parseInt(val, 10);
+                if (val.length > 0 && num >= 1 && num <= 99) {
+                    clearFieldError(rollNumberInput, rollNumberError);
+                }
+            });
+
+            // Handle paste to ensure only up to 2 numeric digits can be pasted
+            rollNumberInput.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedData.replace(/\D/g, '').slice(0, 2);
+                document.execCommand('insertText', false, numericOnly);
+                const val = rollNumberInput.value.trim();
+                const num = parseInt(val, 10);
+                if (val.length > 0 && num >= 1 && num <= 99) {
+                    clearFieldError(rollNumberInput, rollNumberError);
+                }
+            });
+        }
+        descInput.addEventListener('input', () => {
+            if (descInput.value.trim().length >= 10) clearFieldError(descInput, descError);
+        });
+        declarationCheck.addEventListener('change', () => {
+            if (declarationCheck.checked) clearFieldError(null, declarationError);
+        });
+
+        if (contactPhoneInput) {
+            contactPhoneInput.addEventListener('keydown', (e) => {
+                if (['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(e.key)) {
+                    return;
+                }
+                if (e.ctrlKey || e.metaKey) return;
+                if (!/^[0-9]$/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            contactPhoneInput.addEventListener('input', () => {
+                contactPhoneInput.value = contactPhoneInput.value.replace(/\D/g, '').slice(0, 10);
+                if (contactPhoneInput.value.length === 10) {
+                    validatePhoneNumber(contactPhoneInput, contactPhoneError, false);
+                } else if (contactPhoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(contactPhoneInput, contactPhoneError, false);
+                }
+            });
+
+            contactPhoneInput.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedData.replace(/\D/g, '').slice(0, 10);
+                document.execCommand('insertText', false, numericOnly);
+                if (contactPhoneInput.value.length === 10 || contactPhoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(contactPhoneInput, contactPhoneError, false);
+                }
+            });
+
+            contactPhoneInput.addEventListener('blur', () => {
+                validatePhoneNumber(contactPhoneInput, contactPhoneError, false);
+            });
+        }
+
+        // Reset Handler
+        form.addEventListener('reset', () => {
+            clearFieldError(studentNameInput, studentNameError);
+            clearFieldError(parentNameInput, parentNameError);
+            clearFieldError(classGradeInput, classGradeError);
+            clearFieldError(sectionValInput, sectionValError);
+            clearFieldError(rollNumberInput, rollNumberError);
+            clearFieldError(contactPhoneInput, contactPhoneError);
+            clearFieldError(descInput, descError);
+            clearFieldError(null, declarationError);
+            if (charCounter) charCounter.textContent = '0 / 2000';
+            successAlert.style.display = 'none';
+            errorAlert.style.display = 'none';
+        });
+
+        // Submit Another Button
+        const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+        if (submitAnotherBtn) {
+            submitAnotherBtn.addEventListener('click', () => {
+                form.reset();
+                form.style.display = 'block';
+                successAlert.style.display = 'none';
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+
+        // Form Submission
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Honeypot check
+            const honeypot = document.getElementById('hp_website');
+            if (honeypot && honeypot.value.trim().length > 0) {
+                console.warn('Bot detected by honeypot');
+                form.reset();
+                return;
+            }
+
+            // Perform Validations
+            let isValid = true;
+            let firstInvalidEl = null;
+
+            if (!validateField(studentNameInput, studentNameError, 'Please enter student\'s full name (min 2 letters).', v => v.trim().length >= 2)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = studentNameInput;
+            }
+
+            if (!validateField(parentNameInput, parentNameError, 'Please enter parent/guardian\'s name (min 2 letters).', v => v.trim().length >= 2)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = parentNameInput;
+            }
+
+            if (!validateField(classGradeInput, classGradeError, 'Please select the student\'s class.')) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = classGradeInput;
+            }
+
+            if (!validateField(sectionValInput, sectionValError, 'Please select the section.')) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = sectionValInput;
+            }
+
+            const rollVal = rollNumberInput ? rollNumberInput.value.trim() : '';
+            const rollNum = parseInt(rollVal, 10);
+            if (!rollVal || isNaN(rollNum) || rollNum < 1 || rollNum > 99) {
+                showFieldError(rollNumberInput, rollNumberError, 'Please enter a valid roll number (1 to 99).');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = rollNumberInput;
+            } else {
+                clearFieldError(rollNumberInput, rollNumberError);
+            }
+
+            if (!validatePhoneNumber(contactPhoneInput, contactPhoneError, false)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = contactPhoneInput;
+            }
+
+            if (!validateField(descInput, descError, 'Please provide feedback description (at least 10 characters).', v => v.trim().length >= 10)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = descInput;
+            }
+
+            if (!declarationCheck.checked) {
+                declarationError.style.display = 'block';
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = declarationCheck;
+            }
+
+            if (!isValid) {
+                if (firstInvalidEl) {
+                    firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (typeof firstInvalidEl.focus === 'function') firstInvalidEl.focus();
+                }
+                return;
+            }
+
+            // Hide previous alerts
+            successAlert.style.display = 'none';
+            errorAlert.style.display = 'none';
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtnText.textContent = 'Submitting Feedback...';
+            submitIcon.className = 'fas fa-spinner fa-spin';
+
+            const sName = studentNameInput.value.trim();
+            const pName = parentNameInput.value.trim();
+            const cGrade = classGradeInput.value;
+            const sSection = sectionValInput.value;
+            const rNum = rollNumberInput.value.trim();
+            const category = document.getElementById('feedbackCategory').value;
+            const rawDesc = descInput.value.trim();
+            const phoneVal = contactPhoneInput ? contactPhoneInput.value.trim() : '';
+
+            // Enrich description with category and phone if available
+            let fullDescription = rawDesc;
+            const extras = [];
+            if (category) extras.push(`[Category: ${category}]`);
+            if (phoneVal) extras.push(`[Contact Phone: ${phoneVal}]`);
+            if (extras.length > 0) {
+                fullDescription = `${extras.join(' ')}\n\n${rawDesc}`;
+            }
+
+            // Build Google Form URLSearchParams
+            const postData = new URLSearchParams();
+            postData.append(ENTRY_STUDENT_NAME, sName);
+            postData.append(ENTRY_CLASS, cGrade);
+            postData.append(ENTRY_SECTION, sSection);
+            postData.append(ENTRY_ROLL_NUMBER, rNum);
+            postData.append(ENTRY_DESCRIPTION, fullDescription);
+            postData.append(ENTRY_PARENT_NAME, pName);
+
+            try {
+                if (GOOGLE_SCRIPT_WEBAPP_URL && GOOGLE_SCRIPT_WEBAPP_URL.trim() !== '') {
+                    // Send to deployed Google Apps Script Web App
+                    const appsScriptPayload = new URLSearchParams({
+                        auth_token: 'NA_SARAN_FEEDBACK_2026_SECURE_TOKEN',
+                        student_name: sName,
+                        parent_name: pName,
+                        class: cGrade,
+                        section: sSection,
+                        roll_number: rNum,
+                        phone: phoneVal,
+                        category: category,
+                        description: rawDesc
+                    });
+
+                    await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: appsScriptPayload.toString()
+                    });
+                } else {
+                    // Submit directly to Google Forms endpoint
+                    await fetch(GOOGLE_FORM_ACTION_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: postData.toString()
+                    });
+                }
+
+                // Populate success card
+                document.getElementById('submittedParentName').textContent = pName;
+                document.getElementById('submittedStudentName').textContent = sName;
+                document.getElementById('submittedClass').textContent = `${cGrade} - ${sSection}`;
+
+                document.getElementById('receiptStudent').textContent = sName;
+                document.getElementById('receiptClassSec').textContent = `Class ${cGrade} (Section ${sSection})`;
+                document.getElementById('receiptRoll').textContent = rNum;
+                document.getElementById('receiptParent').textContent = pName;
+                document.getElementById('receiptTime').textContent = new Date().toLocaleString('en-IN', {
+                    dateStyle: 'medium',
+                    timeStyle: 'short'
+                });
+
+                // Display success
+                form.style.display = 'none';
+                successAlert.style.display = 'block';
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (err) {
+                console.error('Submission failed:', err);
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'Submit Feedback';
+                submitIcon.className = 'fas fa-paper-plane';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -9,8 +9,7 @@
         content="Official Central Examination Board Result portal for Class 9 and Class 10 Secondary Education. Check results and marksheet certificates by Roll Number and Date of Birth.">
 
     <!-- Mobile Web App & Theme Color -->
-    <meta name="theme-color" content="#050a30" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f4f6fc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -18,22 +17,22 @@
     <meta property="og:title" content="Central Examination Board Result - Class IX & Class X">
     <meta property="og:description"
         content="Official secondary examination result lookup portal for Class 9 & Class 10. Enter Roll Number and DOB to retrieve official certificates.">
-    <meta property="og:image" content="../assets/ceb-logo.png">
+    <meta property="og:image" content="assets/ceb-logo.png">
 
     <!-- Favicon & Touch Icon (Central Examination Board Logo) -->
-    <link rel="icon" type="image/png" href="../assets/ceb-logo.png">
-    <link rel="apple-touch-icon" href="../assets/ceb-logo.png">
+    <link rel="icon" type="image/png" href="assets/ceb-logo.png">
+    <link rel="apple-touch-icon" href="assets/ceb-logo.png">
 
-    <!-- Google Fonts & Local Font Awesome 6 -->
+    <!-- Google Fonts & Local Font Awesome 6 Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
 
     <!-- External Modular Stylesheet (Main Design System) -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -48,14 +47,14 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="#" class="brand-link" id="brandLink" onclick="location.reload(); return false;">
-                <img src="../assets/ceb-logo.png" alt="Central Examination Board Logo" class="brand-logo" loading="eager">
+                <img src="assets/ceb-logo.png" alt="Central Examination Board Logo" class="brand-logo" loading="eager">
                 <div class="brand-text">
                     <h1>Central Examination Board Result</h1>
                     <span>Secondary Board (Class IX & Class X)</span>
                 </div>
             </a>
 
-            <div>
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
                 <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme"
                     aria-label="Toggle Dark and Light Theme">
                     <i class="fas fa-moon" id="themeIcon"></i>
@@ -163,41 +162,58 @@
     <!-- Minimal Footer with CEB Emblem -->
     <footer class="site-footer">
         <div class="footer-logo-row">
-            <img src="../assets/ceb-logo.png" alt="Central Examination Board Emblem">
+            <img src="assets/ceb-logo.png" alt="Central Examination Board Emblem">
             <span>Central Examination Board</span>
         </div>
         <p>&copy; 2026 Central Examination Board. Secondary School Examination Result Portal.</p>
+        <p style="margin-top: 0.35rem; color: var(--text-muted); font-size: 0.82rem;">
+            Official Secondary Examination & Certification Retrieval Service
+        </p>
     </footer>
 
     <!-- Interactive Script & Optimized Algorithm -->
     <script>
-        // Theme Management (Light #f4f6fc & Dark #050a30)
+        // Theme Management (Synchronized with site-wide na_user_theme)
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const themeIcon = document.getElementById('themeIcon');
 
-        function setTheme(theme) {
+        function applyTheme(theme) {
             if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('na_theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
             } else {
                 document.documentElement.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('na_theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
             }
         }
 
-        const savedTheme = localStorage.getItem('na_theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
+        // Clear legacy automatic dark storage so it defaults to bright light
+        if (localStorage.getItem('na_theme') === 'dark' && !localStorage.getItem('na_user_theme')) {
+            localStorage.removeItem('na_theme');
         }
 
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            setTheme(isDark ? 'light' : 'dark');
-        });
+        // Apply theme: prioritize na_user_theme, fallback to na_theme or default
+        const activeTheme = localStorage.getItem('na_user_theme') || localStorage.getItem('na_theme');
+        if (activeTheme === 'dark') {
+            applyTheme('dark');
+        } else if (activeTheme === 'light') {
+            applyTheme('light');
+        } else {
+            applyTheme('default');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('na_user_theme', nextTheme);
+                localStorage.setItem('na_theme', nextTheme);
+            });
+        }
 
         // Toast Helper
         let toastTimer;

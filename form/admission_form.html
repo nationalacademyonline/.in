@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Admission Enquiry Form (2026–2027) | National Academy Saran</title>
+    <meta name="description"
+        content="Official Student Admission Enquiry Form for National Academy, Taraiya, Saran, Bihar. Inquire for Nursery to Class 10 for Session 2026-2027.">
+
+    <!-- Mobile Web App & Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Admission Enquiry Form (2026–2027) | National Academy Saran">
+    <meta property="og:description"
+        content="Submit an online enquiry for admission to National Academy Taraiya, Saran. Session 2026–27.">
+    <meta property="og:image" content="../assets/school-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/school-logo.png">
+    <link rel="apple-touch-icon" href="../assets/school-logo.png">
+
+    <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- Institutional Design System -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+
+<body>
+
+    <!-- Ambient Subtle Glow (#050a30 & #233dff) -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="glow-orb glow-1"></div>
+        <div class="glow-orb glow-2"></div>
+    </div>
+
+    <!-- Top Navigation Header (Matches Home Page) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand-link" id="brandLink" title="National Academy Saran">
+                <img src="../assets/school-logo.png" alt="National Academy Logo" class="brand-logo" loading="eager">
+                <div class="brand-text">
+                    <h1>National Academy</h1>
+                    <span>Saran, Bihar</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../home/index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="../home/index.html#about" class="nav-link">About</a></li>
+                <li><a href="../home/index.html#academics" class="nav-link">Academics</a></li>
+                <li><a href="../home/index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="../home/index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html" class="nav-link active">Forms</a></li>
+                <li><a href="../index.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Theme"
+                    aria-label="Toggle Dark and Light Theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+
+                <button type="button" id="mobileMenuBtn" class="mobile-toggle-btn" title="Open Navigation Menu"
+                    aria-label="Open Navigation Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <div class="form-shell">
+
+            <!-- Page Intro -->
+            <section class="page-intro" style="margin-bottom: 1.75rem;">
+                <div class="page-badge">
+                    <i class="fas fa-graduation-cap"></i> Academic Session 2026–2027
+                </div>
+                <h2 class="page-title">Admission Enquiry Form</h2>
+                <p class="page-desc">
+                    Register your enquiry for admission at National Academy. Please fill out the required details below.
+                    Our admissions team will review your enquiry and contact you promptly.
+                </p>
+            </section>
+
+            <!-- Success Alert Notification -->
+            <div id="formSuccessAlert" class="status-alert alert-success" role="alert">
+                <h4><i class="fas fa-circle-check"></i> Admission Enquiry Submitted Successfully!</h4>
+                <p>
+                    Thank you, <strong id="submittedParentName">Parent</strong>. Your admission enquiry for student
+                    <strong id="submittedStudentName">Applicant</strong> (applying for <span id="submittedGrade">Selected Class</span>)
+                    has been securely received by the National Academy admissions committee.
+                </p>
+                <div class="success-receipt">
+                    <div class="receipt-row">
+                        <span class="receipt-label">Student Full Name:</span>
+                        <span class="receipt-val" id="receiptStudent"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Grade / Class Applied:</span>
+                        <span class="receipt-val" id="receiptGrade"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Parent / Guardian:</span>
+                        <span class="receipt-val" id="receiptParent"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Contact Phone:</span>
+                        <span class="receipt-val" id="receiptPhone"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Oral Test / Screening:</span>
+                        <span class="receipt-val" id="receiptOralTest"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Submission Time:</span>
+                        <span class="receipt-val" id="receiptTime"></span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="button" class="btn-submit" id="submitAnotherBtn" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+                        <i class="fas fa-redo"></i> Submit Another Enquiry
+                    </button>
+                    <a href="index.html" class="btn-reset" style="padding: 0.55rem 1.25rem; font-size: 0.85rem; text-decoration: none;">
+                        <i class="fas fa-folder-open"></i> Back to All Forms
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error Alert Notification -->
+            <div id="formErrorAlert" class="status-alert alert-error" role="alert">
+                <h4><i class="fas fa-triangle-exclamation"></i> Submission Notice</h4>
+                <p id="formErrorMessage">
+                    There was an issue sending your enquiry. Please check your internet connection or contact the
+                    admissions desk directly at <strong>+91 97717 60033</strong>.
+                </p>
+            </div>
+
+            <!-- Admission Form Card -->
+            <div class="form-card">
+                <form id="admissionApplicationForm" method="POST">
+                    <!-- Invisible Honeypot Field (Stops automated spam bots) -->
+                    <input type="text" name="hp_website" id="hp_website" style="display:none !important; visibility:hidden !important; position:absolute !important; left:-9999px !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <!-- SECTION 1: STUDENT INFORMATION -->
+                    <div class="form-section-title">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>1. Student Information</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student_name" class="form-label">
+                                Student's Full Name <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="student_name" name="student_name" class="form-control"
+                                placeholder="Enter student's full name" required autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob" class="form-label">
+                                Date of Birth <span class="required-star">*</span>
+                            </label>
+                            <input type="date" id="dob" name="dob" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender" class="form-label">
+                                Gender <span class="required-star">*</span>
+                            </label>
+                            <select id="gender" name="gender" class="form-control" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade" class="form-label">
+                                Class / Grade Applying For <span class="required-star">*</span>
+                            </label>
+                            <select id="grade" name="grade" class="form-control" required>
+                                <option value="">Select Grade</option>
+                                <option value="Pre-Nursery">Pre-Nursery</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="LKG">L.K.G.</option>
+                                <option value="UKG">U.K.G.</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Balanced Row: Left has vertical stack of Blood Group & Oral Test, Right has Passport Photo -->
+                    <div class="student-bottom-row">
+                        <div class="student-fields-stack">
+                            <div class="form-group">
+                                <label for="blood_group" class="form-label">Blood Group</label>
+                                <select id="blood_group" name="blood_group" class="form-control">
+                                    <option value="">Unknown / Optional</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="oral_test" class="form-label">
+                                    Oral Test <span class="required-star">*</span>
+                                </label>
+                                <select id="oral_test" name="oral_test" class="form-control" required>
+                                    <option value="">Select Option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="photo-column-wrapper">
+                            <label class="form-label" for="student_photo_camera">Student Image</label>
+                            <div class="photo-upload-container">
+                                <div class="photo-preview-box" id="photoPreviewBox" role="button" tabindex="0"
+                                    title="Click to open camera" aria-label="Student photo camera box. Click to open camera.">
+                                    <img id="photoPreviewImg" src="" alt="Student Photo" style="display: none;">
+                                    <div id="photoPlaceholder" class="photo-placeholder">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Camera</span>
+                                    </div>
+                                    <div class="photo-hover-overlay" id="photoHoverOverlay">
+                                        <i class="fas fa-magnifying-glass-plus"></i>
+                                        <span>Preview</span>
+                                    </div>
+                                </div>
+                                <div class="photo-upload-meta">
+                                    <span class="photo-hint-text">Upload a clear photo of the student (JPG, PNG, max 3 MB).</span>
+                                    <input type="file" id="student_photo_camera" name="student_photo_camera"
+                                        accept=".jpg,.jpeg,.png,image/jpeg,image/png" capture="environment" class="photo-file-input">
+                                    <input type="file" id="student_photo_gallery" name="student_photo_gallery"
+                                        accept=".jpg,.jpeg,.png,image/jpeg,image/png" class="photo-file-input">
+                                    <div class="photo-action-buttons">
+                                        <button type="button" class="btn-select-photo btn-camera-lens" id="btnCamera"
+                                            title="Open camera to take photo on the spot">
+                                            <i class="fas fa-camera"></i> <span id="cameraBtnText">Open Camera</span>
+                                        </button>
+                                        <button type="button" class="btn-select-photo btn-gallery-lens" id="btnGallery"
+                                            title="Select image from device gallery or files">
+                                            <i class="fas fa-images"></i> <span>Gallery</span>
+                                        </button>
+                                    </div>
+                                    <span id="selectedFileName" class="selected-file-text">No file chosen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: PARENT & GUARDIAN DETAILS -->
+                    <div class="form-section-title">
+                        <i class="fas fa-users"></i>
+                        <span>2. Parent / Guardian Details</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="father_name" class="form-label">
+                                Father's / Guardian's Full Name <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="father_name" name="father_name" class="form-control"
+                                placeholder="Enter father's name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mother_name" class="form-label">Mother's Full Name</label>
+                            <input type="text" id="mother_name" name="mother_name" class="form-control"
+                                placeholder="Enter mother's name">
+                        </div>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">
+                                Mobile / WhatsApp No. <span class="required-star">*</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-control"
+                                placeholder="10-digit mobile number" required maxlength="10" inputmode="numeric" autocomplete="tel">
+                            <span class="field-error-msg" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alt_phone" class="form-label">Alternate Phone</label>
+                            <input type="tel" id="alt_phone" name="alt_phone" class="form-control"
+                                placeholder="Optional second number" maxlength="10" inputmode="numeric" autocomplete="tel">
+                            <span class="field-error-msg" id="altPhoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="name@example.com" autocomplete="email">
+                            <span class="field-error-msg" id="emailError"></span>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: ADDRESS & ACADEMIC BACKGROUND -->
+                    <div class="form-section-title">
+                        <i class="fas fa-map-location-dot"></i>
+                        <span>3. Address & Academic History</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address" class="form-label">
+                                Residential Address / Village / Ward <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="address" name="address" class="form-control"
+                                placeholder="Village / Street / Mohalla" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city" class="form-label">
+                                Block / District / City <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="city" name="city" class="form-control"
+                                value="Taraiya (Saran)" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prev_school" class="form-label">Previous School Attended (If Any)</label>
+                            <input type="text" id="prev_school" name="prev_school" class="form-control"
+                                placeholder="Name of previous school">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prev_class" class="form-label">Last Class Completed & Percentage / Grade</label>
+                            <input type="text" id="prev_class" name="prev_class" class="form-control"
+                                placeholder="e.g. Class 4 - 88%">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label for="queries" class="form-label">Any Questions or Special Requests?</label>
+                        <textarea id="queries" name="queries" class="form-control"
+                            placeholder="Transport query, timing, or any specific remarks..."></textarea>
+                    </div>
+
+                    <!-- DECLARATION CHECKBOX -->
+                    <div class="declaration-box">
+                        <input type="checkbox" id="agree_terms" required>
+                        <label for="agree_terms" style="cursor: pointer;">
+                            I hereby certify that all information submitted in this enquiry is accurate and true to
+                            the best of my knowledge. I understand that submitting this form initiates the admission
+                            evaluation process for National Academy.
+                        </label>
+                    </div>
+
+                    <!-- ACTIONS BAR -->
+                    <div class="form-actions-bar">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span id="submitBtnText">Submit Enquiry</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Helpline Quick Callout -->
+            <div class="form-helpline-box">
+                <div class="form-helpline-info">
+                    <h4>Need assistance filling this form?</h4>
+                    <p>Our admissions desk is available Mon–Sat (8:00 AM to 3:00 PM).</p>
+                </div>
+                <div class="form-helpline-links">
+                    <a href="tel:+919771760033" class="helpline-chip" title="Call Accounts Office">
+                        <i class="fas fa-phone-alt"></i> +91 97717 60033
+                    </a>
+                    <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer"
+                        class="helpline-chip chip-wa" title="WhatsApp Admissions Desk">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Help
+                    </a>
+                </div>
+            </div>
+
+            <!-- Large Photo Preview Modal -->
+            <div id="photoOptionModal" class="photo-modal-overlay" aria-hidden="true" style="display: none;">
+                <div class="photo-modal-card" role="dialog" aria-labelledby="photoModalTitle" aria-modal="true">
+                    <div class="photo-modal-header">
+                        <div class="photo-modal-icon-badge">
+                            <i class="fas fa-id-badge"></i>
+                        </div>
+                        <div>
+                            <h4 id="photoModalTitle" class="photo-modal-title">Student Photo Preview</h4>
+                            <p id="photoModalDesc" class="photo-modal-subtitle">Selected student photo</p>
+                        </div>
+                        <button type="button" class="photo-modal-close" id="closePhotoModalBtn" aria-label="Close preview" title="Close preview">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Large Image Preview -->
+                    <div class="photo-large-preview-wrap">
+                        <img id="modalLargePreviewImg" src="" alt="Student Photo Large Preview">
+                    </div>
+
+                    <!-- Options below preview: Retake Camera or Choose Different Image from Gallery -->
+                    <div class="photo-modal-actions-row">
+                        <button type="button" class="btn-modal-action btn-modal-retake" id="modalCameraBtn" title="Retake photo using camera">
+                            <i class="fas fa-camera"></i>
+                            <span>Retake Photo</span>
+                        </button>
+                        <button type="button" class="btn-modal-action btn-modal-gallery" id="modalGalleryBtn" title="Choose a different image from gallery">
+                            <i class="fas fa-images"></i>
+                            <span>Choose from Gallery</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER (Matches Home Page)
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="footer-logo-row">
+            <img src="../assets/school-logo.png" alt="National Academy Emblem">
+            <span>National Academy Saran</span>
+        </div>
+        <p>Shahnewazpur, State Highway 73, Taraiya, Saran, Bihar - 841424.</p>
+        <p style="margin-top: 0.35rem; color: var(--text-muted); font-size: 0.82rem;">
+            Helplines: <a href="tel:+919771760033" style="color: inherit; text-decoration: none;">+91 97717 60033</a> | 
+            Email: <a href="mailto:support.nationalacademysaran@gmail.com" style="color: inherit; text-decoration: none;">support.nationalacademysaran@gmail.com</a>
+        </p>
+        <p style="margin-top: 0.75rem;">
+            &copy; 2026 National Academy. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // ==========================================================================
+        // GOOGLE APPS SCRIPT WEB APP ENDPOINT CONFIGURATION
+        // ==========================================================================
+        // Paste your deployed Google Apps Script Web App URL below:
+        const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyGsrlolltyoKBFnjlQBBw8QyS0qQuNRNvfVEClAHvGXb7oW2zciD8FynPSRJ282BTD/exec';
+
+        // Theme Management (Default: Bright Light governed by style.css :root)
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        // Clear legacy automatic dark storage so all pages default to bright light
+        if (localStorage.getItem('na_theme') === 'dark' && !localStorage.getItem('na_user_theme')) {
+            localStorage.removeItem('na_theme');
+        }
+
+        // Apply explicit user preference if manually chosen, otherwise default to CSS :root (Bright Light)
+        const userTheme = localStorage.getItem('na_user_theme');
+        if (userTheme === 'dark') {
+            applyTheme('dark');
+        } else if (userTheme === 'light') {
+            applyTheme('light');
+        } else {
+            applyTheme('default');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('na_user_theme', nextTheme);
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('active');
+                menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuIcon.className = 'fas fa-bars';
+                });
+            });
+        }
+
+        // Photo Preview and Base64 Encoding
+        const photoPreviewBox = document.getElementById('photoPreviewBox');
+        const photoPreviewImg = document.getElementById('photoPreviewImg');
+        const photoPlaceholder = document.getElementById('photoPlaceholder');
+        const selectedFileName = document.getElementById('selectedFileName');
+        const studentPhotoCamera = document.getElementById('student_photo_camera');
+        const studentPhotoGallery = document.getElementById('student_photo_gallery');
+        const btnCamera = document.getElementById('btnCamera');
+        const btnGallery = document.getElementById('btnGallery');
+        const cameraBtnText = document.getElementById('cameraBtnText');
+
+        // Modal Elements
+        const photoOptionModal = document.getElementById('photoOptionModal');
+        const modalLargePreviewImg = document.getElementById('modalLargePreviewImg');
+        const modalCameraBtn = document.getElementById('modalCameraBtn');
+        const modalGalleryBtn = document.getElementById('modalGalleryBtn');
+        const closePhotoModalBtn = document.getElementById('closePhotoModalBtn');
+
+        let photoBase64 = '';
+        let photoType = '';
+
+        function openLargePreviewModal() {
+            if (!photoOptionModal) return;
+            if (modalLargePreviewImg && photoBase64) {
+                modalLargePreviewImg.src = photoBase64;
+            }
+            photoOptionModal.style.display = 'flex';
+            photoOptionModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePhotoModal() {
+            if (!photoOptionModal) return;
+            photoOptionModal.style.display = 'none';
+            photoOptionModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // Camera trigger (button)
+        if (btnCamera) {
+            btnCamera.addEventListener('click', () => {
+                if (studentPhotoCamera) studentPhotoCamera.click();
+            });
+        }
+
+        // Gallery trigger (button)
+        if (btnGallery) {
+            btnGallery.addEventListener('click', () => {
+                if (studentPhotoGallery) studentPhotoGallery.click();
+            });
+        }
+
+        // Preview box click: open camera if empty, or open large preview if photo selected
+        if (photoPreviewBox) {
+            photoPreviewBox.addEventListener('click', () => {
+                if (photoBase64) {
+                    openLargePreviewModal();
+                } else {
+                    if (studentPhotoCamera) studentPhotoCamera.click();
+                }
+            });
+            photoPreviewBox.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (photoBase64) {
+                        openLargePreviewModal();
+                    } else {
+                        if (studentPhotoCamera) studentPhotoCamera.click();
+                    }
+                }
+            });
+        }
+
+        // Modal Action: Retake with Camera
+        if (modalCameraBtn) {
+            modalCameraBtn.addEventListener('click', () => {
+                closePhotoModal();
+                if (studentPhotoCamera) studentPhotoCamera.click();
+            });
+        }
+
+        // Modal Action: Choose from Gallery
+        if (modalGalleryBtn) {
+            modalGalleryBtn.addEventListener('click', () => {
+                closePhotoModal();
+                if (studentPhotoGallery) studentPhotoGallery.click();
+            });
+        }
+
+        // Close Modal via 'X' Mark
+        if (closePhotoModalBtn) closePhotoModalBtn.addEventListener('click', closePhotoModal);
+
+        if (photoOptionModal) {
+            photoOptionModal.addEventListener('click', (e) => {
+                if (e.target === photoOptionModal) closePhotoModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && photoOptionModal && photoOptionModal.style.display === 'flex') {
+                closePhotoModal();
+            }
+        });
+
+        // Handle Selected Image File (Strictly JPG, JPEG, PNG, max 3 MB)
+        function handleSelectedImageFile(file, inputElement) {
+            if (!file) {
+                // User opened camera or gallery but cancelled - keep existing photo safe!
+                return;
+            }
+
+            const validMimeTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/pjpeg'];
+            const validExtensions = ['.jpg', '.jpeg', '.png'];
+            const fileName = (file.name || '').toLowerCase();
+            const fileExt = fileName.includes('.') ? '.' + fileName.split('.').pop() : '';
+
+            const isFormatValid = validMimeTypes.includes((file.type || '').toLowerCase()) || validExtensions.includes(fileExt);
+
+            if (!isFormatValid) {
+                alert('Invalid image format. Please select or capture a photo in JPG, JPEG, or PNG format.');
+                if (inputElement) inputElement.value = '';
+                return;
+            }
+
+            if (file.size > 3 * 1024 * 1024) {
+                alert('The selected photo exceeds the 3 MB limit. Please select or capture a smaller image.');
+                if (inputElement) inputElement.value = '';
+                return;
+            }
+
+            selectedFileName.textContent = file.name || 'Photo captured';
+            photoType = file.type || (fileExt === '.png' ? 'image/png' : 'image/jpeg');
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                photoBase64 = event.target.result;
+                photoPreviewImg.src = event.target.result;
+                photoPreviewImg.style.display = 'block';
+                photoPlaceholder.style.display = 'none';
+                if (modalLargePreviewImg) {
+                    modalLargePreviewImg.src = event.target.result;
+                }
+                if (photoPreviewBox) {
+                    photoPreviewBox.classList.add('has-photo');
+                    photoPreviewBox.setAttribute('title', 'Click to view large preview');
+                }
+                if (cameraBtnText) {
+                    cameraBtnText.textContent = 'Retake Photo';
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        if (studentPhotoCamera) {
+            studentPhotoCamera.addEventListener('change', function (e) {
+                handleSelectedImageFile(e.target.files && e.target.files[0], studentPhotoCamera);
+            });
+        }
+
+        if (studentPhotoGallery) {
+            studentPhotoGallery.addEventListener('change', function (e) {
+                handleSelectedImageFile(e.target.files && e.target.files[0], studentPhotoGallery);
+            });
+        }
+
+        // Form Handling & Submission
+        const form = document.getElementById('admissionApplicationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const successAlert = document.getElementById('formSuccessAlert');
+        const errorAlert = document.getElementById('formErrorAlert');
+        const submittedStudentName = document.getElementById('submittedStudentName');
+
+        // Phone & Email Validation Elements
+        const phoneInput = document.getElementById('phone');
+        const altPhoneInput = document.getElementById('alt_phone');
+        const emailInput = document.getElementById('email');
+        const phoneError = document.getElementById('phoneError');
+        const altPhoneError = document.getElementById('altPhoneError');
+        const emailError = document.getElementById('emailError');
+
+        // Strict Numbers-Only Handler (Blocks all letters, symbols, spaces)
+        function handlePhoneKeyDown(e) {
+            // Allow navigation and editing control keys
+            if ([
+                'Backspace', 'Delete', 'Tab', 'Escape', 'Enter',
+                'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+                'Home', 'End'
+            ].includes(e.key)) {
+                return;
+            }
+            // Allow keyboard shortcuts (Ctrl/Cmd + A, C, V, X, Z)
+            if (e.ctrlKey || e.metaKey) {
+                return;
+            }
+            // Disallow all non-digit keys
+            if (!/^[0-9]$/.test(e.key)) {
+                e.preventDefault();
+            }
+        }
+
+        function enforceNumericOnly(e) {
+            // Remove any non-digits that might have slipped through (e.g. drag-and-drop or IME) and limit to 10 digits
+            e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+        }
+
+        function handlePhonePaste(e) {
+            e.preventDefault();
+            const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+            const numericOnly = pastedData.replace(/\D/g, '').slice(0, 10);
+            document.execCommand('insertText', false, numericOnly);
+        }
+
+        // Attach strict numeric listeners
+        [phoneInput, altPhoneInput].forEach(input => {
+            if (!input) return;
+            input.addEventListener('keydown', handlePhoneKeyDown);
+            input.addEventListener('input', enforceNumericOnly);
+            input.addEventListener('paste', handlePhonePaste);
+        });
+
+        // Disposable / Temporary Email Domain Filter
+        const DISPOSABLE_EMAIL_DOMAINS = new Set([
+            '10minutemail.com', '10minutemail.net', '10minutemail.org', '10minutemail.co.uk',
+            '20minutemail.com', '20minutemail.it',
+            'tempmail.com', 'temp-mail.org', 'temp-mail.io', 'tempmail.net', 'tempmail.dev',
+            'tempmailo.com', 'tempail.com', 'mytemp.email', 'tmail.ws', 'minuteinbox.com',
+            'guerrillamail.com', 'guerrillamail.net', 'guerrillamail.org', 'guerrillamail.biz',
+            'guerrillamailblock.com', 'sharklasers.com', 'grr.la', 'guerrillamail.de', 'pokemail.net',
+            'spam4.me', 'throwawaymail.com', 'dispostable.com', 'disposablemail.com', 'disposable.com',
+            'yopmail.com', 'yopmail.fr', 'yopmail.net', 'cool.fr.nf', 'jetable.fr.nf',
+            'courriel.fr.nf', 'moncourrier.fr.nf', 'monemail.fr.nf', 'mega.zik.dj',
+            'trashmail.com', 'trashmail.net', 'trashmail.me', 'rcpt.at', 'curryrasen.de',
+            'fakeinbox.com', 'fakemailgenerator.com', 'emailondeck.com', 'mohmal.com', 'mohmal.in',
+            'mohmal.im', 'getairmail.com', 'airmail.news', 'burnermail.io', 'crazymailing.com',
+            'generator.email', 'dropmail.me', 'inboxkitten.com', 'nada.ltd', 'getnada.com',
+            'internxt.com', 'armyspy.com', 'cuvox.de', 'dayrep.com', 'einrot.com',
+            'fleckens.hu', 'gustr.com', 'jourrapide.com', 'rhyta.com', 'superrito.com',
+            'teleworm.us', 'byom.de', 'trash-mail.com', 'wegwerfmail.de', 'wegwerfmail.net',
+            'mailnesia.com', 'maildrop.cc', 'inboxbear.com', 'inboxlv.com', 'spambog.com',
+            'tempr.email', 'discard.email', 'mailcatch.com', 'mailscrap.com', 'harakirimail.com',
+            'incognitomail.org', 'fakemail.net', 'mytempemail.com', 'zillamail.com', 'trashmail.org',
+            'mailinator.com', 'mailinator2.com', 'binkmail.com', 'safetymail.info', 'suremail.info',
+            'zippymail.info', 'spamfree24.org', 'emailfree.site', 'tempinbox.com',
+            'trashinbox.com', 'anonbox.net', 'burner.email', 'emailfake.com', 'mohmal.tech'
+        ]);
+
+        const DISPOSABLE_KEYWORDS = [
+            'tempmail', 'temp-mail', 'dispostable', 'guerrilla', 'fakeinbox', 'throwaway',
+            '10minute', 'yopmail', 'burnermail', 'trashmail', 'disposable', 'fakemail',
+            'mytemp', 'minuteinbox', 'inboxkitten', 'mohmal', 'sharklasers', 'emailondeck',
+            'dropmail', 'generator.email'
+        ];
+
+        function isDisposableEmail(email) {
+            if (!email || !email.includes('@')) return false;
+            const parts = email.trim().toLowerCase().split('@');
+            if (parts.length !== 2) return false;
+            const domain = parts[1];
+            if (DISPOSABLE_EMAIL_DOMAINS.has(domain)) return true;
+            return DISPOSABLE_KEYWORDS.some(kw => domain.includes(kw));
+        }
+
+        // Inline Error Helpers
+        function showFieldError(input, errorEl, message) {
+            if (input) input.classList.add('is-invalid');
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function clearFieldError(input, errorEl) {
+            if (input) input.classList.remove('is-invalid');
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.style.display = 'none';
+            }
+        }
+
+        function validatePhoneNumber(input, errorEl, isRequired) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                if (isRequired) {
+                    showFieldError(input, errorEl, 'Mobile number is required (must be 10 digits).');
+                    return false;
+                }
+                clearFieldError(input, errorEl);
+                return true;
+            }
+            if (val.length !== 10) {
+                showFieldError(input, errorEl, `Please enter a complete 10-digit number (${val.length}/10 entered).`);
+                return false;
+            }
+            if (!/^[6-9]\d{9}$/.test(val)) {
+                showFieldError(input, errorEl, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.');
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        function validateEmail(input, errorEl, isRequired = false) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                if (isRequired) {
+                    showFieldError(input, errorEl, 'Email address is required.');
+                    return false;
+                }
+                clearFieldError(input, errorEl);
+                return true;
+            }
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(val)) {
+                showFieldError(input, errorEl, 'Please enter a valid email format (e.g. student@gmail.com).');
+                return false;
+            }
+            if (isDisposableEmail(val)) {
+                showFieldError(input, errorEl, 'Temporary or disposable email addresses are not accepted. Please use a valid personal email.');
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        // Live validation listeners
+        if (phoneInput) {
+            phoneInput.addEventListener('blur', () => validatePhoneNumber(phoneInput, phoneError, true));
+            phoneInput.addEventListener('input', () => {
+                if (phoneInput.value.length === 10) {
+                    validatePhoneNumber(phoneInput, phoneError, true);
+                } else if (phoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(phoneInput, phoneError, true);
+                }
+            });
+        }
+
+        if (altPhoneInput) {
+            altPhoneInput.addEventListener('blur', () => validatePhoneNumber(altPhoneInput, altPhoneError, false));
+            altPhoneInput.addEventListener('input', () => {
+                if (altPhoneInput.value.length === 10) {
+                    validatePhoneNumber(altPhoneInput, altPhoneError, false);
+                } else if (altPhoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(altPhoneInput, altPhoneError, false);
+                }
+            });
+        }
+
+        if (emailInput) {
+            emailInput.addEventListener('blur', () => validateEmail(emailInput, emailError, false));
+            emailInput.addEventListener('input', () => {
+                if (emailInput.classList.contains('is-invalid')) {
+                    validateEmail(emailInput, emailError, false);
+                }
+            });
+        }
+
+        form.addEventListener('reset', function () {
+            photoBase64 = '';
+            photoType = '';
+            if (photoPreviewImg) photoPreviewImg.style.display = 'none';
+            if (modalLargePreviewImg) modalLargePreviewImg.src = '';
+            if (photoPlaceholder) photoPlaceholder.style.display = 'flex';
+            if (selectedFileName) selectedFileName.textContent = 'No file chosen';
+            if (photoPreviewBox) {
+                photoPreviewBox.classList.remove('has-photo');
+                photoPreviewBox.setAttribute('title', 'Click to open camera');
+            }
+            if (cameraBtnText) {
+                cameraBtnText.textContent = 'Open Camera';
+            }
+            if (studentPhotoCamera) studentPhotoCamera.value = '';
+            if (studentPhotoGallery) studentPhotoGallery.value = '';
+            clearFieldError(phoneInput, phoneError);
+            clearFieldError(altPhoneInput, altPhoneError);
+            clearFieldError(emailInput, emailError);
+        });
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Validate Phone & Email Before Submitting
+            const isPhoneValid = validatePhoneNumber(phoneInput, phoneError, true);
+            const isAltPhoneValid = validatePhoneNumber(altPhoneInput, altPhoneError, false);
+            const isEmailValid = validateEmail(emailInput, emailError, false);
+
+            if (!isPhoneValid || !isAltPhoneValid || !isEmailValid) {
+                const firstInvalid = [
+                    !isPhoneValid ? phoneInput : null,
+                    !isAltPhoneValid ? altPhoneInput : null,
+                    !isEmailValid ? emailInput : null
+                ].find(Boolean);
+
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstInvalid.focus();
+                }
+                return;
+            }
+
+            // Hide previous alerts
+            successAlert.style.display = 'none';
+            errorAlert.style.display = 'none';
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtnText.textContent = 'Submitting Enquiry...';
+
+            const formData = new FormData(form);
+            const studentName = formData.get('student_name') || 'Applicant';
+
+            // Prepare payload
+            const payload = {
+                auth_token: 'NA_SARAN_ADMISSION_2026_SECURE_TOKEN',
+                hp_website: formData.get('hp_website') || '',
+                timestamp: new Date().toISOString(),
+                student_name: formData.get('student_name'),
+                dob: formData.get('dob'),
+                gender: formData.get('gender'),
+                grade: formData.get('grade'),
+                class: formData.get('grade'),
+                blood_group: formData.get('blood_group'),
+                oral_test: formData.get('oral_test'),
+                father_name: formData.get('father_name'),
+                mother_name: formData.get('mother_name'),
+                phone: formData.get('phone'),
+                alt_phone: formData.get('alt_phone'),
+                email: formData.get('email'),
+                address: formData.get('address'),
+                city: formData.get('city'),
+                prev_school: formData.get('prev_school'),
+                prev_class: formData.get('prev_class'),
+                queries: formData.get('queries'),
+                photo_base64: photoBase64,
+                photo_type: photoType
+            };
+
+            try {
+                // If Google Script URL is provided, send the request
+                if (GOOGLE_SCRIPT_WEBAPP_URL && GOOGLE_SCRIPT_WEBAPP_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE') {
+                    await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams(payload).toString()
+                    });
+                }
+
+                // Populate success receipt
+                const pName = formData.get('father_name') || formData.get('mother_name') || 'Parent / Guardian';
+                const gradeVal = formData.get('grade') || 'Selected Grade';
+                const phoneVal = formData.get('phone') || '';
+                const oralTestVal = formData.get('oral_test') || 'No';
+
+                const subParent = document.getElementById('submittedParentName');
+                if (subParent) subParent.textContent = pName;
+                if (submittedStudentName) submittedStudentName.textContent = studentName;
+                const subGrade = document.getElementById('submittedGrade');
+                if (subGrade) subGrade.textContent = gradeVal;
+
+                const rStudent = document.getElementById('receiptStudent');
+                if (rStudent) rStudent.textContent = studentName;
+                const rGrade = document.getElementById('receiptGrade');
+                if (rGrade) rGrade.textContent = gradeVal;
+                const rParent = document.getElementById('receiptParent');
+                if (rParent) rParent.textContent = pName;
+                const rPhone = document.getElementById('receiptPhone');
+                if (rPhone) rPhone.textContent = phoneVal;
+                const rOral = document.getElementById('receiptOralTest');
+                if (rOral) rOral.textContent = oralTestVal;
+                const rTime = document.getElementById('receiptTime');
+                if (rTime) {
+                    rTime.textContent = new Date().toLocaleString('en-IN', {
+                        dateStyle: 'medium',
+                        timeStyle: 'short'
+                    });
+                }
+
+                // Hide form and display success receipt
+                form.style.display = 'none';
+                successAlert.style.display = 'block';
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (err) {
+                console.error('Submission error:', err);
+                document.getElementById('formErrorMessage').textContent =
+                    'There was an unexpected error submitting your enquiry. Please try again or reach out to our admission helpdesk directly.';
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'Submit Enquiry';
+            }
+        });
+
+        // Submit Another Application Handler
+        const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+        if (submitAnotherBtn) {
+            submitAnotherBtn.addEventListener('click', () => {
+                form.reset();
+                photoBase64 = '';
+                photoType = '';
+                if (photoPreviewImg) photoPreviewImg.style.display = 'none';
+                if (photoPlaceholder) photoPlaceholder.style.display = 'flex';
+                if (selectedFileName) selectedFileName.textContent = 'No file chosen';
+                form.style.display = 'block';
+                successAlert.style.display = 'none';
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    </script>
+</body>
+
+</html>

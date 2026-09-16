@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Contact Us - National Academy Saran</title>
+    <title>Official Contact & Campus Directory | National Academy Saran</title>
     <meta name="description"
-        content="Contact National Academy, Taraiya, Saran, Bihar. Submit online admission forms, feedback & grievance forms, campus location map, and direct helplines.">
+        content="Official Contact & Campus Directory for National Academy, Taraiya, Saran, Bihar. Campus location, visiting hours, departmental helplines, and online forms access.">
 
     <!-- Mobile Web App & Theme Color -->
-    <meta name="theme-color" content="#050a30" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f4f6fc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Contact Us - National Academy Saran">
+    <meta property="og:title" content="Official Contact & Campus Directory | National Academy Saran">
     <meta property="og:description"
-        content="Reach out to National Academy Saran. Admissions, feedback form, campus directions, and helplines.">
+        content="Reach out to National Academy, Taraiya, Saran. Official campus directions, departmental desks, office hours, and online forms.">
     <meta property="og:image" content="assets/school-logo.png">
 
     <!-- Favicon -->
@@ -44,10 +43,10 @@
         <div class="glow-orb glow-2"></div>
     </div>
 
-    <!-- Top Minimal Navigation -->
+    <!-- Top Navigation Header -->
     <header class="site-header">
         <div class="header-inner">
-            <a href="#" class="brand-link" id="brandLink">
+            <a href="index.html" class="brand-link" id="brandLink" title="National Academy Saran">
                 <img src="assets/school-logo.png" alt="National Academy Logo" class="brand-logo" loading="eager">
                 <div class="brand-text">
                     <h1>National Academy</h1>
@@ -55,10 +54,26 @@
                 </div>
             </a>
 
-            <div>
-                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme"
+            <!-- Desktop Nav Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home/index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="home/index.html#about" class="nav-link">About</a></li>
+                <li><a href="home/index.html#academics" class="nav-link">Academics</a></li>
+                <li><a href="home/index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="home/index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="form/index.html" class="nav-link">Forms</a></li>
+                <li><a href="index.html" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Theme"
                     aria-label="Toggle Dark and Light Theme">
                     <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+
+                <button type="button" id="mobileMenuBtn" class="mobile-toggle-btn" title="Open Navigation Menu"
+                    aria-label="Open Navigation Menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
                 </button>
             </div>
         </div>
@@ -67,167 +82,248 @@
     <!-- Main Content Container -->
     <main class="main-container">
 
-        <!-- Minimal Header Section -->
+        <!-- Page Header Section -->
         <section class="page-intro">
             <div class="page-badge">
-                <i class="fas fa-envelope-open-text"></i> Contact & Inquiries
+                <i class="fas fa-building-columns"></i> Official Campus Directory &amp; Office Desk
             </div>
-            <h2 class="page-title">National Academy</h2>
+            <h2 class="page-title">Contact &amp; Campus Directory</h2>
             <p class="page-desc">
-                Have an inquiry or request? Access admission and feedback forms, explore our campus location, or connect
-                directly with our office.
+                Have an enquiry, planning a campus visit, or need administrative assistance? Connect directly with our departmental desks, explore campus directions in Taraiya, or access official office hours.
             </p>
         </section>
 
-        <!-- The 3 Core Boxes Grid -->
-        <section class="cards-grid" aria-label="Services & Campus Location">
+        <!-- Main 2-Column Campus Directory & Communication Hub -->
+        <div class="contact-hub-grid">
 
-            <!-- Box 1: Admission Enquiry Form -->
-            <article class="feature-card" id="admissionCard">
-                <div class="card-header">
-                    <div class="card-icon-wrap">
-                        <i class="fas fa-file-signature"></i>
+            <!-- Column 1: Campus Location & Visiting Desk -->
+            <div class="contact-hub-col">
+                <article class="contact-hub-card" id="campusLocationCard">
+                    <div class="card-header">
+                        <div class="card-icon-wrap">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <span class="card-badge">Taraiya, Saran</span>
                     </div>
-                    <span class="card-badge">2026–27 Session</span>
-                </div>
-                <h3>Admission Enquiry Form</h3>
-                <p>Apply for new student admissions or submit your enrollment inquiry online directly to our admissions
-                    committee.</p>
-                <a href="https://forms.gle/efnVTqDJbvzvwEXW7" target="_blank" rel="noopener noreferrer"
-                    class="card-btn btn-brand-outline" id="admissionBtn">
-                    <span>Fill Admission Enquiry Form</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
+                    <h3>Campus Location &amp; Directions</h3>
 
-            <!-- Box 2: Complaint & Feedback Form -->
-            <article class="feature-card" id="feedbackCard">
-                <div class="card-header">
-                    <div class="card-icon-wrap">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <span class="card-badge">Student & Parent Voice</span>
-                </div>
-                <h3>Complaint & Feedback</h3>
-                <p>Share your valuable suggestions, general feedback, or submit grievance matters directly to school
-                    administration.</p>
-                <a href="https://forms.gle/EGjkVovPbxakk7jCA" target="_blank" rel="noopener noreferrer"
-                    class="card-btn btn-brand-outline" id="feedbackBtn">
-                    <span>Submit Feedback</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
-
-            <!-- Box 3: Campus Location with Interactive Mini Map -->
-            <article class="feature-card map-card" id="locationCard" onclick="openLocationModal()"
-                title="Click to expand campus map">
-                <div class="card-header">
-                    <div class="card-icon-wrap">
-                        <i class="fas fa-map-location-dot"></i>
-                    </div>
-                    <span class="card-badge">Taraiya, Saran</span>
-                </div>
-                <h3>Campus Location</h3>
-
-                <!-- Live Mini Map Preview (Local Snapshot with Expand Action) -->
-                <div class="mini-map-viewport">
-                    <img src="assets/campus-map-preview.png" alt="National Academy Taraiya Campus Map Preview" class="mini-map-img" loading="lazy">
-                    <div class="map-pin-indicator" title="National Academy Campus Location">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <div class="map-expand-overlay">
-                        <div class="map-expand-pill">
-                            <i class="fas fa-expand-alt"></i> Click to Expand Map
+                    <!-- Interactive Mini Map Preview (Expands to Modal on click) -->
+                    <div class="mini-map-viewport" onclick="openLocationModal()" title="Click to view interactive campus map" style="cursor: pointer; margin-bottom: 1.25rem;">
+                        <img src="assets/campus-map-preview.png" alt="National Academy Taraiya Campus Map Preview" class="mini-map-img" loading="lazy">
+                        <div class="map-pin-indicator" title="National Academy Campus Location">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="map-expand-overlay">
+                            <div class="map-expand-pill">
+                                <i class="fas fa-expand-alt"></i> Click to Expand Map
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mini-address-text" title="Shahnewazpur, State Highway 73, Marhaurah Taraiya Road, Taraiya">
-                    <i class="fas fa-location-dot" style="color: #ea4335; margin-right: 6px; flex-shrink: 0;"></i>
-                    <span>Shahnewazpur, SH-73, Taraiya, Saran</span>
-                </div>
+                    <!-- Postal Address & Landmarks -->
+                    <div class="campus-address-card">
+                        <div class="campus-address-row">
+                            <i class="fas fa-location-dot address-pin-icon"></i>
+                            <div>
+                                <h4>Official Campus Address</h4>
+                                <p id="fullAddressStr">Shahnewazpur, State Highway 73, Marhaurah–Taraiya Road, Taraiya, Saran, Bihar – 841424</p>
+                                <span class="landmark-text">
+                                    <i class="fas fa-route"></i> Landmark: Directly situated on SH-73 (Marhaurah–Taraiya Route)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="campus-address-actions">
+                            <button type="button" class="btn-sm-action btn-brand-outline" onclick="copyAddressText()" id="copyAddressBtn">
+                                <i class="far fa-copy"></i> Copy Address
+                            </button>
+                            <a href="https://www.google.com/maps/search/?api=1&query=National+Academy,+Taraiya,+Saran,+Bihar+841424"
+                                target="_blank" rel="noopener noreferrer" class="btn-sm-action btn-brand-solid" id="openExternalMapsBtn">
+                                <i class="fas fa-diamond-turn-right"></i> Open in Maps App
+                            </a>
+                        </div>
+                    </div>
 
-                <button type="button" class="card-btn btn-brand-outline" id="expandMapBtn">
-                    <span>View Full Map & Directions</span>
-                    <i class="fas fa-expand"></i>
-                </button>
-            </article>
-
-        </section>
-
-        <!-- Direct Contact & Helpline Section -->
-        <section class="contact-section" aria-labelledby="helpline-title">
-            <h3 id="helpline-title" class="contact-section-title">
-                <i class="fas fa-headset"></i> Direct Helplines & Office Desk
-            </h3>
-
-            <div class="contact-grid">
-                <!-- Accounts Office (Primary Helpline ending with 60033) -->
-                <div class="contact-tile">
-                    <div class="tile-icon icon-phone">
-                        <i class="fas fa-phone-alt"></i>
+                    <!-- Campus Visiting Protocol & Hours -->
+                    <div class="campus-visiting-card">
+                        <div class="visiting-card-title">
+                            <i class="fas fa-clock-rotate-left"></i>
+                            <span>Campus Visiting Hours &amp; Protocol</span>
+                        </div>
+                        <ul class="visiting-hours-list">
+                            <li>
+                                <strong><i class="far fa-clock"></i> General Office Hours:</strong>
+                                <span>Monday – Saturday: 8:00 AM – 3:30 PM (Closed on Sundays &amp; Public Holidays)</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-user-tie"></i> Principal &amp; Management Consultations:</strong>
+                                <span>10:30 AM – 1:00 PM (Prior appointment recommended via office phone)</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-shield-halved"></i> Visitor Protocol:</strong>
+                                <span>For child safety, all parents and visitors must check in at the main gate reception desk upon arrival.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="tile-details">
-                        <div class="tile-label">Accounts Office</div>
-                        <a href="tel:+919771760033" class="tile-value" style="text-decoration: none;">+91 97717
-                            60033</a>
-                    </div>
-                    <button type="button" class="copy-btn" onclick="copyText('+919771760033', 'Accounts Office')"
-                        title="Copy Phone Number" aria-label="Copy Accounts Office Number">
-                        <i class="far fa-copy"></i>
-                    </button>
-                </div>
-
-                <!-- General Helpdesk (ending with 33600) -->
-                <div class="contact-tile">
-                    <div class="tile-icon icon-phone">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="tile-details">
-                        <div class="tile-label">General Helpdesk</div>
-                        <a href="tel:+918757033600" class="tile-value" style="text-decoration: none;">+91 87570
-                            33600</a>
-                    </div>
-                    <button type="button" class="copy-btn" onclick="copyText('+918757033600', 'General Helpdesk')"
-                        title="Copy Phone Number" aria-label="Copy General Helpdesk Number">
-                        <i class="far fa-copy"></i>
-                    </button>
-                </div>
-
-                <!-- Accounts WhatsApp (Linked to Accounts Office 60033) -->
-                <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer" class="contact-tile"
-                    id="whatsappTile">
-                    <div class="tile-icon icon-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <div class="tile-details">
-                        <div class="tile-label">Accounts WhatsApp</div>
-                        <div class="tile-value">WhatsApp Chat</div>
-                    </div>
-                    <i class="fas fa-arrow-up-right-from-square"
-                        style="color: var(--text-muted); font-size: 0.8rem; margin-right: 0.3rem;"></i>
-                </a>
-
-                <!-- Support Email -->
-                <div class="contact-tile">
-                    <div class="tile-icon icon-email">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="tile-details">
-                        <div class="tile-label">Support Email</div>
-                        <a href="mailto:support.nationalacademysaran@gmail.com" class="tile-email-text"
-                            title="support.nationalacademysaran@gmail.com"
-                            style="text-decoration: none; color: inherit;">support.nationalacademysaran@gmail.com</a>
-                    </div>
-                    <button type="button" class="copy-btn" onclick="copyText('support.nationalacademysaran@gmail.com', 'Support Email')"
-                        title="Copy Email" aria-label="Copy Support Email">
-                        <i class="far fa-copy"></i>
-                    </button>
-                </div>
+                </article>
             </div>
 
-            <!-- Social Links Strip -->
-            <div class="social-strip">
+            <!-- Column 2: Departmental Communication Desks -->
+            <div class="contact-hub-col">
+                <article class="contact-hub-card" id="departmentHelplinesCard">
+                    <div class="card-header">
+                        <div class="card-icon-wrap">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <span class="card-badge">Direct Helplines</span>
+                    </div>
+                    <h3>Departmental Desks &amp; Helplines</h3>
+
+                    <!-- Desk 1: Admissions & Counseling -->
+                    <div class="dept-desk-group">
+                        <div class="dept-desk-header">
+                            <div class="dept-badge"><i class="fas fa-graduation-cap"></i> Admissions Office &amp; Fee Desk</div>
+                            <span class="dept-sub">New enrollments, fee schedule, entrance guidance &amp; campus tours</span>
+                        </div>
+                        <div class="dept-tiles-row">
+                            <div class="contact-tile">
+                                <div class="tile-icon icon-phone">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">Admissions Hotline</div>
+                                    <a href="tel:+919771760033" class="tile-value" style="text-decoration: none;">+91 97717 60033</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyText('+919771760033', 'Admissions Hotline')"
+                                    title="Copy Phone Number" aria-label="Copy Admissions Phone Number">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer" class="contact-tile" id="whatsappTile">
+                                <div class="tile-icon icon-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">Admissions WhatsApp Desk</div>
+                                    <div class="tile-value">Chat Directly on WhatsApp</div>
+                                </div>
+                                <i class="fas fa-arrow-up-right-from-square" style="color: var(--text-muted); font-size: 0.8rem; margin-right: 0.3rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Desk 2: General Administration & Transport -->
+                    <div class="dept-desk-group">
+                        <div class="dept-desk-header">
+                            <div class="dept-badge"><i class="fas fa-building-user"></i> General Administration &amp; Transport</div>
+                            <span class="dept-sub">Student attendance, bus route queries, fee receipts &amp; office services</span>
+                        </div>
+                        <div class="dept-tiles-row">
+                            <div class="contact-tile">
+                                <div class="tile-icon icon-phone">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">General Helpdesk</div>
+                                    <a href="tel:+918757033600" class="tile-value" style="text-decoration: none;">+91 87570 33600</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyText('+918757033600', 'General Helpdesk')"
+                                    title="Copy Phone Number" aria-label="Copy General Helpdesk Number">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="contact-tile">
+                                <div class="tile-icon icon-phone" style="color: #f59e0b; background: rgba(245, 158, 11, 0.12);">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">Working Hours</div>
+                                    <div class="tile-value" style="font-size: 0.92rem;">Mon–Sat • 8:00 AM – 3:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desk 3: Official Electronic Mail -->
+                    <div class="dept-desk-group">
+                        <div class="dept-desk-header">
+                            <div class="dept-badge"><i class="fas fa-envelope-open-text"></i> Official Electronic Mail</div>
+                            <span class="dept-sub">Official communication, parental support &amp; grievance redressal</span>
+                        </div>
+                        <div class="dept-tiles-row">
+                            <div class="contact-tile">
+                                <div class="tile-icon icon-email">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">Parent Support &amp; Grievances</div>
+                                    <a href="mailto:support.nationalacademysaran@gmail.com" class="tile-email-text"
+                                        title="support.nationalacademysaran@gmail.com"
+                                        style="text-decoration: none; color: inherit;">support.nationalacademysaran@gmail.com</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyText('support.nationalacademysaran@gmail.com', 'Support Email')"
+                                    title="Copy Email" aria-label="Copy Support Email">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="contact-tile">
+                                <div class="tile-icon icon-email">
+                                    <i class="fas fa-inbox"></i>
+                                </div>
+                                <div class="tile-details">
+                                    <div class="tile-label">School Administration &amp; Principal</div>
+                                    <a href="mailto:nationalacademysaran@gmail.com" class="tile-email-text"
+                                        title="nationalacademysaran@gmail.com"
+                                        style="text-decoration: none; color: inherit;">nationalacademysaran@gmail.com</a>
+                                </div>
+                                <button type="button" class="copy-btn" onclick="copyText('nationalacademysaran@gmail.com', 'School Email')"
+                                    title="Copy Email" aria-label="Copy School Email">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+
+        <!-- Central Online Forms Portal Gateway Banner -->
+        <section class="forms-gateway-banner" aria-label="Central Online Forms Directory">
+            <div class="forms-gateway-content">
+                <div class="forms-gateway-icon-wrap">
+                    <i class="fas fa-folder-tree"></i>
+                </div>
+                <div class="forms-gateway-text">
+                    <div class="forms-gateway-badge">
+                        <i class="fas fa-laptop-file"></i> 24/7 Digital Self-Service
+                    </div>
+                    <h3>Need to Submit an Official Application or Form?</h3>
+                    <p>
+                        Save time without visiting the school office. Submit student admission applications, share parent feedback, explore teaching careers, or request alumni certificates directly through our official online forms directory.
+                    </p>
+                    <div class="forms-gateway-chips">
+                        <span class="gateway-chip"><i class="fas fa-check"></i> Admissions (2026–27)</span>
+                        <span class="gateway-chip"><i class="fas fa-check"></i> Parent Feedback &amp; Grievances</span>
+                        <span class="gateway-chip"><i class="fas fa-check"></i> General Inquiries, Careers &amp; Records</span>
+                    </div>
+                </div>
+            </div>
+            <div class="forms-gateway-action">
+                <a href="form/index.html" class="btn-gateway-portal" id="exploreFormsPortalBtn" title="Go to Official Forms Directory">
+                    <span>Explore Online Forms</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Media & Digital Channels Strip -->
+        <section class="contact-section" style="padding: 1.25rem 1rem; text-align: center; overflow: hidden;" aria-label="Official Social Channels">
+            <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-title); margin-bottom: 0.35rem;">
+                <i class="fas fa-globe" style="color: var(--brand-blue); margin-right: 0.4rem;"></i> Connect with National Academy Online
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 1rem 0;">Follow our official school social handles for campus news, celebrations, and circulars.</p>
+            <div class="social-strip" style="margin-top: 0; padding-top: 0; border-top: none;">
                 <a href="https://www.nationalacademysaran.com" target="_blank" rel="noopener noreferrer"
                     class="social-chip chip-web">
                     <i class="fas fa-globe"></i> Website
@@ -307,44 +403,86 @@
         </div>
     </div>
 
-    <!-- Minimal Footer -->
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-logo-row">
             <img src="assets/school-logo.png" alt="National Academy Emblem">
             <span>National Academy Saran</span>
         </div>
-        <p>&copy; 2026 National Academy. Taraiya, Saran, Bihar - 841424.</p>
+        <p>Shahnewazpur, State Highway 73, Taraiya, Saran, Bihar - 841424.</p>
+        <p style="margin-top: 0.35rem; color: var(--text-muted); font-size: 0.82rem;">
+            Helplines: <a href="tel:+919771760033" style="color: inherit; text-decoration: none;">+91 97717 60033</a> | 
+            Email: <a href="mailto:support.nationalacademysaran@gmail.com" style="color: inherit; text-decoration: none;">support.nationalacademysaran@gmail.com</a>
+        </p>
+        <p style="margin-top: 0.75rem;">
+            &copy; 2026 National Academy. All Rights Reserved.
+        </p>
     </footer>
 
     <!-- Interactive Script -->
     <script>
-        // Theme Management (Light #f4f6fc & Dark #050a30)
+        // Theme Management (Default: Bright Light governed by style.css :root)
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const themeIcon = document.getElementById('themeIcon');
 
-        function setTheme(theme) {
+        function applyTheme(theme) {
             if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('na_theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
             } else {
                 document.documentElement.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('na_theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
             }
         }
 
-        const savedTheme = localStorage.getItem('na_theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
+        // Clear legacy automatic dark storage so all pages default to bright light
+        if (localStorage.getItem('na_theme') === 'dark' && !localStorage.getItem('na_user_theme')) {
+            localStorage.removeItem('na_theme');
         }
 
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            setTheme(isDark ? 'light' : 'dark');
-        });
+        // Apply explicit user preference if manually chosen, otherwise default to CSS :root (Bright Light)
+        const userTheme = localStorage.getItem('na_user_theme');
+        if (userTheme === 'dark') {
+            applyTheme('dark');
+        } else if (userTheme === 'light') {
+            applyTheme('light');
+        } else {
+            applyTheme('default');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('na_user_theme', nextTheme);
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('active');
+                menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuIcon.className = 'fas fa-bars';
+                });
+            });
+        }
 
         // Location Modal Open / Close
         const locationModal = document.getElementById('locationModal');

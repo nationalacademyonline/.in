@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>General Enquiry Form | National Academy Saran</title>
+    <meta name="description"
+        content="Official General Purpose Enquiry, Career Application & Institutional Collaboration Portal for National Academy, Taraiya, Saran, Bihar. Connect for jobs, partnerships, or official inquiries.">
+
+    <!-- Mobile Web App & Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="General Enquiry Form | National Academy Saran">
+    <meta property="og:description"
+        content="Official multi-purpose portal: submit career applications, institutional partnership proposals, vendor inquiries, or alumni record requests.">
+    <meta property="og:image" content="../assets/school-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/school-logo.png">
+    <link rel="apple-touch-icon" href="../assets/school-logo.png">
+
+    <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- Master Design System Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Ambient Subtle Glow -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="glow-orb glow-1"></div>
+        <div class="glow-orb glow-2"></div>
+    </div>
+
+    <!-- Institutional Standard Header (All 7 Links) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand-link" id="brandLink" title="National Academy Saran">
+                <img src="../assets/school-logo.png" alt="National Academy Logo" class="brand-logo" loading="eager">
+                <div class="brand-text">
+                    <h1>National Academy</h1>
+                    <span>Saran, Bihar</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../home/index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="../home/index.html#about" class="nav-link">About</a></li>
+                <li><a href="../home/index.html#academics" class="nav-link">Academics</a></li>
+                <li><a href="../home/index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="../home/index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html" class="nav-link active">Forms</a></li>
+                <li><a href="../index.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <button type="button" id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Dark/Light Theme"
+                    aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button type="button" id="mobileMenuBtn" class="mobile-toggle-btn" title="Open Navigation Menu"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container (Middle Aligned) -->
+    <main class="main-container">
+        <div class="form-shell">
+
+            <!-- Page Intro (Centered & Middle Aligned) -->
+            <section class="page-intro" style="margin-bottom: 2rem;">
+                <div class="page-badge">
+                    <i class="fas fa-layer-group"></i> Official Multi-Purpose Portal
+                </div>
+                <h2 class="page-title">General Enquiry Form</h2>
+                <p class="page-desc">
+                    Welcome to the National Academy general enquiry desk. Use this form to apply for teaching and staff careers, propose educational partnerships, present vendor supplies, request alumni documents, or communicate with our leadership team on any official matter.
+                </p>
+            </section>
+
+            <!-- Success Alert Notification & Detailed Receipt Card -->
+            <div class="status-alert alert-success" id="successAlert" role="alert" style="display: none;">
+                <h4>
+                    <i class="fas fa-circle-check"></i>
+                    <span>Enquiry Submitted Successfully!</span>
+                </h4>
+                <p>
+                    Thank you, <strong id="submittedPersonName">Applicant</strong>. Your <span id="submittedCategoryBadge" style="font-weight: 700; color: var(--brand-blue);">enquiry</span>
+                    has been securely logged. A confirmation has been registered with reference tracking ID <strong id="submittedTicketId" style="color: var(--brand-blue);">GEN-2026-XXXX</strong>. Our administrative desk will review your submission and contact you promptly.
+                </p>
+
+                <!-- Structured Submission Receipt Card -->
+                <div class="success-receipt">
+                    <div class="receipt-row">
+                        <span class="receipt-label">Reference Ticket ID:</span>
+                        <span class="receipt-val" id="receiptTicketId" style="color: var(--brand-blue);"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Contact Person / Name:</span>
+                        <span class="receipt-val" id="receiptName"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Nature / Category:</span>
+                        <span class="receipt-val" id="receiptCategory"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Contact Phone:</span>
+                        <span class="receipt-val" id="receiptPhone"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Email Address:</span>
+                        <span class="receipt-val" id="receiptEmail"></span>
+                    </div>
+                    <div class="receipt-row" id="receiptOrgRow" style="display: none;">
+                        <span class="receipt-label" id="receiptOrgLabel">Organization / Specifics:</span>
+                        <span class="receipt-val" id="receiptOrgVal"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Submission Time:</span>
+                        <span class="receipt-val" id="receiptTime"></span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="button" class="btn-submit" id="submitAnotherBtn" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+                        <i class="fas fa-redo"></i> Submit Another Enquiry
+                    </button>
+                    <a href="index.html" class="btn-reset" style="padding: 0.55rem 1.25rem; font-size: 0.85rem; text-decoration: none;">
+                        <i class="fas fa-folder-open"></i> Back to All Forms
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error Alert Banner -->
+            <div class="status-alert alert-error" id="errorAlert" role="alert" style="display: none;">
+                <h4>
+                    <i class="fas fa-circle-exclamation"></i>
+                    <span>Submission Notice</span>
+                </h4>
+                <p id="formErrorMessage">
+                    There was an issue submitting your enquiry. Please verify your connection and try again, or call our school office desk directly at
+                    <a href="tel:+919771760033" style="color: inherit; font-weight: 700;">+91 97717 60033</a>.
+                </p>
+            </div>
+
+            <!-- Form Container Card -->
+            <div class="form-card" id="formCard">
+                <form id="generalEnquiryForm" novalidate autocomplete="on">
+
+                    <!-- Anti-Spam Hidden Honeypot Trap -->
+                    <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+                        <label for="hp_website">Leave this field blank</label>
+                        <input type="text" id="hp_website" name="hp_website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <!-- ==========================================================
+                         SECTION 1: CONTACT IDENTIFICATION
+                         ========================================================== -->
+                    <div class="form-section-title">
+                        <i class="fas fa-id-card"></i>
+                        <span>1. Contact Person & Identification</span>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">
+                                Full Name / Contact Person <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="fullName" name="full_name" class="form-control"
+                                placeholder="Enter your full name" required autocomplete="name">
+                            <div class="field-error-msg" id="fullNameError">Please enter your full name (at least 2 letters).</div>
+                        </div>
+
+                        <!-- Mobile Number (10 digits) -->
+                        <div class="form-group">
+                            <label for="contactPhone" class="form-label">
+                                Mobile Number (WhatsApp) <span class="required-star">*</span>
+                            </label>
+                            <input type="tel" id="contactPhone" name="phone" class="form-control"
+                                placeholder="10-digit mobile number" maxlength="10" required autocomplete="tel">
+                            <div class="field-error-msg" id="contactPhoneError">Please enter a valid 10-digit Indian mobile number.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- Email Address -->
+                        <div class="form-group">
+                            <label for="contactEmail" class="form-label">
+                                Email Address <span class="required-star">*</span>
+                            </label>
+                            <input type="email" id="contactEmail" name="email" class="form-control"
+                                placeholder="e.g. yourname@domain.com" required autocomplete="email">
+                            <div class="field-error-msg" id="contactEmailError">Please enter a valid personal or organizational email.</div>
+                        </div>
+
+                        <!-- City / Location -->
+                        <div class="form-group">
+                            <label for="cityLocation" class="form-label">
+                                City / Town & State <span class="required-star">*</span>
+                            </label>
+                            <input type="text" id="cityLocation" name="city_location" class="form-control"
+                                placeholder="e.g. Taraiya, Saran, Bihar" required>
+                            <div class="field-error-msg" id="cityLocationError">Please state your city or district.</div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================================
+                         SECTION 2: PURPOSE OF INQUIRY & CONTEXTUAL DETAILS
+                         ========================================================== -->
+                    <div class="form-section-title" style="margin-top: 1.75rem;">
+                        <i class="fas fa-list-check"></i>
+                        <span>2. Purpose of Your Inquiry</span>
+                    </div>
+
+                    <!-- Primary Purpose Dropdown -->
+                    <div class="form-group">
+                        <label for="enquiryCategory" class="form-label">
+                            Primary Purpose of Inquiry <span class="required-star">*</span>
+                        </label>
+                        <select id="enquiryCategory" name="category" class="form-control" required>
+                            <option value="">-- Choose Purpose of Inquiry --</option>
+                            <option value="Career / Job Application">Career / Job Application (Teaching, Staff, Admin, Driver)</option>
+                            <option value="Institutional Collaboration & Events">Institutional Collaboration (Workshops, Health Camps, Competitions, CSR)</option>
+                            <option value="Vendor & Business Proposal">Vendor &amp; Supplier Proposal (Books, Uniforms, Lab, IT, Furniture)</option>
+                            <option value="Alumni & Student Record Request">Alumni &amp; Records (Duplicate TC, Marksheet, Verification)</option>
+                            <option value="General Inquiry & Public Communication">General Inquiry / Community Communication / Other</option>
+                        </select>
+                        <div class="field-error-msg" id="enquiryCategoryError">Please select the primary purpose of your enquiry.</div>
+                    </div>
+
+                    <!-- Dynamic Helper Notice (when no category is selected) -->
+                    <div id="purposeHelperNotice" class="purpose-helper-notice">
+                        <i class="fas fa-hand-pointer"></i>
+                        Please select a purpose from the dropdown above to load the relevant sub-categories and details.
+                    </div>
+
+                    <!-- ==========================================================
+                         CONTEXTUAL DYNAMIC DETAIL SECTIONS (Populated by Purpose)
+                         ========================================================== -->
+
+                    <!-- 2A: Career & Job Application Fields -->
+                    <div class="conditional-section" id="careerSection">
+                        <div class="conditional-section-header">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Career &amp; Employment Details</span>
+                        </div>
+
+                        <div class="form-row">
+                            <!-- Sub-Category: Position Applied -->
+                            <div class="form-group">
+                                <label for="careerRole" class="form-label">
+                                    Sub-Category: Position / Role Applying For <span class="required-star">*</span>
+                                </label>
+                                <select id="careerRole" name="career_role" class="form-control">
+                                    <option value="">-- Choose Position / Role --</option>
+                                    <optgroup label="Teaching Faculty">
+                                        <option value="Pre-Primary / Nursery Mother Teacher">Pre-Primary / Nursery Mother Teacher</option>
+                                        <option value="PRT (Primary Teacher: Classes 1 to 5 - All Subjects)">PRT (Primary Teacher: Classes 1 to 5 - All Subjects)</option>
+                                        <option value="TGT: Mathematics (Classes 6 to 10)">TGT: Mathematics (Classes 6 to 10)</option>
+                                        <option value="TGT: Science (Physics, Chemistry, Biology)">TGT: Science (Physics, Chemistry, Biology)</option>
+                                        <option value="TGT: English Language &amp; Literature">TGT: English Language &amp; Literature</option>
+                                        <option value="TGT: Hindi &amp; Sanskrit">TGT: Hindi &amp; Sanskrit</option>
+                                        <option value="TGT: Social Science (History, Civics, Geography)">TGT: Social Science (History, Civics, Geography)</option>
+                                        <option value="Computer Science / IT &amp; Coding Teacher">Computer Science / IT &amp; Coding Teacher</option>
+                                        <option value="Physical Education Teacher (PET) / Sports Coach">Physical Education Teacher (PET) / Sports Coach</option>
+                                        <option value="Art, Craft, Music &amp; Dance Instructor">Art, Craft, Music &amp; Dance Instructor</option>
+                                    </optgroup>
+                                    <optgroup label="Administrative &amp; Campus Staff">
+                                        <option value="Front Desk Executive / Receptionist">Front Desk Executive / Receptionist</option>
+                                        <option value="Accountant / Fee Clerk / Office Administrator">Accountant / Fee Clerk / Office Administrator</option>
+                                        <option value="Science Lab Assistant / Librarian">Science Lab Assistant / Librarian</option>
+                                        <option value="School Bus / Van Driver">School Bus / Van Driver</option>
+                                        <option value="Campus Security &amp; Support Staff">Campus Security &amp; Support Staff</option>
+                                        <option value="Other School Role">Other School Role</option>
+                                    </optgroup>
+                                </select>
+                                <div class="field-error-msg" id="careerRoleError">Please select the position you are applying for.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="careerQualification" class="form-label">
+                                    Highest Educational Qualification <span class="required-star">*</span>
+                                </label>
+                                <input type="text" id="careerQualification" name="career_qualification" class="form-control"
+                                    placeholder="e.g. B.Ed, M.Sc (Math), B.A (English), D.El.Ed, MCA">
+                                <div class="field-error-msg" id="careerQualificationError">Please state your highest degree or diploma.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="careerExperience" class="form-label">
+                                    Years of Relevant Experience <span class="required-star">*</span>
+                                </label>
+                                <select id="careerExperience" name="career_experience" class="form-control">
+                                    <option value="">-- Choose Experience Level --</option>
+                                    <option value="Fresher (0 years / Passionate Aspirant)">Fresher (0 years / Passionate Aspirant)</option>
+                                    <option value="1 – 2 Years">1 – 2 Years</option>
+                                    <option value="3 – 5 Years">3 – 5 Years</option>
+                                    <option value="5 – 10 Years">5 – 10 Years</option>
+                                    <option value="10+ Years (Senior / Veteran Educator)">10+ Years (Senior / Veteran Educator)</option>
+                                </select>
+                                <div class="field-error-msg" id="careerExperienceError">Please indicate your experience level.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="careerNotice" class="form-label">
+                                    Availability / Expected Joining
+                                </label>
+                                <select id="careerNotice" name="career_notice" class="form-control">
+                                    <option value="Immediate Joining">Immediate Joining (Within 7 days)</option>
+                                    <option value="15 Days Notice">15 Days Notice</option>
+                                    <option value="1 Month Notice">1 Month Notice</option>
+                                    <option value="From Next Academic Term">From Next Academic Term (2026–27)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="careerResumeLink" class="form-label">
+                                Resume / CV Link (Google Drive / LinkedIn / Cloud Link)
+                            </label>
+                            <input type="url" id="careerResumeLink" name="career_resume_link" class="form-control"
+                                placeholder="https://drive.google.com/... or LinkedIn Profile URL">
+                            <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                Ensure Google Drive link sharing is set to "Anyone with the link can view".
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2B: Institutional Collaboration Fields -->
+                    <div class="conditional-section" id="collabSection">
+                        <div class="conditional-section-header">
+                            <i class="fas fa-handshake"></i>
+                            <span>Collaboration &amp; Partnership Details</span>
+                        </div>
+
+                        <div class="form-row">
+                            <!-- Sub-Category: Collaboration Nature -->
+                            <div class="form-group">
+                                <label for="collabType" class="form-label">
+                                    Sub-Category: Collaboration Nature &amp; Focus <span class="required-star">*</span>
+                                </label>
+                                <select id="collabType" name="collab_type" class="form-control">
+                                    <option value="">-- Choose Collaboration Nature --</option>
+                                    <option value="Student Educational Workshop / Career Guidance">Student Educational Workshop / Career Guidance</option>
+                                    <option value="Free Health / Eye / Dental Screening Camp">Free Health / Eye / Dental Screening Camp</option>
+                                    <option value="Inter-School Sports / Athletic Tournament">Inter-School Sports / Athletic Tournament</option>
+                                    <option value="Science, STEM &amp; Robotics Exhibition">Science, STEM &amp; Robotics Exhibition</option>
+                                    <option value="Environmental, Tree Plantation &amp; CSR Campaign">Environmental, Tree Plantation &amp; CSR Campaign</option>
+                                    <option value="Cultural, Debate &amp; Quiz Festival">Cultural, Debate &amp; Quiz Festival</option>
+                                    <option value="Media &amp; Press Feature">Media &amp; Press Feature</option>
+                                    <option value="Other Collaborative Initiative">Other Collaborative Initiative</option>
+                                </select>
+                                <div class="field-error-msg" id="collabTypeError">Please specify the purpose of the collaboration.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="collabOrgType" class="form-label">
+                                    Organization / Agency Type
+                                </label>
+                                <select id="collabOrgType" name="collab_org_type" class="form-control">
+                                    <option value="NGO / Non-Profit Welfare Organization">NGO / Non-Profit Welfare Organization</option>
+                                    <option value="Hospital / Medical Clinic / Healthcare">Hospital / Medical Clinic / Healthcare</option>
+                                    <option value="University / College / EdTech Partner">University / College / EdTech Partner</option>
+                                    <option value="Sports Club / Academy">Sports Club / Academy</option>
+                                    <option value="Government / District Administration">Government / District Administration</option>
+                                    <option value="Other Institution">Other Institution</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="collabOrgName" class="form-label">
+                                    Organization / Institution / Agency Name <span class="required-star">*</span>
+                                </label>
+                                <input type="text" id="collabOrgName" name="collab_org_name" class="form-control"
+                                    placeholder="e.g. Saran Health Mission or Rotary Club Saran">
+                                <div class="field-error-msg" id="collabOrgNameError">Please enter your organization name.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="collabTimeline" class="form-label">
+                                    Proposed Timeline / Preferred Month
+                                </label>
+                                <input type="text" id="collabTimeline" name="collab_timeline" class="form-control"
+                                    placeholder="e.g. October 2026 or Next Term">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2C: Vendor / Supplier Proposal Fields -->
+                    <div class="conditional-section" id="vendorSection">
+                        <div class="conditional-section-header">
+                            <i class="fas fa-truck-ramp-box"></i>
+                            <span>Vendor, Supplier &amp; Contractor Details</span>
+                        </div>
+
+                        <div class="form-row">
+                            <!-- Sub-Category: Product / Service Domain -->
+                            <div class="form-group">
+                                <label for="vendorDomain" class="form-label">
+                                    Sub-Category: Product / Service Domain <span class="required-star">*</span>
+                                </label>
+                                <select id="vendorDomain" name="vendor_domain" class="form-control">
+                                    <option value="">-- Choose Product / Service Category --</option>
+                                    <option value="Textbooks, Notebooks &amp; Library Supplies">Textbooks, Notebooks &amp; Library Supplies</option>
+                                    <option value="School Uniforms, Shoes, Belts &amp; Winter Blazers">School Uniforms, Shoes, Belts &amp; Winter Blazers</option>
+                                    <option value="Smart Classroom Panels, IT Hardware &amp; Laptops">Smart Classroom Panels, IT Hardware &amp; Laptops</option>
+                                    <option value="Science Laboratory Apparatus &amp; Chemicals">Science Laboratory Apparatus &amp; Chemicals</option>
+                                    <option value="Classroom Desks, Benches &amp; Dual Furniture">Classroom Desks, Benches &amp; Dual Furniture</option>
+                                    <option value="School Bus Fleet Supply, Maintenance &amp; GPS">School Bus Fleet Supply, Maintenance &amp; GPS</option>
+                                    <option value="Campus CCTV, Security &amp; Safety Infrastructure">Campus CCTV, Security &amp; Safety Infrastructure</option>
+                                    <option value="Sports Kits, Playground Equipment &amp; Games">Sports Kits, Playground Equipment &amp; Games</option>
+                                    <option value="Printing, Stationeries &amp; Institutional Supplies">Printing, Stationeries &amp; Institutional Supplies</option>
+                                    <option value="Other Specialized School Supplies">Other Specialized School Supplies</option>
+                                </select>
+                                <div class="field-error-msg" id="vendorDomainError">Please select your primary product or service domain.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vendorCompanyName" class="form-label">
+                                    Company / Agency / Firm Name <span class="required-star">*</span>
+                                </label>
+                                <input type="text" id="vendorCompanyName" name="vendor_company_name" class="form-control"
+                                    placeholder="e.g. Saran Educational Publishers Pvt Ltd">
+                                <div class="field-error-msg" id="vendorCompanyNameError">Please provide your business or firm name.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vendorWebsite" class="form-label">
+                                Company Website or Digital Catalog Link (Optional)
+                            </label>
+                            <input type="url" id="vendorWebsite" name="vendor_website" class="form-control"
+                                placeholder="https://www.yourcompany.com or Drive catalog link">
+                        </div>
+                    </div>
+
+                    <!-- 2D: Alumni & Student Record Request Fields -->
+                    <div class="conditional-section" id="alumniSection">
+                        <div class="conditional-section-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Alumni &amp; Student Record Request Details</span>
+                        </div>
+
+                        <div class="form-row">
+                            <!-- Sub-Category: Document Type -->
+                            <div class="form-group">
+                                <label for="alumniDocType" class="form-label">
+                                    Sub-Category: Certificate / Service Requested <span class="required-star">*</span>
+                                </label>
+                                <select id="alumniDocType" name="alumni_doc_type" class="form-control">
+                                    <option value="">-- Choose Document Requested --</option>
+                                    <option value="Transfer Certificate (TC) Duplicate / Re-issue">Transfer Certificate (TC) Duplicate / Re-issue</option>
+                                    <option value="Character / Conduct Certificate">Character / Conduct Certificate</option>
+                                    <option value="Marksheet / Report Card Duplicate / Verification">Marksheet / Report Card Duplicate / Verification</option>
+                                    <option value="Bonafide / Study Certificate (Passport / Higher Studies)">Bonafide / Study Certificate (Passport / Higher Studies)</option>
+                                    <option value="Alumni Community Connect &amp; Mentorship">Alumni Community Connect &amp; Mentorship</option>
+                                    <option value="Other Official Verification">Other Official Verification</option>
+                                </select>
+                                <div class="field-error-msg" id="alumniDocTypeError">Please select the document or service requested.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alumniStudentName" class="form-label">
+                                    Student Full Name (as enrolled in school records) <span class="required-star">*</span>
+                                </label>
+                                <input type="text" id="alumniStudentName" name="alumni_student_name" class="form-control"
+                                    placeholder="Student's name on official register">
+                                <div class="field-error-msg" id="alumniStudentNameError">Please provide the student's name on school records.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alumniLastClass" class="form-label">
+                                    Last Class Studied <span class="required-star">*</span>
+                                </label>
+                                <select id="alumniLastClass" name="alumni_last_class" class="form-control">
+                                    <option value="">-- Choose Class --</option>
+                                    <option value="Class 10 (Matriculation)">Class 10 (Matriculation)</option>
+                                    <option value="Class 9">Class 9</option>
+                                    <option value="Class 8">Class 8</option>
+                                    <option value="Class 7">Class 7</option>
+                                    <option value="Class 6">Class 6</option>
+                                    <option value="Class 1 to 5 (Primary Wing)">Class 1 to 5 (Primary Wing)</option>
+                                </select>
+                                <div class="field-error-msg" id="alumniLastClassError">Please select the last class attended.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alumniYear" class="form-label">
+                                    Year of Leaving / Passing Out <span class="required-star">*</span>
+                                </label>
+                                <input type="text" id="alumniYear" name="alumni_year" class="form-control"
+                                    placeholder="e.g. 2023, 2024 or 2025" maxlength="4">
+                                <div class="field-error-msg" id="alumniYearError">Please enter the year you left or completed class.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2E: General Inquiry Specifics -->
+                    <div class="conditional-section" id="generalSection">
+                        <div class="conditional-section-header">
+                            <i class="fas fa-circle-info"></i>
+                            <span>General Inquiry Details</span>
+                        </div>
+
+                        <!-- Sub-Category: General Focus -->
+                        <div class="form-group">
+                            <label for="generalFocus" class="form-label">
+                                Sub-Category: Specific Nature of Inquiry <span class="required-star">*</span>
+                            </label>
+                            <select id="generalFocus" name="general_focus" class="form-control">
+                                <option value="">-- Choose Specific Nature of Inquiry --</option>
+                                <option value="School Timings, Calendar &amp; Transport Coverage">School Timings, Calendar &amp; Transport Coverage</option>
+                                <option value="Request for In-Person Appointment with Principal / Management">Request for In-Person Appointment with Principal / Management</option>
+                                <option value="Campus Ground / Facility Usage for Exams or Sports">Campus Ground / Facility Usage for Exams or Sports</option>
+                                <option value="Press &amp; Media Coverage Request">Press &amp; Media Coverage Request</option>
+                                <option value="Community Lost &amp; Found or Neighborhood Inquiry">Community Lost &amp; Found or Neighborhood Inquiry</option>
+                                <option value="General Question / Other Matter">General Question / Other Matter</option>
+                            </select>
+                            <div class="field-error-msg" id="generalFocusError">Please select the specific nature of your inquiry.</div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================================
+                         SECTION 3: PROPOSAL / MESSAGE DETAILS
+                         ========================================================== -->
+                    <div class="form-section-title" style="margin-top: 1.75rem;">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <span>3. Statement, Proposal or Message Details</span>
+                    </div>
+
+                    <!-- Subject Headline -->
+                    <div class="form-group">
+                        <label for="enquirySubject" class="form-label">
+                            Subject / Summary Headline <span class="required-star">*</span>
+                        </label>
+                        <input type="text" id="enquirySubject" name="subject" class="form-control"
+                            placeholder="e.g. Application for TGT Mathematics or Workshop Proposal on Cyber Safety"
+                            required minlength="5" maxlength="150">
+                        <div class="field-error-msg" id="enquirySubjectError">Please provide a brief subject headline (at least 5 characters).</div>
+                    </div>
+
+                    <!-- Detailed Message Textarea -->
+                    <div class="form-group">
+                        <label for="enquiryMessage" class="form-label">
+                            Detailed Description / Statement / Proposal <span class="required-star">*</span>
+                        </label>
+                        <textarea id="enquiryMessage" name="message" class="form-control"
+                            placeholder="Please provide full details regarding your inquiry, qualifications, proposed collaboration dates, or vendor portfolio so the administration can respond promptly..."
+                            required minlength="20" maxlength="2500" style="min-height: 135px;"></textarea>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="field-error-msg" id="enquiryMessageError">Please enter a detailed message (at least 20 characters).</div>
+                            <div class="char-counter" id="charCounter">0 / 2500</div>
+                        </div>
+                    </div>
+
+                    <!-- Declaration Box -->
+                    <div class="declaration-box">
+                        <input type="checkbox" id="declarationCheck" required>
+                        <label for="declarationCheck">
+                            I verify that the information provided above is accurate and intended for legitimate professional, educational, or administrative communication with National Academy Taraiya.
+                        </label>
+                    </div>
+                    <div class="field-error-msg" id="declarationError" style="margin-top: -1rem; margin-bottom: 1rem;">
+                        Please check the verification box before submitting.
+                    </div>
+
+                    <!-- Form Action Buttons -->
+                    <div class="form-actions-bar">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane" id="submitIcon"></i>
+                            <span id="submitBtnText">Submit Enquiry</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Helpline Quick Callout -->
+            <div class="form-helpline-box">
+                <div class="form-helpline-info">
+                    <h4>Prefer to speak with our administrative desk in person?</h4>
+                    <p>Our school office is open Monday–Saturday (8:00 AM to 3:30 PM) at Shahnewazpur, Taraiya, Saran.</p>
+                </div>
+                <div class="form-helpline-links">
+                    <a href="tel:+919771760033" class="helpline-chip" title="Call School Office">
+                        <i class="fas fa-phone-alt"></i> +91 97717 60033
+                    </a>
+                    <a href="https://wa.me/919771760033" target="_blank" rel="noopener noreferrer"
+                        class="helpline-chip chip-wa" title="WhatsApp Administrative Desk">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Help
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo-row">
+            <img src="../assets/school-logo.png" alt="National Academy Emblem">
+            <span>National Academy Saran</span>
+        </div>
+        <p class="footer-tagline">
+            Excellence in Education, Career Opportunities & Community Partnerships | Taraiya, Saran, Bihar
+        </p>
+        <p class="footer-copy">
+            &copy; 2026 National Academy. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // ==========================================================================
+        // GOOGLE APPS SCRIPT WEB APP ENDPOINT CONFIGURATION
+        // ==========================================================================
+        // Paste your deployed Google Apps Script Web App URL for General Enquiries below:
+        const GOOGLE_SCRIPT_WEBAPP_URL = '';
+
+        // Theme Management
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        const userTheme = localStorage.getItem('na_user_theme');
+        if (userTheme === 'dark') {
+            applyTheme('dark');
+        } else if (userTheme === 'light') {
+            applyTheme('light');
+        } else {
+            applyTheme('default');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('na_user_theme', nextTheme);
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('active');
+                if (menuIcon) menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    if (menuIcon) menuIcon.className = 'fas fa-bars';
+                });
+            });
+        }
+
+        // Dynamic Category & Contextual Switcher
+        const enquiryCategory = document.getElementById('enquiryCategory');
+        const purposeHelperNotice = document.getElementById('purposeHelperNotice');
+        const enquirySubjectInput = document.getElementById('enquirySubject');
+        const msgInput = document.getElementById('enquiryMessage');
+
+        const careerSection = document.getElementById('careerSection');
+        const collabSection = document.getElementById('collabSection');
+        const vendorSection = document.getElementById('vendorSection');
+        const alumniSection = document.getElementById('alumniSection');
+        const generalSection = document.getElementById('generalSection');
+
+        function selectCategory(categoryName) {
+            if (enquiryCategory && enquiryCategory.value !== categoryName) {
+                enquiryCategory.value = categoryName;
+            }
+
+            // Hide all conditional sections
+            [careerSection, collabSection, vendorSection, alumniSection, generalSection].forEach(sec => {
+                if (sec) sec.classList.remove('active');
+            });
+
+            // Toggle helper notice
+            if (purposeHelperNotice) {
+                purposeHelperNotice.style.display = categoryName ? 'none' : 'block';
+            }
+
+            // Clear any previous error styling in conditional fields
+            document.querySelectorAll('.conditional-section input, .conditional-section select').forEach(el => {
+                el.classList.remove('is-invalid');
+            });
+            document.querySelectorAll('.conditional-section .field-error-msg').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            if (!categoryName) {
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. Brief summary of your inquiry or proposal';
+                if (msgInput) msgInput.placeholder = 'Please provide full details regarding your inquiry, qualifications, proposed collaboration, or vendor portfolio...';
+                return;
+            }
+
+            // Reveal matching section & adapt contextual placeholders
+            if (categoryName === 'Career / Job Application') {
+                if (careerSection) careerSection.classList.add('active');
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. Application for TGT Mathematics / PRT Primary Teacher';
+                if (msgInput) msgInput.placeholder = 'Please summarize your teaching or professional background, subject strengths, qualification highlights, and why you would like to join National Academy...';
+            } else if (categoryName === 'Institutional Collaboration & Events') {
+                if (collabSection) collabSection.classList.add('active');
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. Proposal for Student Career Guidance Workshop / Free Health Screening';
+                if (msgInput) msgInput.placeholder = 'Please detail your organization\'s background, proposed student activity or workshop, target grades, dates, and what our school would need to facilitate...';
+            } else if (categoryName === 'Vendor & Business Proposal') {
+                if (vendorSection) vendorSection.classList.add('active');
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. Supply Proposal for Textbooks / Uniforms / Smart Panels / Lab Apparatus';
+                if (msgInput) msgInput.placeholder = 'Please outline your product offerings, commercial terms, delivery capabilities in Saran district, and past institutional references...';
+            } else if (categoryName === 'Alumni & Student Record Request') {
+                if (alumniSection) alumniSection.classList.add('active');
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. Request for Duplicate Transfer Certificate (TC) or Marksheet Verification';
+                if (msgInput) msgInput.placeholder = 'Please mention your enrollment or roll number (if remembered), purpose of certificate request, and any urgent deadline...';
+            } else if (categoryName === 'General Inquiry & Public Communication') {
+                if (generalSection) generalSection.classList.add('active');
+                if (enquirySubjectInput) enquirySubjectInput.placeholder = 'e.g. School Transport Coverage / Appointment Request with Principal';
+                if (msgInput) msgInput.placeholder = 'Please provide full details of your query so our administrative team can review and assist you with accurate information...';
+            }
+        }
+
+        // Dropdown change handler
+        if (enquiryCategory) {
+            enquiryCategory.addEventListener('change', (e) => {
+                selectCategory(e.target.value);
+            });
+        }
+
+        // Character counter
+        const charCounter = document.getElementById('charCounter');
+        if (msgInput && charCounter) {
+            msgInput.addEventListener('input', () => {
+                const len = msgInput.value.length;
+                charCounter.textContent = `${len} / 2500`;
+                if (len >= 2400) {
+                    charCounter.style.color = '#ef4444';
+                } else {
+                    charCounter.style.color = 'var(--text-muted)';
+                }
+            });
+        }
+
+        // Validation helpers
+        function showFieldError(inputEl, errorEl, message) {
+            if (inputEl) inputEl.classList.add('is-invalid');
+            if (errorEl) {
+                if (message) errorEl.textContent = message;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function clearFieldError(inputEl, errorEl) {
+            if (inputEl) inputEl.classList.remove('is-invalid');
+            if (errorEl) errorEl.style.display = 'none';
+        }
+
+        function validatePhoneNumber(input, errorEl) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                showFieldError(input, errorEl, 'Mobile number is required (10 digits).');
+                return false;
+            }
+            if (val.length !== 10) {
+                showFieldError(input, errorEl, `Please enter a complete 10-digit number (${val.length}/10 entered).`);
+                return false;
+            }
+            if (!/^[6-9]\d{9}$/.test(val)) {
+                showFieldError(input, errorEl, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.');
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        const DISPOSABLE_EMAIL_DOMAINS = new Set([
+            '10minutemail.com', '10minutemail.net', 'tempmail.com', 'temp-mail.org',
+            'guerrillamail.com', 'sharklasers.com', 'yopmail.com', 'throwawaymail.com',
+            'dispostable.com', 'mailinator.com', 'trashmail.com'
+        ]);
+
+        function validateEmail(input, errorEl) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                showFieldError(input, errorEl, 'Email address is required.');
+                return false;
+            }
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!regex.test(val)) {
+                showFieldError(input, errorEl, 'Please enter a valid email format (e.g. name@domain.com).');
+                return false;
+            }
+            const domain = val.split('@')[1].toLowerCase();
+            if (DISPOSABLE_EMAIL_DOMAINS.has(domain)) {
+                showFieldError(input, errorEl, 'Temporary disposable email addresses are not accepted.');
+                return false;
+            }
+            clearFieldError(input, errorEl);
+            return true;
+        }
+
+        // Form Fields
+        const fullNameInput = document.getElementById('fullName');
+        const fullNameError = document.getElementById('fullNameError');
+        const contactPhoneInput = document.getElementById('contactPhone');
+        const contactPhoneError = document.getElementById('contactPhoneError');
+        const contactEmailInput = document.getElementById('contactEmail');
+        const contactEmailError = document.getElementById('contactEmailError');
+        const cityLocationInput = document.getElementById('cityLocation');
+        const cityLocationError = document.getElementById('cityLocationError');
+        const enquiryCategoryError = document.getElementById('enquiryCategoryError');
+        const enquirySubjectError = document.getElementById('enquirySubjectError');
+        const enquiryMessageError = document.getElementById('enquiryMessageError');
+        const declarationCheck = document.getElementById('declarationCheck');
+        const declarationError = document.getElementById('declarationError');
+
+        // Numeric Phone Keydown & Input Filters
+        if (contactPhoneInput) {
+            contactPhoneInput.addEventListener('keydown', (e) => {
+                if (['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(e.key)) return;
+                if (e.ctrlKey || e.metaKey) return;
+                if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+            });
+
+            contactPhoneInput.addEventListener('input', () => {
+                contactPhoneInput.value = contactPhoneInput.value.replace(/\D/g, '').slice(0, 10);
+                if (contactPhoneInput.value.length === 10 || contactPhoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(contactPhoneInput, contactPhoneError);
+                }
+            });
+
+            contactPhoneInput.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pasted = (e.clipboardData || window.clipboardData).getData('text');
+                const numOnly = pasted.replace(/\D/g, '').slice(0, 10);
+                document.execCommand('insertText', false, numOnly);
+                if (contactPhoneInput.value.length === 10 || contactPhoneInput.classList.contains('is-invalid')) {
+                    validatePhoneNumber(contactPhoneInput, contactPhoneError);
+                }
+            });
+        }
+
+        fullNameInput.addEventListener('input', () => {
+            if (fullNameInput.value.trim().length >= 2) clearFieldError(fullNameInput, fullNameError);
+        });
+        contactEmailInput.addEventListener('input', () => {
+            if (contactEmailInput.classList.contains('is-invalid')) validateEmail(contactEmailInput, contactEmailError);
+        });
+        contactEmailInput.addEventListener('blur', () => validateEmail(contactEmailInput, contactEmailError));
+        cityLocationInput.addEventListener('input', () => {
+            if (cityLocationInput.value.trim().length >= 2) clearFieldError(cityLocationInput, cityLocationError);
+        });
+        enquiryCategory.addEventListener('change', () => {
+            if (enquiryCategory.value) clearFieldError(enquiryCategory, enquiryCategoryError);
+        });
+        enquirySubjectInput.addEventListener('input', () => {
+            if (enquirySubjectInput.value.trim().length >= 5) clearFieldError(enquirySubjectInput, enquirySubjectError);
+        });
+        msgInput.addEventListener('input', () => {
+            if (msgInput.value.trim().length >= 20) clearFieldError(msgInput, enquiryMessageError);
+        });
+        declarationCheck.addEventListener('change', () => {
+            if (declarationCheck.checked) clearFieldError(null, declarationError);
+        });
+
+        // Form Submit
+        const form = document.getElementById('generalEnquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const submitIcon = document.getElementById('submitIcon');
+        const successAlert = document.getElementById('successAlert');
+        const errorAlert = document.getElementById('errorAlert');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Honeypot check
+            const hp = document.getElementById('hp_website');
+            if (hp && hp.value.trim().length > 0) {
+                console.warn('Bot submission blocked');
+                form.reset();
+                return;
+            }
+
+            let isValid = true;
+            let firstInvalidEl = null;
+
+            if (fullNameInput.value.trim().length < 2) {
+                showFieldError(fullNameInput, fullNameError, 'Please enter your full name (at least 2 letters).');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = fullNameInput;
+            }
+
+            if (!validatePhoneNumber(contactPhoneInput, contactPhoneError)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = contactPhoneInput;
+            }
+
+            if (!validateEmail(contactEmailInput, contactEmailError)) {
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = contactEmailInput;
+            }
+
+            if (cityLocationInput.value.trim().length < 2) {
+                showFieldError(cityLocationInput, cityLocationError, 'Please enter your city or district.');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = cityLocationInput;
+            }
+
+            if (!enquiryCategory.value) {
+                showFieldError(enquiryCategory, enquiryCategoryError, 'Please choose a category.');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = enquiryCategory;
+            }
+
+            // Contextual Validations
+            const cat = enquiryCategory.value;
+            let orgOrRoleText = '';
+
+            if (cat === 'Career / Job Application') {
+                const roleEl = document.getElementById('careerRole');
+                const roleErr = document.getElementById('careerRoleError');
+                if (!roleEl.value) {
+                    showFieldError(roleEl, roleErr, 'Please select the position you are applying for.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = roleEl;
+                }
+                const qualEl = document.getElementById('careerQualification');
+                const qualErr = document.getElementById('careerQualificationError');
+                if (!qualEl.value.trim()) {
+                    showFieldError(qualEl, qualErr, 'Please enter your highest qualification.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = qualEl;
+                }
+                orgOrRoleText = `Role: ${roleEl.value}`;
+            } else if (cat === 'Institutional Collaboration & Events') {
+                const typeEl = document.getElementById('collabType');
+                const typeErr = document.getElementById('collabTypeError');
+                if (!typeEl.value) {
+                    showFieldError(typeEl, typeErr, 'Please specify the collaboration nature.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = typeEl;
+                }
+                const orgEl = document.getElementById('collabOrgName');
+                const orgErr = document.getElementById('collabOrgNameError');
+                if (!orgEl.value.trim()) {
+                    showFieldError(orgEl, orgErr, 'Please enter organization name.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = orgEl;
+                }
+                orgOrRoleText = `Org: ${orgEl.value.trim()} (${typeEl.value})`;
+            } else if (cat === 'Vendor & Business Proposal') {
+                const domEl = document.getElementById('vendorDomain');
+                const domErr = document.getElementById('vendorDomainError');
+                if (!domEl.value) {
+                    showFieldError(domEl, domErr, 'Please select your product/service domain.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = domEl;
+                }
+                const venEl = document.getElementById('vendorCompanyName');
+                const venErr = document.getElementById('vendorCompanyNameError');
+                if (!venEl.value.trim()) {
+                    showFieldError(venEl, venErr, 'Please enter company name.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = venEl;
+                }
+                orgOrRoleText = `Vendor: ${venEl.value.trim()} (${domEl.value})`;
+            } else if (cat === 'Alumni & Student Record Request') {
+                const docEl = document.getElementById('alumniDocType');
+                const docErr = document.getElementById('alumniDocTypeError');
+                if (!docEl.value) {
+                    showFieldError(docEl, docErr, 'Please select certificate or service requested.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = docEl;
+                }
+                const stuEl = document.getElementById('alumniStudentName');
+                const stuErr = document.getElementById('alumniStudentNameError');
+                if (!stuEl.value.trim()) {
+                    showFieldError(stuEl, stuErr, 'Please enter student name on records.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = stuEl;
+                }
+                const classEl = document.getElementById('alumniLastClass');
+                const classErr = document.getElementById('alumniLastClassError');
+                if (!classEl.value) {
+                    showFieldError(classEl, classErr, 'Please select the last class attended.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = classEl;
+                }
+                const yearEl = document.getElementById('alumniYear');
+                const yearErr = document.getElementById('alumniYearError');
+                if (!yearEl.value.trim()) {
+                    showFieldError(yearEl, yearErr, 'Please enter passing or leaving year.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = yearEl;
+                }
+                orgOrRoleText = `Request: ${docEl.value} for ${stuEl.value.trim()}`;
+            } else if (cat === 'General Inquiry & Public Communication') {
+                const genEl = document.getElementById('generalFocus');
+                const genErr = document.getElementById('generalFocusError');
+                if (genEl && !genEl.value) {
+                    showFieldError(genEl, genErr, 'Please select the specific nature of your inquiry.');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = genEl;
+                }
+                orgOrRoleText = genEl && genEl.value ? `Matter: ${genEl.value}` : '';
+            }
+
+            if (enquirySubjectInput.value.trim().length < 5) {
+                showFieldError(enquirySubjectInput, enquirySubjectError, 'Please enter a subject (min 5 chars).');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = enquirySubjectInput;
+            }
+
+            if (msgInput.value.trim().length < 20) {
+                showFieldError(msgInput, enquiryMessageError, 'Please enter a detailed message (at least 20 characters).');
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = msgInput;
+            }
+
+            if (!declarationCheck.checked) {
+                declarationError.style.display = 'block';
+                isValid = false;
+                if (!firstInvalidEl) firstInvalidEl = declarationCheck;
+            }
+
+            if (!isValid) {
+                if (firstInvalidEl) {
+                    firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (typeof firstInvalidEl.focus === 'function') firstInvalidEl.focus();
+                }
+                return;
+            }
+
+            // Hide previous alerts
+            successAlert.style.display = 'none';
+            errorAlert.style.display = 'none';
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtnText.textContent = 'Submitting Enquiry...';
+            submitIcon.className = 'fas fa-spinner fa-spin';
+
+            const nameVal = fullNameInput.value.trim();
+            const phoneVal = contactPhoneInput.value.trim();
+            const emailVal = contactEmailInput.value.trim();
+            const cityVal = cityLocationInput.value.trim();
+            const subjectVal = enquirySubjectInput.value.trim();
+            const messageVal = msgInput.value.trim();
+
+            // Additional Category Payloads
+            const careerRole = document.getElementById('careerRole') ? document.getElementById('careerRole').value : '';
+            const careerQual = document.getElementById('careerQualification') ? document.getElementById('careerQualification').value.trim() : '';
+            const careerExp = document.getElementById('careerExperience') ? document.getElementById('careerExperience').value : '';
+            const careerResume = document.getElementById('careerResumeLink') ? document.getElementById('careerResumeLink').value.trim() : '';
+
+            const collabOrg = document.getElementById('collabOrgName') ? document.getElementById('collabOrgName').value.trim() : '';
+            const collabType = document.getElementById('collabType') ? document.getElementById('collabType').value : '';
+            const collabTimeline = document.getElementById('collabTimeline') ? document.getElementById('collabTimeline').value.trim() : '';
+
+            const vendorCompany = document.getElementById('vendorCompanyName') ? document.getElementById('vendorCompanyName').value.trim() : '';
+            const vendorDomain = document.getElementById('vendorDomain') ? document.getElementById('vendorDomain').value : '';
+
+            const alumniStudent = document.getElementById('alumniStudentName') ? document.getElementById('alumniStudentName').value.trim() : '';
+            const alumniClass = document.getElementById('alumniLastClass') ? document.getElementById('alumniLastClass').value : '';
+            const alumniYear = document.getElementById('alumniYear') ? document.getElementById('alumniYear').value.trim() : '';
+            const alumniDoc = document.getElementById('alumniDocType') ? document.getElementById('alumniDocType').value : '';
+            const generalFocus = document.getElementById('generalFocus') ? document.getElementById('generalFocus').value : '';
+
+            // Generate Client Reference Ticket ID
+            const clientTicketId = 'GEN-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+
+            const payload = new URLSearchParams({
+                auth_token: 'NA_SARAN_GENERAL_2026_SECURE_TOKEN',
+                ticket_id: clientTicketId,
+                full_name: nameVal,
+                phone: phoneVal,
+                email: emailVal,
+                city_location: cityVal,
+                category: cat,
+                subject: subjectVal,
+                message: messageVal,
+                career_role: careerRole,
+                career_qualification: careerQual,
+                career_experience: careerExp,
+                career_resume_link: careerResume,
+                collab_org_name: collabOrg,
+                collab_type: collabType,
+                collab_timeline: collabTimeline,
+                vendor_company_name: vendorCompany,
+                vendor_domain: vendorDomain,
+                alumni_student_name: alumniStudent,
+                alumni_last_class: alumniClass,
+                alumni_year: alumniYear,
+                alumni_doc_type: alumniDoc,
+                general_focus: generalFocus
+            });
+
+            try {
+                if (GOOGLE_SCRIPT_WEBAPP_URL && GOOGLE_SCRIPT_WEBAPP_URL.trim() !== '') {
+                    await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: payload.toString()
+                    });
+                }
+
+                // Populate success receipt
+                document.getElementById('submittedPersonName').textContent = nameVal;
+                document.getElementById('submittedCategoryBadge').textContent = cat;
+                document.getElementById('submittedTicketId').textContent = clientTicketId;
+
+                document.getElementById('receiptTicketId').textContent = clientTicketId;
+                document.getElementById('receiptName').textContent = nameVal;
+                document.getElementById('receiptCategory').textContent = cat;
+                document.getElementById('receiptPhone').textContent = phoneVal;
+                document.getElementById('receiptEmail').textContent = emailVal;
+
+                const orgRow = document.getElementById('receiptOrgRow');
+                const orgValEl = document.getElementById('receiptOrgVal');
+                if (orgOrRoleText && orgRow && orgValEl) {
+                    orgValEl.textContent = orgOrRoleText;
+                    orgRow.style.display = 'flex';
+                } else if (orgRow) {
+                    orgRow.style.display = 'none';
+                }
+
+                document.getElementById('receiptTime').textContent = new Date().toLocaleString('en-IN', {
+                    dateStyle: 'medium',
+                    timeStyle: 'short'
+                });
+
+                // Hide form and show receipt
+                document.getElementById('formCard').style.display = 'none';
+                successAlert.style.display = 'block';
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (err) {
+                console.error('Submission failed:', err);
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'Submit Enquiry';
+                submitIcon.className = 'fas fa-paper-plane';
+            }
+        });
+
+        // Sub-Category Select Change Listeners to clear errors
+        ['careerRole', 'collabType', 'vendorDomain', 'alumniDocType', 'alumniLastClass', 'generalFocus'].forEach(id => {
+            const el = document.getElementById(id);
+            const err = document.getElementById(id + 'Error');
+            if (el && err) {
+                el.addEventListener('change', () => {
+                    if (el.value) clearFieldError(el, err);
+                });
+            }
+        });
+
+        // Submit Another Enquiry Handler
+        const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+        if (submitAnotherBtn) {
+            submitAnotherBtn.addEventListener('click', () => {
+                form.reset();
+                selectCategory('');
+                if (charCounter) charCounter.textContent = '0 / 2500';
+                document.getElementById('formCard').style.display = 'block';
+                successAlert.style.display = 'none';
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    </script>
+</body>
+
+</html>

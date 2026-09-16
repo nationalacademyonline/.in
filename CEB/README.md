@@ -4,6 +4,12 @@ An official, responsive, zero-maintenance static web portal for Secondary School
 
 ---
 
+> [!IMPORTANT]
+> **Independent Standalone Portal**:
+> The Central Examination Board (CEB) portal is completely autonomous and self-contained. It is **not connected or linked to the school website**, and the school website does not link to the CEB portal. All required assets, stylesheets, fonts, and scripts are hosted directly inside this directory.
+
+---
+
 ## Direct PDF URL Generation Algorithm
 
 The system operates using a zero-backend, deterministic URL construction algorithm. When a candidate enters their Roll Number and selects their Date of Birth (DOB via HTML5 calendar picker), the portal generates the direct PDF certificate URL:
@@ -40,10 +46,10 @@ The system operates using a zero-backend, deterministic URL construction algorit
 
 ```text
 CEB/
-├── index.html       # Single-Page Result Form & Algorithm Script
-├── Result_PDFs/     # Direct Marksheet Records
-├── dummy details    # Sample Candidate Credentials
-├── SRS.txt          # Software Requirements Specification
-├── LL-SRS.txt       # Low-Level Specification
-└── README.md        # Technical Documentation
+├── assets/          # Isolated portal branding (ceb-logo.png)
+├── css/             # Consolidated stylesheets (style.css, fontawesome.min.css)
+├── webfonts/        # Self-hosted Font Awesome 6 icon fonts
+├── Result_PDFs/     # Direct marksheet records & certificates
+├── index.html       # Single-page result form & algorithm script
+└── README.md        # Technical documentation
 ```
