@@ -46,16 +46,17 @@ This guide enables you to connect the **General Purpose Enquiry, Career Applicat
 ```javascript
 /**
  * ============================================================================
- * NATIONAL ACADEMY, SARAN - GENERAL ENQUIRY & CAREERS BACKEND
+ * NATIONAL ACADEMY, SARAN - GENERAL ENQUIRY & CAREERS BACKEND (Google Apps Script)
  * ============================================================================
  * Features:
- *  - Automated Ticket ID generator (e.g., GEN-2026-0001)
+ *  - Client & Auto Ticket ID Synchronization (e.g. GEN-2026-4821)
  *  - Auto-generated Midnight Navy Header row (#050a30)
  *  - Multi-intent contextual capture: Careers, Collabs, Vendors, Alumni, Inquiries
  *  - Security Layer: Auth Token verification & Bot Honeypot protection
  *  - Rapid Double-Click Debounce (30-second filter)
  *  - Administrative workflow columns: Status & Resolution Notes
  *  - Thread-safe spreadsheet locking with LockService
+ *  - Resilient payload parser (handles URL-encoded, POST parameters, and JSON)
  * ============================================================================
  */
 
@@ -71,6 +72,7 @@ function doGet(e) {
 
 /**
  * Robustly parses cell timestamps into milliseconds.
+ * Handles native Date objects, numbers, ISO strings, and Indian locale strings (DD/MM/YYYY, HH:mm:ss am/pm).
  */
 function parseTimestampMillis(val) {
   if (val instanceof Date) return val.getTime();
@@ -98,6 +100,7 @@ function parseTimestampMillis(val) {
 function doPost(e) {
   var lock = LockService.getScriptLock();
   try {
+    // Acquire lock for up to 30 seconds to handle concurrent submissions safely
     lock.waitLock(30000);
   } catch (err) {
     return ContentService
@@ -107,13 +110,31 @@ function doPost(e) {
 
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var p = e.parameter || {};
+
+    // ------------------------------------------------------------------------
+    // ROBUST PAYLOAD PARSER (Handles URL-encoded, parameter object, and JSON)
+    // ------------------------------------------------------------------------
+    var p = (e && e.parameter) ? e.parameter : {};
+    if ((!p || Object.keys(p).length === 0) && e && e.postData && e.postData.contents) {
+      try {
+        p = JSON.parse(e.postData.contents);
+      } catch (err) {
+        p = {};
+        var qs = e.postData.contents.split('&');
+        for (var i = 0; i < qs.length; i++) {
+          var pair = qs[i].split('=');
+          if (pair[0]) {
+            p[decodeURIComponent(pair[0].replace(/\+/g, ' '))] = decodeURIComponent((pair[1] || '').replace(/\+/g, ' '));
+          }
+        }
+      }
+    }
 
     // ------------------------------------------------------------------------
     // SECURITY LAYER 1: Secret Auth Token Verification
     // ------------------------------------------------------------------------
-    var EXPECTED_AUTH_TOKEN = "NA_SARAN_GENERAL_2026_SECURE_TOKEN";
-    if (p.auth_token && p.auth_token !== EXPECTED_AUTH_TOKEN) {
+    var ALLOWED_TOKENS = ["NA_SARAN_GENERAL_2026_SECURE_TOKEN", "NA_GENERAL_2026_SECURE_TOKEN"];
+    if (p.auth_token && ALLOWED_TOKENS.indexOf(p.auth_token) === -1) {
       return ContentService
         .createTextOutput(JSON.stringify({ result: "error", error: "Unauthorized access: invalid token" }))
         .setMimeType(ContentService.MimeType.JSON);
@@ -122,14 +143,14 @@ function doPost(e) {
     // ------------------------------------------------------------------------
     // SECURITY LAYER 2: Bot Honeypot Trap
     // ------------------------------------------------------------------------
-    if (p.hp_website && String(p.hp_website).trim() !== "") {
+    if ((p.hp_website && String(p.hp_website).trim() !== "") || (p.bot_trap && String(p.bot_trap).trim() !== "")) {
       return ContentService
         .createTextOutput(JSON.stringify({ result: "success", note: "bot_filtered" }))
         .setMimeType(ContentService.MimeType.JSON);
     }
 
     // ------------------------------------------------------------------------
-    // EXTRACT FIELDS
+    // EXTRACT & SANITIZE FIELDS
     // ------------------------------------------------------------------------
     var fullName       = (p.full_name || "").trim();
     var phone          = (p.phone || "").trim().replace(/\D/g, "");
@@ -139,24 +160,32 @@ function doPost(e) {
     var subject        = (p.subject || "").trim();
     var message        = (p.message || "").trim();
 
-    // Contextual fields
+    // Contextual fields: Careers
     var careerRole     = (p.career_role || "").trim();
     var careerQual     = (p.career_qualification || "").trim();
     var careerExp      = (p.career_experience || "").trim();
     var careerResume   = (p.career_resume_link || "").trim();
 
-    var collabOrg      = (p.collab_org_name || p.vendor_company_name || "").trim();
-    var collabFocus    = (p.collab_type || p.vendor_domain || p.alumni_doc_type || p.general_focus || "").trim();
+    // Contextual fields: Organization / Company / Alumni Student
+    var collabOrg      = (p.collab_org_name || p.vendor_company_name || (p.alumni_student_name ? "Alumni: " + p.alumni_student_name : "")).trim();
+    if (p.collab_org_type && collabOrg) {
+      collabOrg += " [" + p.collab_org_type + "]";
+    }
+
+    // Contextual fields: Sub-Focus / Domain / Specific Request details
+    var alumniDetails  = p.alumni_doc_type ? p.alumni_doc_type + (p.alumni_last_class || p.alumni_year ? " (" + [p.alumni_last_class ? "Class: " + p.alumni_last_class : "", p.alumni_year ? "Year: " + p.alumni_year : ""].filter(Boolean).join(", ") + ")" : "") : "";
+    var collabDetails  = p.collab_type ? p.collab_type + (p.collab_timeline ? " [Timeline: " + p.collab_timeline + "]" : "") : "";
+    var collabFocus    = (collabDetails || p.vendor_domain || alumniDetails || p.general_focus || "").trim();
 
     if (!fullName || fullName.length < 2) {
       return ContentService
-        .createTextOutput(JSON.stringify({ result: "error", error: "Full name is required." }))
+        .createTextOutput(JSON.stringify({ result: "error", error: "Full name is required (at least 2 characters)." }))
         .setMimeType(ContentService.MimeType.JSON);
     }
 
-    if (!message || message.length < 20) {
+    if (!message || message.length < 10) {
       return ContentService
-        .createTextOutput(JSON.stringify({ result: "error", error: "Detailed message is required (min 20 chars)." }))
+        .createTextOutput(JSON.stringify({ result: "error", error: "Detailed message is required (at least 10 characters)." }))
         .setMimeType(ContentService.MimeType.JSON);
     }
 
@@ -216,12 +245,13 @@ function doPost(e) {
     }
 
     // ------------------------------------------------------------------------
-    // GENERATE UNIQUE TICKET ID (e.g. GEN-2026-0001)
+    // TICKET ID (Sync client ticket ID or generate sequential ID)
     // ------------------------------------------------------------------------
     var entryNumber = Math.max(1, lastRow);
     var formattedNumber = ("0000" + entryNumber).slice(-4);
     var currentYear = new Date().getFullYear();
-    var ticketId = "GEN-" + currentYear + "-" + formattedNumber;
+    var fallbackTicketId = "GEN-" + currentYear + "-" + formattedNumber;
+    var ticketId = (p.ticket_id && String(p.ticket_id).trim()) || fallbackTicketId;
 
     // ------------------------------------------------------------------------
     // APPEND ROW TO SPREADSHEET
@@ -273,27 +303,41 @@ function doPost(e) {
 ---
 
 ## Step 3: Deploy Web App in Google Apps Script
+
+### Deploying for the First Time:
 1. In the Apps Script editor, click **Save** (`Ctrl + S`).
 2. Click the blue **Deploy** button (top right) > **New deployment**.
 3. Click the gear icon next to "Select type" and choose **Web app**.
 4. Set the deployment options:
    * **Description**: `National Academy General Enquiry & Careers Webhook`
-   * **Execute as**: `Me (abidhussain841424@gmail.com)`
-   * **Who has access**: **`Anyone`** *(Crucial so visitors, job seekers, and partners can submit without login)*
+   * **Execute as**: `Me`
+   * **Who has access**: **`Anyone`** *(Crucial so visitors, job seekers, and partners can submit without needing a Google login)*
 5. Click **Deploy**.
 6. Click **Authorize access**, select your Google account, click *Advanced* > *Go to National Academy General Enquiry Backend (unsafe)*, and click **Allow**.
 7. Copy the generated **Web App URL** (ends with `/exec`).
 
+### If Updating an Existing Deployment (Keeps the same URL):
+1. In the Apps Script editor, click **Save** (`Ctrl + S`).
+2. At the top right, click **Deploy** > **Manage deployments**.
+3. In the left panel, select your **Active** Web app.
+4. Click the **Pencil icon (Edit)** at the top right of the modal.
+5. In the **Version** dropdown, select **New version**.
+6. Click **Deploy**.
+> **Important:** Creating a "New version" ensures your current URL immediately runs the updated code without generating a new link.
+
 ---
 
 ## Step 4: Paste URL into `general_form.html`
-1. Open [`general_form.html`](file:///c:/Users/ABID/Documents/Hussain841424/Hussain_Web/nationalacademy/form/general_form.html).
-2. Near the top of the `<script>` tag (around line 380), find:
+1. Open [`general_form.html`](file:///c:/Users/ABID/Documents/GitHub%20Website%20(.in)/form/general_form.html).
+2. Near line 642, find the endpoint configuration:
    ```javascript
-   const GOOGLE_SCRIPT_WEBAPP_URL = 'PASTE_YOUR_COPIED_URL_HERE';
+   const GOOGLE_SCRIPT_WEBAPP_URL = '';
    ```
-3. Paste your Web App URL inside the quotes.
-4. Save the file. Every submission will now record in real-time into your spreadsheet!
+3. Paste your Web App URL inside the quotes:
+   ```javascript
+   const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+   ```
+4. Save the file (`Ctrl + S`). Every submission from the website will now record in real-time into your spreadsheet!
 
 ---
 

@@ -93,81 +93,32 @@
             </p>
         </section>
 
+        <!-- Central Online Forms Tab (Section 1: Minimal & Shortened on Top) -->
+        <section class="forms-gateway-banner forms-gateway-compact" aria-label="Central Online Forms Directory">
+            <div class="forms-gateway-content">
+                <div class="forms-gateway-icon-wrap">
+                    <i class="fas fa-file-lines"></i>
+                </div>
+                <div class="forms-gateway-text">
+                    <div class="forms-gateway-badge">
+                        <i class="fas fa-laptop-file"></i> Online Forms &amp; Applications
+                    </div>
+                    <h3>Official Forms &amp; Self-Service Portal</h3>
+                    <p>Apply for admissions, submit parent feedback, or request school documents online.</p>
+                </div>
+            </div>
+            <div class="forms-gateway-action">
+                <a href="form/index.html" class="btn-gateway-portal" id="exploreFormsPortalBtn" title="Go to Official Forms Directory">
+                    <span>Explore Online Forms</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
         <!-- Main 2-Column Campus Directory & Communication Hub -->
         <div class="contact-hub-grid">
 
-            <!-- Column 1: Campus Location & Visiting Desk -->
-            <div class="contact-hub-col">
-                <article class="contact-hub-card" id="campusLocationCard">
-                    <div class="card-header">
-                        <div class="card-icon-wrap">
-                            <i class="fas fa-map-location-dot"></i>
-                        </div>
-                        <span class="card-badge">Taraiya, Saran</span>
-                    </div>
-                    <h3>Campus Location &amp; Directions</h3>
-
-                    <!-- Interactive Mini Map Preview (Expands to Modal on click) -->
-                    <div class="mini-map-viewport" onclick="openLocationModal()" title="Click to view interactive campus map" style="cursor: pointer; margin-bottom: 1.25rem;">
-                        <img src="assets/campus-map-preview.png" alt="National Academy Taraiya Campus Map Preview" class="mini-map-img" loading="lazy">
-                        <div class="map-pin-indicator" title="National Academy Campus Location">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="map-expand-overlay">
-                            <div class="map-expand-pill">
-                                <i class="fas fa-expand-alt"></i> Click to Expand Map
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Postal Address & Landmarks -->
-                    <div class="campus-address-card">
-                        <div class="campus-address-row">
-                            <i class="fas fa-location-dot address-pin-icon"></i>
-                            <div>
-                                <h4>Official Campus Address</h4>
-                                <p id="fullAddressStr">Shahnewazpur, State Highway 73, Marhaurah–Taraiya Road, Taraiya, Saran, Bihar – 841424</p>
-                                <span class="landmark-text">
-                                    <i class="fas fa-route"></i> Landmark: Directly situated on SH-73 (Marhaurah–Taraiya Route)
-                                </span>
-                            </div>
-                        </div>
-                        <div class="campus-address-actions">
-                            <button type="button" class="btn-sm-action btn-brand-outline" onclick="copyAddressText()" id="copyAddressBtn">
-                                <i class="far fa-copy"></i> Copy Address
-                            </button>
-                            <a href="https://www.google.com/maps/search/?api=1&query=National+Academy,+Taraiya,+Saran,+Bihar+841424"
-                                target="_blank" rel="noopener noreferrer" class="btn-sm-action btn-brand-solid" id="openExternalMapsBtn">
-                                <i class="fas fa-diamond-turn-right"></i> Open in Maps App
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Campus Visiting Protocol & Hours -->
-                    <div class="campus-visiting-card">
-                        <div class="visiting-card-title">
-                            <i class="fas fa-clock-rotate-left"></i>
-                            <span>Campus Visiting Hours &amp; Protocol</span>
-                        </div>
-                        <ul class="visiting-hours-list">
-                            <li>
-                                <strong><i class="far fa-clock"></i> General Office Hours:</strong>
-                                <span>Monday – Saturday: 8:00 AM – 3:30 PM (Closed on Sundays &amp; Public Holidays)</span>
-                            </li>
-                            <li>
-                                <strong><i class="fas fa-user-tie"></i> Principal &amp; Management Consultations:</strong>
-                                <span>10:30 AM – 1:00 PM (Prior appointment recommended via office phone)</span>
-                            </li>
-                            <li>
-                                <strong><i class="fas fa-shield-halved"></i> Visitor Protocol:</strong>
-                                <span>For child safety, all parents and visitors must check in at the main gate reception desk upon arrival.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Column 2: Departmental Communication Desks -->
+            <!-- Column 1 (Section 2): Departmental Communication Desks & Helplines (Numbers First) -->
             <div class="contact-hub-col">
                 <article class="contact-hub-card" id="departmentHelplinesCard">
                     <div class="card-header">
@@ -286,36 +237,78 @@
                 </article>
             </div>
 
-        </div>
+            <!-- Column 2 (Section 3): Campus Location & Visiting Desk (Location Second) -->
+            <div class="contact-hub-col">
+                <article class="contact-hub-card" id="campusLocationCard">
+                    <div class="card-header">
+                        <div class="card-icon-wrap">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <span class="card-badge">Taraiya, Saran</span>
+                    </div>
+                    <h3>Campus Location &amp; Directions</h3>
 
-        <!-- Central Online Forms Portal Gateway Banner -->
-        <section class="forms-gateway-banner" aria-label="Central Online Forms Directory">
-            <div class="forms-gateway-content">
-                <div class="forms-gateway-icon-wrap">
-                    <i class="fas fa-folder-tree"></i>
-                </div>
-                <div class="forms-gateway-text">
-                    <div class="forms-gateway-badge">
-                        <i class="fas fa-laptop-file"></i> 24/7 Digital Self-Service
+                    <!-- Interactive Mini Map Preview (Expands to Modal on click) -->
+                    <div class="mini-map-viewport" onclick="openLocationModal()" title="Click to view interactive campus map" style="cursor: pointer; margin-bottom: 1.25rem;">
+                        <img src="assets/campus-map-preview.png" alt="National Academy Taraiya Campus Map Preview" class="mini-map-img" loading="lazy">
+                        <div class="map-pin-indicator" title="National Academy Campus Location">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="map-expand-overlay">
+                            <div class="map-expand-pill">
+                                <i class="fas fa-expand-alt"></i> Click to Expand Map
+                            </div>
+                        </div>
                     </div>
-                    <h3>Need to Submit an Official Application or Form?</h3>
-                    <p>
-                        Save time without visiting the school office. Submit student admission applications, share parent feedback, explore teaching careers, or request alumni certificates directly through our official online forms directory.
-                    </p>
-                    <div class="forms-gateway-chips">
-                        <span class="gateway-chip"><i class="fas fa-check"></i> Admissions (2026–27)</span>
-                        <span class="gateway-chip"><i class="fas fa-check"></i> Parent Feedback &amp; Grievances</span>
-                        <span class="gateway-chip"><i class="fas fa-check"></i> General Inquiries, Careers &amp; Records</span>
+
+                    <!-- Postal Address & Landmarks -->
+                    <div class="campus-address-card">
+                        <div class="campus-address-row">
+                            <i class="fas fa-location-dot address-pin-icon"></i>
+                            <div>
+                                <h4>Official Campus Address</h4>
+                                <p id="fullAddressStr">Shahnewazpur, State Highway 73, Marhaurah–Taraiya Road, Taraiya, Saran, Bihar – 841424</p>
+                                <span class="landmark-text">
+                                    <i class="fas fa-route"></i> Landmark: Directly situated on SH-73 (Marhaurah–Taraiya Route)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="campus-address-actions">
+                            <button type="button" class="btn-sm-action btn-brand-outline" onclick="copyAddressText()" id="copyAddressBtn">
+                                <i class="far fa-copy"></i> Copy Address
+                            </button>
+                            <a href="https://www.google.com/maps/search/?api=1&query=National+Academy,+Taraiya,+Saran,+Bihar+841424"
+                                target="_blank" rel="noopener noreferrer" class="btn-sm-action btn-brand-solid" id="openExternalMapsBtn">
+                                <i class="fas fa-diamond-turn-right"></i> Open in Maps App
+                            </a>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Campus Visiting Protocol & Hours -->
+                    <div class="campus-visiting-card">
+                        <div class="visiting-card-title">
+                            <i class="fas fa-clock-rotate-left"></i>
+                            <span>Campus Visiting Hours &amp; Protocol</span>
+                        </div>
+                        <ul class="visiting-hours-list">
+                            <li>
+                                <strong><i class="far fa-clock"></i> General Office Hours:</strong>
+                                <span>Monday – Saturday: 8:00 AM – 3:30 PM (Closed on Sundays &amp; Public Holidays)</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-user-tie"></i> Principal &amp; Management Consultations:</strong>
+                                <span>10:30 AM – 1:00 PM (Prior appointment recommended via office phone)</span>
+                            </li>
+                            <li>
+                                <strong><i class="fas fa-shield-halved"></i> Visitor Protocol:</strong>
+                                <span>For child safety, all parents and visitors must check in at the main gate reception desk upon arrival.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
             </div>
-            <div class="forms-gateway-action">
-                <a href="form/index.html" class="btn-gateway-portal" id="exploreFormsPortalBtn" title="Go to Official Forms Directory">
-                    <span>Explore Online Forms</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
+
+        </div>
 
         <!-- Social Media & Digital Channels Strip -->
         <section class="contact-section" style="padding: 1.25rem 1rem; text-align: center; overflow: hidden;" aria-label="Official Social Channels">
